@@ -1,0 +1,59 @@
+.music{
+    margin-top: 80px;
+}
+.title{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 48px;
+}
+.musicList{
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 40px auto 0;
+}
+.playlist{
+    aspect-ratio: 1;
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.spotifyIcon{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    fill: white;
+}
+.playlistImage{
+    width: 100%;
+}
+.playBtn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    display: grid;
+    place-content: center;
+}
+.blackBtn{
+    background-color: rgba(0,0,0,0.5);
+
+}
+.whiteBtn{
+    background-color: rgba(255,255,255,0.2);
+
+}
+
+.playIcon{
+    fill: white;
+    width: 40px;
+    height: 40px;
+}
