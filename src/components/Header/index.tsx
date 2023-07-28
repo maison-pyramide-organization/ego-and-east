@@ -1,33 +1,30 @@
 import styles from "./styles.module.scss";
 import logo from "../../assets/logo.png";
+import LeftNav from "./Left Nav";
+import RightNav from "./Right Nav";
 
 const Header = () => {
+    // useEffect(() => {
+    //     const navEls = document.querySelectorAll(".newNavLink");
+    //     console.log(navEls);
+    //     navEls.forEach((el) => {
+    //         el.addEventListener("mouseenter", (e) => {
+    //             console.log(e.target.dataset.id);
+    //         });
+    //     });
+    // }, []);
+
+
+
     return (
         <header className={styles.header}>
-            <nav className={styles.nav}>
-                <a href="" className={styles.navLink}>
-                    book a talent
-                </a>
-                <a href="" className={styles.navLink}>
-                    become a talent
-                </a>
-            </nav>
+            <LeftNav/>
 
             <div className={styles.logoContainer}>
                 <img src={logo} alt="EGO & EAST LOGO" className={styles.logo} />
             </div>
+            <RightNav/>
 
-            <nav className={styles.nav}>
-                <a href="" className={styles.navLink}>
-                    our services
-                </a>
-                <a href="" className={styles.navLink}>
-                    about us
-                </a>
-                <a href="" className={styles.navLink}>
-                    contact us
-                </a>
-            </nav>
         </header>
     );
 };
