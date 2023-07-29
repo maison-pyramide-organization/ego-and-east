@@ -2,10 +2,11 @@ import styles from "./styles.module.scss";
 import playslists from "../../data/playlists";
 import Playlist from "./Playlist";
 import { Fragment } from "react";
+import classNames from "classnames";
 
 const Music = () => {
     return (
-        <div className={styles.music}>
+        <section className={classNames("section")}>
             <h1 className={styles.title}>hit shuffle and enjoy</h1>
             <ul className={styles.musicList}>
                 {playslists.map((playlist) => (
@@ -14,7 +15,7 @@ const Music = () => {
                     </Fragment>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 };
 export default Music;
