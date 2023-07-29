@@ -1,3 +1,4 @@
+// SERVICES LIST
 .services{
     margin-top: 100px;
     display: flex;
@@ -15,21 +16,40 @@
 .servicesList{
     flex-basis: 100%;
 }
+//
+// SERVICE
+//
 .service{
-    padding: 32px;
+    // padding: 32px;
     border-bottom: 1px solid black ;
     &:first-of-type{
     border-top: 1px solid black ;
     }
 }
 .serviceHeader{
+    padding: 32px;
+    color:#444;
+    stroke:#444;
     display: flex;
     gap:32px;
     align-items: center;
+    cursor: pointer;
+    &:hover{
+        color:black;
+        stroke: black;
+    }
+    &:hover .arrowIcon{
+        transform: translateX(10px);
+    }
+    &:hover .closeIcon{
+        transform: rotate(90deg)
+    }
 }
-.serviceId{
-    margin-right: 32px;
+.serviceIndex{
+    font-size: 32px;
     font-weight: 300;
+    overflow: hidden;
+    display: flex;
 }
 .serviceTitle{
     height: fit-content;
@@ -45,10 +65,10 @@
     height: 48px;
     display: grid;
     place-content: center;
-    cursor: pointer;
-    &:hover .arrowIcon{
-        transform: translateX(10px);
-    }
+    // cursor: pointer;
+    // &:hover .arrowIcon{
+    //     transform: translateX(10px);
+    // }
 }
 .arrowIcon{
     display: block;
@@ -58,19 +78,23 @@
     display: block;
     width: 40px;
     height: 40px;
+    transition: transform .2s ease-in;
 }
 .descriptionContainer{
     margin-left: auto;
     width: 60%;
     height: 0;
     overflow: hidden;
-    transition: height .3s ease-in;
+    transition: height .3s ease-out;
+}
+.descriptionWraper{
+    padding: 16px 40px 40px;
 }
 .serviceDescription{
     font-size: 16px;
     line-height: 24px;
     text-align: justify;
-    margin-top: 40px;
 }
+
 
 

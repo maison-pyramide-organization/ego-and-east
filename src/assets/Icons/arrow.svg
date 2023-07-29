@@ -1,10 +1,6 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_347_2)">
-<path d="M32 10C32 11.484 33.466 13.7 34.95 15.56C36.858 17.96 39.138 20.054 41.752 21.652C43.712 22.85 46.088 24 48 24M48 24C46.088 24 43.71 25.15 41.752 26.348C39.138 27.948 36.858 30.042 34.95 32.438C33.466 34.3 32 36.52 32 38M48 24L-6.1196e-07 24" stroke="black" stroke-width="2"/>
-</g>
-<defs>
-<clipPath id="clip0_347_2">
-<rect width="48" height="48" fill="white" transform="translate(48) rotate(90)"/>
-</clipPath>
-</defs>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" stroke='inherit' xmlns="http://www.w3.org/2000/svg">
+    <path d="M32 10C32 11.484 33.466 13.7 34.95 15.56C36.858 17.96 39.138 20.054 41.752 21.652C43.712 22.85 46.088 24 48 24M48 24C46.088 24 43.71 25.15 41.752 26.348C39.138 27.948 36.858 30.042 34.95 32.438C33.466 34.3 32 36.52 32 38M48 24L-6.1196e-07 24" stroke-width="2"/>
+    <clipPath>
+        <rect width="48" height="48" transform="translate(48) rotate(90)"/>
+    </clipPath>
 </svg>
