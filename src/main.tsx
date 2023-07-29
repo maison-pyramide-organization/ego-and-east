@@ -1,10 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './assets/index.css'
-import Home from './pages/Home'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./assets/index.css";
+import Home from "./pages/Home";
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Home/>
-  </React.StrictMode>,
-)
+ReactDOM.createRoot(document.getElementById("root")!).render(<Home />);
+// <React.StrictMode>
+//   <Home/>
+// </React.StrictMode>

@@ -1,59 +1,48 @@
 import styles from "../styles.module.scss";
-import { useState } from "react";
 import classNames from "classnames";
+import { useEffect, useRef } from "react";
 
-const RightNav = () => {
-    const [active, setActive] = useState<string | null>(null);
+interface Iprops {
+    onEnter: (event: Event, nav: HTMLElement) => void;
+    onLeave: (nav: HTMLElement) => void;
+}
 
-    const handleMouseEnter = (e: any) => {
-        const target = e.target as HTMLElement;
-        const activeId = target.dataset.id!;
-        setActive(activeId);
-    };
-    const handleMouseLeave = () => {
-        setActive(null);
-    };
-    const lineClass = (index: string, position: string) => {
-        const mainClass = styles[`${position}Line`];
-        if (!active || index == active) return classNames(mainClass);
-        if (index > active) return classNames(mainClass, styles[`left${index}`]);
-        if (index < active) return classNames(mainClass, styles[`right${index}`]);
-    };
+const RightNav = (props: Iprops) => {
+    const { onEnter, onLeave } = props;
+    const navRef = useRef(null);
+    useEffect(() => {
+        const nav = navRef.current! as HTMLElement;
+        const handleEnter = (e: Event) => {
+            onEnter(e, nav);
+        };
+        const handleLeave = () => {
+            onLeave(nav);
+        };
+        const linkEls = nav.querySelectorAll(".navLink");
+        linkEls.forEach((link) => {
+            link.addEventListener("mouseover", handleEnter);
+            link.addEventListener("mouseleave", handleLeave);
+        });
+        return () => {
+            linkEls.forEach((link) => {
+                link.removeEventListener("mouseover", handleEnter);
+                link.removeEventListener("mouseleave", handleLeave);
+            });
+        };
+    }, []);
+
     return (
-        <nav className={styles.nav}>
-            <a
-                data-id="1"
-                onMouseOver={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className={styles.newNavLink}
-                id={styles.book}
-                href=""
-            >
-                <span className={lineClass("1", "top")}></span>
+        <nav className={styles.nav} ref={navRef}>
+            <span className={classNames(styles.line, "line")} />
+            <span className={classNames(styles.line, "line")} />
+            <a className={classNames(styles.navLink, "navLink")} href="">
                 our services
-                <span className={lineClass("1", "bottom")}></span>
             </a>
-            <a
-                data-id="2"
-                onMouseOver={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className={styles.newNavLink}
-                href=""
-            >
-                <span className={lineClass("2", "top")}></span>
+            <a className={classNames(styles.navLink, "navLink")} href="">
                 about us
-                <span className={lineClass("2", "bottom")}></span>
             </a>
-            <a
-                data-id="3"
-                onMouseOver={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className={styles.newNavLink}
-                href=""
-            >
-                <span className={lineClass("3", "top")}></span>
+            <a className={classNames(styles.navLink, "navLink")} href="">
                 contact us
-                <span className={lineClass("3", "bottom")}></span>
             </a>
         </nav>
     );

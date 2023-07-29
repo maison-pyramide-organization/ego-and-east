@@ -4,27 +4,32 @@ import LeftNav from "./Left Nav";
 import RightNav from "./Right Nav";
 
 const Header = () => {
-    // useEffect(() => {
-    //     const navEls = document.querySelectorAll(".newNavLink");
-    //     console.log(navEls);
-    //     navEls.forEach((el) => {
-    //         el.addEventListener("mouseenter", (e) => {
-    //             console.log(e.target.dataset.id);
-    //         });
-    //     });
-    // }, []);
+    const onEnter = (e: Event, nav: HTMLElement) => {
+        const lineEls = nav.querySelectorAll(".line") as NodeListOf<HTMLElement>;
+        const linkEl = e.target as HTMLElement;
+        const offset = linkEl.offsetLeft;
+        const width = linkEl.clientWidth;
+        lineEls.forEach((lineEl) => {
+            lineEl.style.width = width + "px";
+            lineEl.style.transform = `translateX(${offset}px)`;
+        });
+    };
 
-
-
+    const onLeave = (nav: HTMLElement) => {
+        const lineEls = nav.querySelectorAll(".line") as NodeListOf<HTMLElement>;
+        lineEls.forEach((lineEl) => {
+            lineEl.style.width = "100%";
+            lineEl.style.transform = `translateX(0)`;
+        });
+    };
     return (
         <header className={styles.header}>
-            <LeftNav/>
+            <LeftNav onEnter={onEnter} onLeave={onLeave} />
 
             <div className={styles.logoContainer}>
                 <img src={logo} alt="EGO & EAST LOGO" className={styles.logo} />
             </div>
-            <RightNav/>
-
+            <RightNav onEnter={onEnter} onLeave={onLeave} />
         </header>
     );
 };
