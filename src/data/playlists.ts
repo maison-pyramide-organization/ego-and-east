@@ -1,7 +1,7 @@
-import image1 from "../assets/Images/playlist1.png";
-import image2 from "../assets/Images/playlist2.png";
-import image3 from "../assets/Images/playlist3.png";
-import image4 from "../assets/Images/playlist4.png";
+import image1 from "../assets/Images/playlist/1.png";
+import image2 from "../assets/Images/playlist/2.png";
+import image3 from "../assets/Images/playlist/3.png";
+import image4 from "../assets/Images/playlist/4.png";
 import { Iplaylist } from "../types/playlists";
 
 const playslists: Iplaylist[] = [

@@ -1,4 +1,5 @@
 import About from "../../components/About";
+import Gallery from "../../components/Gallery";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import Music from "../../components/Music";
@@ -12,6 +13,7 @@ const Home = () => {
             <Hero />
             <Services/>
             <About />
+            <Gallery/>
             <Music />
         </div>
     );
