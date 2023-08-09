@@ -5,7 +5,7 @@ import { aboutText, aboutSubtext } from "../../data/about";
 
 const About = () => {
     return (
-        <section className={classNames(styles.about, "section")}>
+        <section className={classNames(styles.about, "section")} id="about">
             <h1 className={styles.title}>about ego & east</h1>
             <div className={styles.container}>
                 {/* IMAGE CONTAINER */}

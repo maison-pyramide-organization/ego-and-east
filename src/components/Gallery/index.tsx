@@ -3,6 +3,7 @@ import images from "../../data/gallery";
 import styles from "./styles.module.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ReactComponent as IgIcon } from "../../assets/Icons/instagram.svg";
 
 const ig_url = "https://www.instagram.com/egoandeast/";
 
@@ -10,22 +11,24 @@ const animate = () => {
     const galleryWidth: number = document.getElementById("gallery")?.scrollWidth || 0;
     const galleryHeight: number = document.getElementById("gallery")?.clientHeight || 0;
     const screenWidth: number = window.innerWidth - 95 || 0;
+    // const screenHeight: number = window.innerHeight || 0;
+    // const start =  screenHeight -
 
-    const scrollTrigger: ScrollTrigger.Vars = {
-        // markers: true,
+    const galleryTrigger: ScrollTrigger.Vars = {
+        markers: true,
         trigger: "#gallery",
-        start: "top 30%",
+        start: `top ${galleryHeight + 100}`,
+        // start: `top 80%`,
         end: `+=400`,
-        scrub: 4,
-        pin: true,
-
+        scrub: 6,
+        // pin: true,
         // toggleActions: "restart pause reverse pause",
     };
 
     gsap.to("#gallery", {
         x: -Math.ceil(galleryWidth - screenWidth),
         // duration: 4,
-        scrollTrigger,
+        scrollTrigger: galleryTrigger,
     });
 };
 
@@ -36,7 +39,7 @@ const Gallery = () => {
     }, []);
 
     return (
-        <>
+        <section className="section">
             <div className={styles.galleryContainer}>
                 <div id="gallery" className={styles.gallery}>
                     <div className={styles.gallerySpace} />
@@ -48,11 +51,9 @@ const Gallery = () => {
                             key={image.id}
                             style={{ backgroundImage: `url(${image.image})` }}
                         >
-                            {/* <img src={image.image} alt="ego and easet" /> */}
+                            <IgIcon className={styles.igIcon} />
                         </div>
                     ))}
-
-                    {/* <div className={styles.gallerySpace} /> */}
                 </div>
             </div>
             <a href={ig_url} target="_default" className={styles.igLink}>
@@ -61,7 +62,7 @@ const Gallery = () => {
                     follow us
                 </button>
             </a>
-        </>
+        </section>
     );
 };
 export default Gallery;

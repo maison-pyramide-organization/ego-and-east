@@ -9,19 +9,23 @@ $animation-time:.1s;
     align-items: center;
 }
 .nav{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
     width:369px;
 }
+.navWraper{
+    position: relative;
+    display: flex;
+    // justify-content: space-between;
+    gap: 32px;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
 .logoContainer{
     width: 160px;
 }
 .logo{
     width: 100%;
 }
-
-//
 
 .navLink{
     height: 42px;
@@ -30,6 +34,10 @@ $animation-time:.1s;
     overflow: hidden;
     display: flex;
     align-items: center;
+    &:hover{
+        font-weight: bold;
+        font-size: 15.5px;
+    }
 }
 
 .line{

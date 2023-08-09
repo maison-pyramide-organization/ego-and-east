@@ -8,6 +8,10 @@ interface Iprops {
     playlist: Iplaylist;
 }
 
+
+
+
+
 const Playlist = (props: Iprops) => {
     const { playlist } = props;
     const playBtnClass =

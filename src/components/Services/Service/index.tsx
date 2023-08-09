@@ -14,6 +14,7 @@ const Service = (props: Iprops) => {
     const [isExpanded, setIsExpanded] = useState(false);
     const containerRef = useRef(null);
     const serviceRef = useRef(null);
+    const button = service.button;
 
     const handleClick = () => {
         const state = isExpanded;
@@ -63,12 +64,12 @@ const Service = (props: Iprops) => {
     };
 
     return (
-        <li className={styles.service}>
+        <li className={styles.service} id={service.ref}>
             <div
                 className={styles.serviceHeader}
                 ref={serviceRef}
-                onMouseEnter={handleEnter}
-                onMouseLeave={handleLeave}
+                // onMouseEnter={handleEnter}
+                // onMouseLeave={handleLeave}
                 onClick={handleClick}
             >
                 <div className={styles.serviceIndex}>
@@ -87,6 +88,11 @@ const Service = (props: Iprops) => {
             <div className={styles.descriptionContainer} ref={containerRef}>
                 <div className={styles.descriptionWraper}>
                     <p className={styles.serviceDescription}>{service.description}</p>
+                    {button && (
+                        <button type="button" className={styles.btn}>
+                            {service.button}
+                        </button>
+                    )}
                 </div>
             </div>
         </li>

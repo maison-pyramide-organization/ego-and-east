@@ -1,6 +1,5 @@
 // SERVICES LIST
 .services{
-    margin-top: 100px;
     display: flex;
     gap: 48px;
 }
@@ -12,6 +11,8 @@
     text-orientation: mixed;
     flex-shrink: 0;
     letter-spacing: 2px;
+    transform:rotate(180deg);
+    align-self: flex-start;
 }
 .servicesList{
     flex-basis: 100%;
@@ -41,9 +42,9 @@
     &:hover .arrowIcon{
         transform: translateX(10px);
     }
-    &:hover .closeIcon{
-        transform: rotate(90deg)
-    }
+    // &:hover .closeIcon{
+    //     transform: rotate(90deg)
+    // }
 }
 .serviceIndex{
     font-size: 32px;
@@ -82,6 +83,7 @@
 }
 .descriptionContainer{
     margin-left: auto;
+    margin-right: 60px;
     width: 60%;
     height: 0;
     overflow: hidden;
@@ -96,5 +98,14 @@
     text-align: justify;
 }
 
+.btn{
+    background-color:black ;
+    color: white;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 24px;
+}
 
 
