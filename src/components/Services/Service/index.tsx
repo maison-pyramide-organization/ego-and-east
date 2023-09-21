@@ -3,7 +3,7 @@ import { Iservice } from "../../../types/services";
 import styles from "../styles.module.scss";
 import { ReactComponent as ArrowIcon } from "../../../assets/Icons/arrow.svg";
 import { ReactComponent as CloseIcon } from "../../../assets/Icons/close.svg";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 interface Iprops {
     service: Iservice;
@@ -30,38 +30,39 @@ const Service = (props: Iprops) => {
         descriptionEl.style.height = `${height}px`;
     };
 
-    let tl: any;
-    const setTl = () => {
-        tl = gsap.timeline({ paused: true });
-        const serviceEl = serviceRef.current! as HTMLElement;
-        const el = serviceEl.getElementsByTagName("span");
-        tl.to(el, {
-            y: "-100%",
-            duration: 0.3,
-            ease: "slow(0.1, 0.4, false)",
-            stagger: 0.1,
-        });
-        tl.set(el, {
-            y: "100%",
-        });
-        tl.to(el, {
-            y: "0",
-            duration: 0.3,
-            ease: "ease-out",
-            stagger: 0.1,
-        });
-        return tl;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // let tl: any;
+    // const setTl = () => {
+    //     tl = gsap.timeline({ paused: true });
+    //     const serviceEl = serviceRef.current! as HTMLElement;
+    //     const el = serviceEl.getElementsByTagName("span");
+    //     tl.to(el, {
+    //         y: "-100%",
+    //         duration: 0.3,
+    //         ease: "slow(0.1, 0.4, false)",
+    //         stagger: 0.1,
+    //     });
+    //     tl.set(el, {
+    //         y: "100%",
+    //     });
+    //     tl.to(el, {
+    //         y: "0",
+    //         duration: 0.3,
+    //         ease: "ease-out",
+    //         stagger: 0.1,
+    //     });
+    //     return tl;
+    // };
 
-    const handleEnter = () => {
-        if (isExpanded) return;
-        setTl();
-        tl.play();
-    };
-    const handleLeave = () => {
-        // tl.revert();
-        // tl.reverse();
-    };
+    // const handleEnter = () => {
+    //     if (isExpanded) return;
+    //     setTl();
+    //     tl.play();
+    // };
+    // const handleLeave = () => {
+    //     // tl.revert();
+    //     // tl.reverse();
+    // };
 
     return (
         <li className={styles.service} id={service.ref}>
