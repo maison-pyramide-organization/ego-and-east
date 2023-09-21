@@ -1,36 +1,50 @@
 import styles from "./styles.module.scss";
-import logo from "../../assets/logo.png";
 import LeftNav from "./Left Nav";
 import RightNav from "./Right Nav";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
+import { useState } from "react";
+import Menu from "./Menu";
+import classNames from "classnames";
 
 const Header = () => {
-    const onEnter = (e: Event, nav: HTMLElement) => {
-        const lineEls = nav.querySelectorAll(".line") as NodeListOf<HTMLElement>;
-        const linkEl = e.target as HTMLElement;
-        const offset = linkEl.offsetLeft;
-        const width = linkEl.clientWidth;
-        lineEls.forEach((lineEl) => {
-            lineEl.style.width = width + "px";
-            lineEl.style.transform = `translateX(${offset}px)`;
-        });
+    const [menuOpend, setMenuOpened] = useState(false);
+    const toogleMenu = () => {
+        document.body.classList.toggle("disable-scroll");
+        if (!menuOpend) {
+            console.log("opening menu");
+            setMenuOpened(true);
+        } else {
+            console.log("closing menu");
+            setMenuOpened(false);
+        }
     };
 
-    const onLeave = (nav: HTMLElement) => {
-        const lineEls = nav.querySelectorAll(".line") as NodeListOf<HTMLElement>;
-        lineEls.forEach((lineEl) => {
-            lineEl.style.width = "100%";
-            lineEl.style.transform = `translateX(0)`;
-        });
-    };
+    const logoClasses = menuOpend
+        ? classNames(styles.logo, styles.lightLogo)
+        : classNames(styles.logo);
+
+    const menuIconClasses = menuOpend
+        ? classNames(styles.menuIcon, styles.lightIcon)
+        : classNames(styles.menuIcon);
+
     return (
-        <header className={styles.header}>
-            <LeftNav onEnter={onEnter} onLeave={onLeave} />
+        <>
+            <header className={styles.header}>
+                <div className={styles.header_wrapper}>
+                    <LeftNav />
+                    <div className={styles.logoContainer}>
+                        <Logo className={logoClasses} />
+                    </div>
+                    <RightNav />
 
-            <div className={styles.logoContainer}>
-                <img src={logo} alt="EGO & EAST LOGO" className={styles.logo} />
-            </div>
-            <RightNav onEnter={onEnter} onLeave={onLeave} />
-        </header>
+                    <div className={menuIconClasses} onClick={toogleMenu}>
+                        <span id="bar_1"></span>
+                        <span id="bar_2"></span>
+                    </div>
+                </div>
+            </header>
+            {menuOpend && <Menu />}
+        </>
     );
 };
 export default Header;

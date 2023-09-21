@@ -68,8 +68,6 @@ const Service = (props: Iprops) => {
             <div
                 className={styles.serviceHeader}
                 ref={serviceRef}
-                // onMouseEnter={handleEnter}
-                // onMouseLeave={handleLeave}
                 onClick={handleClick}
             >
                 <div className={styles.serviceIndex}>

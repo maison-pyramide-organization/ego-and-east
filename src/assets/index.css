@@ -1,7 +1,10 @@
 :root{
+  --sm-screen-max:768px;
+  --md-screen-max:1024px;
   --primary-text-color: #000;
-  --background-color: #EAE7DE;
-  --header-height: calc(68px);
+  --beige: #EAE7DE;
+  --grey-800:#1D1D1B;
+  --header-height: calc(46px);
   --lg-space: 120px;
   --md-space:80px;
 }
@@ -14,7 +17,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  background-color: var(--background-color);
+  background-color: var(--beige);
   font-family: Arial, Helvetica, sans-serif;
   overscroll-behavior: none;
 }
@@ -39,9 +42,39 @@ button{
 /*******************/
 /*** GLOBAL CSS ****/
 /*******************/
+.disable-scroll{
+  overflow: hidden;
+}
+.disable-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+.hide-scrollbar{
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+.hide-scrollbar::-webkit-scrollbar{
+  display: none;
+}
 .section{
   /* margin-top: var(--lg-space) */
   padding: 60px 0;
 }
 
+/***************/
+/****MOBILE****/
+/*************/
+@media screen and (max-width: 600px) {
+:root{
+  --header-height: calc(46px);
+  --lg-space: 80px;
+  --md-space:40px;
+}
+.home{
+  padding: 0 16px;
+}
+}
 
