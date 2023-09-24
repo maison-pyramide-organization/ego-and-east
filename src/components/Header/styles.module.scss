@@ -64,8 +64,8 @@ $animation-time: 0.1s;
         background-color: var(--grey-800);
     }
 }
-.lightIcon span {
-    background-color: var(--beige);
+.lightIcon path {
+    fill: var(--beige);
 }
 
 //////////////

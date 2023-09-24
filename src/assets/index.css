@@ -60,7 +60,6 @@ button{
   display: none;
 }
 .section{
-  /* margin-top: var(--lg-space) */
   padding: 60px 0;
 }
 
@@ -72,6 +71,9 @@ button{
   --header-height: calc(46px);
   --lg-space: 80px;
   --md-space:40px;
+}
+.section{
+  padding: 40px 0;
 }
 .home{
   padding: 0 16px;

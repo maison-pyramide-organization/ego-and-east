@@ -5,6 +5,8 @@ import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { useState } from "react";
 import Menu from "./Menu";
 import classNames from "classnames";
+import { ReactComponent as HumIcon } from "../../assets/Icons/hum.svg";
+import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
 
 const Header = () => {
     const [menuOpend, setMenuOpened] = useState(false);
@@ -38,8 +40,7 @@ const Header = () => {
                     <RightNav />
 
                     <div className={menuIconClasses} onClick={toogleMenu}>
-                        <span id="bar_1"></span>
-                        <span id="bar_2"></span>
+                        {menuOpend ? <CloseIcon /> : <HumIcon />}
                     </div>
                 </div>
             </header>

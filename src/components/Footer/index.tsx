@@ -20,7 +20,7 @@ const Footer = () => {
                             <br />
                             events, activations?
                         </h4>
-                        <button type="button">get in cotact</button>
+                        <button type="button">get in contact</button>
                     </div>
                     <div className={styles.action}>
                         <h4>want to get scouted?</h4>
@@ -41,12 +41,16 @@ const Footer = () => {
 
             <div className={styles.footer_tail}>
                 <p className={styles.copyright}>2022 all rights reserved</p>
-                <h3 className={styles.company}>
+                <a href="https://maisonpyramide.com/" target="_blank" className={styles.company}>
                     A <b>MAISON PYRAMIDE</b> Company
-                </h3>
+                </a>
                 <ul className={styles.socials}>
-                    <li>instagram</li>
-                    <li>linkedin</li>
+                    <li>
+                        <a href="https://www.instagram.com/egoandeast/">instagram</a>
+                    </li>
+                    <li>
+                        <a href="#">linkedin</a>
+                    </li>
                 </ul>
             </div>
         </footer>
