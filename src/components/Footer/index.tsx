@@ -15,7 +15,11 @@ const Footer = () => {
                 </ul>
                 <div className={styles.actionsList}>
                     <div className={styles.action}>
-                        <h4>want to chat about talent, events, activations?</h4>
+                        <h4>
+                            want to chat about talent,
+                            <br />
+                            events, activations?
+                        </h4>
                         <button type="button">get in cotact</button>
                     </div>
                     <div className={styles.action}>
@@ -23,7 +27,11 @@ const Footer = () => {
                         <button type="button">become a talent</button>
                     </div>
                     <div className={styles.action}>
-                        <h4>looking for powerful new talent?</h4>
+                        <h4>
+                            looking for powerful
+                            <br />
+                            new talent?
+                        </h4>
                         <button type="button">book a talent</button>
                     </div>
                 </div>
