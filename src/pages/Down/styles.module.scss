@@ -1,0 +1,33 @@
+main {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    display: block;
+    width: clamp(260px, 40%, 400px );
+    height: auto;
+}
+.company {
+    text-transform: capitalize;
+    margin-top: 24px;
+}
+.title {
+    text-transform: uppercase;
+    font-size: clamp(40px, 6vw, 120px);
+    margin-top: 80px;
+}
+.socials {
+    display: flex;
+    margin-top: 40px;
+    a {
+        text-transform: uppercase;
+        padding: 0 16px;
+    }
+
+    li:first-child {
+        border-right: 1px solid black;
+    }
+}
