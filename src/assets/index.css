@@ -38,7 +38,18 @@ button{
   background-color: transparent;
   cursor: pointer;
 }
-
+input{
+  display: block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+select{
+  display: block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
 /*******************/
 /*** GLOBAL CSS ****/
 /*******************/
@@ -68,7 +79,7 @@ button{
 /*************/
 @media screen and (max-width: 600px) {
 :root{
-  --header-height: calc(46px);
+  --header-height: calc(83px);
   --lg-space: 80px;
   --md-space:40px;
 }

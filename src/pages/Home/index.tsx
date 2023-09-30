@@ -4,6 +4,7 @@ import Gallery from "../../components/Gallery";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import Music from "../../components/Music";
+import Popup from "../../components/Popup";
 import Services from "../../components/Services";
 import styles from "./styles.module.scss";
 
@@ -19,6 +20,7 @@ const Home = () => {
                 <Music />
             </div>
             <Footer />
+            <Popup />
         </>
     );
 };

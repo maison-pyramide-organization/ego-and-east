@@ -1,7 +1,15 @@
+import { useContext } from "react";
 import cities from "../../data/cities";
 import styles from "./styles.module.scss";
+import { IPopupContext, PopupContext } from "../../context/PopupContext";
 
 const Footer = () => {
+    const { setPopup } = useContext(PopupContext) as IPopupContext;
+
+    const openPopup = (popup: string) => {
+        setPopup(popup);
+    };
+
     return (
         <footer className={styles.footer}>
             <div className={styles.footer_wrapper}>
@@ -20,11 +28,15 @@ const Footer = () => {
                             <br />
                             events, activations?
                         </h4>
-                        <button type="button">get in contact</button>
+                        <button type="button" onClick={() => openPopup("get in touch")}>
+                            get in contact
+                        </button>
                     </div>
                     <div className={styles.action}>
                         <h4>want to get scouted?</h4>
-                        <button type="button">become a talent</button>
+                        <button type="button" onClick={() => openPopup("become a talent")}>
+                            become a talent
+                        </button>
                     </div>
                     <div className={styles.action}>
                         <h4>
@@ -32,7 +44,9 @@ const Footer = () => {
                             <br />
                             new talent?
                         </h4>
-                        <button type="button">book a talent</button>
+                        <button type="button" onClick={() => openPopup("book a talent")}>
+                            book a talent
+                        </button>
                     </div>
                 </div>
             </div>

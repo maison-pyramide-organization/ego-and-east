@@ -39,8 +39,8 @@
         color: black;
         stroke: black;
     }
-    &:hover .arrowIcon {
-        transform: translateX(10px);
+    &:hover .chevronIcon {
+        transform: translateY(5px);
     }
     // &:hover .closeIcon{
     //     transform: rotate(90deg)
@@ -62,24 +62,14 @@
 }
 .headerIcon {
     margin-left: auto;
-    width: 48px;
-    height: 48px;
     display: grid;
     place-content: center;
-    // cursor: pointer;
-    // &:hover .arrowIcon{
-    //     transform: translateX(10px);
-    // }
-}
-.arrowIcon {
-    display: block;
-    transition: transform 0.2s ease-in-out;
-}
-.closeIcon {
-    display: block;
-    width: 40px;
-    height: 40px;
-    transition: transform 0.2s ease-in;
+    svg {
+        width: 28px;
+        display: block;
+        transition: transform 0.2s ease-in-out;
+        aspect-ratio: 1;
+    }
 }
 .descriptionContainer {
     margin-left: auto;
@@ -142,10 +132,9 @@
     }
     .headerIcon {
         margin-left: unset;
-    }
-    .arrowIcon {
-        width: 32px;
-        height: 32px;
+        svg {
+            width: 32px;
+        }
     }
 }
 
@@ -163,7 +152,7 @@
     // SERVICE
     //
     .serviceHeader {
-        padding: 16px 0;
+        padding: 16px;
     }
     .serviceIndex {
         font-size: 18px;
@@ -171,8 +160,9 @@
     .serviceTitle {
         font-size: 18px;
     }
-    .arrowIcon {
-        width: 24px;
-        height: 24px;
+    .headerIcon {
+        svg {
+            width: 24px;
+        }
     }
 }

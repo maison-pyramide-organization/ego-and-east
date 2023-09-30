@@ -4,4 +4,5 @@ export interface Iservice {
     description: string;
     ref: string;
     button?: string;
+    popup?: string;
 }

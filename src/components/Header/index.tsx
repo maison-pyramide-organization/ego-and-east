@@ -10,24 +10,15 @@ import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
 
 const Header = () => {
     const [menuOpend, setMenuOpened] = useState(false);
+
     const toogleMenu = () => {
         document.body.classList.toggle("disable-scroll");
-        if (!menuOpend) {
-            console.log("opening menu");
-            setMenuOpened(true);
-        } else {
-            console.log("closing menu");
-            setMenuOpened(false);
-        }
+        setMenuOpened((prev) => !prev);
     };
 
     const logoClasses = menuOpend
         ? classNames(styles.logo, styles.lightLogo)
         : classNames(styles.logo);
-
-    const menuIconClasses = menuOpend
-        ? classNames(styles.menuIcon, styles.lightIcon)
-        : classNames(styles.menuIcon);
 
     return (
         <>
@@ -39,12 +30,16 @@ const Header = () => {
                     </div>
                     <RightNav />
 
-                    <div className={menuIconClasses} onClick={toogleMenu}>
-                        {menuOpend ? <CloseIcon /> : <HumIcon />}
+                    <div className={styles.menuIcon} onClick={toogleMenu}>
+                        {menuOpend ? (
+                            <CloseIcon className={styles.closeIcon} />
+                        ) : (
+                            <HumIcon className={styles.humIcon} />
+                        )}
                     </div>
                 </div>
             </header>
-            {menuOpend && <Menu />}
+            {menuOpend && <Menu closeMenu={toogleMenu} />}
         </>
     );
 };

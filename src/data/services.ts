@@ -8,6 +8,7 @@ const services: Iservice[] = [
         description:
             "Our Brand Strategy service offers industry level expertise in profile building and personal brand elevation. We identify goals and create a strategic trajectory towards achieving these objectives all the while consulting on creative direction and styling inspiration as well as using our connections to the industry’s most relevant beauty, fashion and luxury brands to help build strategic relationships with key industry players.",
         button: "become a talent",
+        popup: "become a talent",
     },
     {
         id: 2,
@@ -16,6 +17,7 @@ const services: Iservice[] = [
         description:
             "With our long-standing experience of organizing logistics for the Ready to Wear Men’s and Women’s as well as Haute Couture shows in New York, London, Milan and Paris, our Fashion Week service takes you to some of the industry’s most exclusive shows, presentations and events during the season.",
         button: "book a talent",
+        popup: "book a talent",
     },
     {
         id: 3,
