@@ -20,17 +20,16 @@
 .textContainer {
     flex-basis: 100%;
     padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
-.text {
+.text{
+    // font-weight: 500;
+    font-weight: bold;
+    text-align: justify;
     font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-}
-.subtext {
-    margin-top: 24px;
-    font-size: 16px;
-    line-height: 1.8;
-    text-align: justify;
+    line-height: 32px;
 }
 
 //////////////
@@ -54,5 +53,9 @@
     .title {
         font-size: 28px;
         letter-spacing: 1px;
+    }
+    .text{
+        font-size: 16px;
+        line-height: 28px;
     }
 }

@@ -9,9 +9,16 @@ const Hero = () => {
                 </div>
                 <h1 className={styles.title}>Zeyne x YUNG & Miu Miu</h1>
             </div>
-            <p className={styles.info}>
-                A <span>maison pyramide</span> company
+            <p className={styles.company}>
+                a <b>MAISON PYRAMIDE</b> company
             </p>
+            <h3 className={styles.info}>
+                We connect top global luxury, beauty and fashion brands with the most compelling{" "}
+                <span>
+                    celebrities, actors, musicians, creatives <b>and</b> influencers
+                </span>{" "}
+                in the Middle East – and beyond.
+            </h3>
         </main>
     );
 };
