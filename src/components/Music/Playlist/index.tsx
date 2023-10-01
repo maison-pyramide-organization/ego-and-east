@@ -18,9 +18,9 @@ const Playlist = (props: Iprops) => {
         <div className={styles.playlist}>
             <img className={styles.playlistImage} src={playlist.image} alt="" />
             <SpotifyIcon className={styles.spotifyIcon} />
-            <div className={playBtnClass}>
+            <a target="_blank" href={playlist.link} className={playBtnClass} title="playlist">
                 <PlayIcon className={styles.playIcon} />
-            </div>
+            </a>
         </div>
     );
 };
