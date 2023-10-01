@@ -8,26 +8,26 @@ const playslists: Iplaylist[] = [
     {
         id: 1,
         image: image1,
-        link: "https://www.fb.com",
-        playBtn:'black',
+        link: "https://open.spotify.com/playlist/3UlQmnkWVEpk6uLcc9rKfZ?si=7cbe7cda0ba0418c",
+        playBtn: "black",
     },
     {
         id: 2,
         image: image2,
-        link: "https://www.fb.com",
-        playBtn:'black',
+        link: "https://open.spotify.com/playlist/7ne6ZlH3snvvqgJy4j86Sb?si=81343e03eef5405e",
+        playBtn: "black",
     },
     {
         id: 3,
         image: image3,
-        link: "https://www.fb.com",
-        playBtn:'black',
+        link: "https://open.spotify.com/playlist/1XgTWVBpRMheq6kPvJWALF?si=5f01064944a649c3",
+        playBtn: "black",
     },
     {
         id: 4,
         image: image4,
-        link: "https://www.fb.com",
-        playBtn:'white',
+        link: "https://open.spotify.com/playlist/1TWTb9yTdbKJwQRTL5bmKs?si=a5713f3a182d48a2",
+        playBtn: "white",
     },
 ];
 
