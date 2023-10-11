@@ -13,11 +13,7 @@ const Hero = () => {
                 a <b>MAISON PYRAMIDE</b> company
             </p>
             <h3 className={styles.info}>
-                We connect top global luxury, beauty and fashion brands with the most compelling{" "}
-                <span>
-                    celebrities, actors, musicians, creatives <b>and</b> influencers
-                </span>{" "}
-                in the Middle East – and beyond.
+                We connect top global luxury, beauty and fashion brands with the most compelling <br/> celebrities, actors, musicians, creatives and influencers in the Middle East – and beyond.
             </h3>
         </main>
     );

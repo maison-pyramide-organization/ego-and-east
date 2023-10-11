@@ -1,6 +1,6 @@
 .hero {
     min-height: calc(100dvh - var(--header-height));
-    margin: 0 auto 24px;
+    margin: 50px auto 24px;
     display: grid;
     place-content: center;
 }
@@ -19,11 +19,13 @@
 }
 .title {
     font-size: 36px;
+    font-weight: 600;
     letter-spacing: 5%;
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     flex-shrink: 0;
+    align-self: flex-end;
 }
 .company {
     margin-top: 24px;
@@ -34,8 +36,9 @@
 .info {
     text-align: center;
     font-size: 18px;
-    width: clamp(200px, 70%, 900px);
+    width: clamp(200px, 100%, 900px);
     margin: 64px auto 0;
+    font-weight: 400;
     span {
         font-weight: normal;
         font-style: italic;

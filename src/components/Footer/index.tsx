@@ -60,10 +60,10 @@ const Footer = () => {
                 </a>
                 <ul className={styles.socials}>
                     <li>
-                        <a href="https://www.instagram.com/egoandeast/">instagram</a>
+                        <a target="_blank" href="https://www.instagram.com/egoandeast/">instagram</a>
                     </li>
                     <li>
-                        <a href="#">linkedin</a>
+                        <a target="_blank" href="https://www.linkedin.com/company/maison-pyramide/">linkedin</a>
                     </li>
                 </ul>
             </div>
