@@ -56,7 +56,7 @@ const Footer = () => {
             <div className={styles.footer_tail}>
                 <p className={styles.copyright}>2022 all rights reserved</p>
                 <a href="https://maisonpyramide.com/" target="_blank" className={styles.company}>
-                    A <b>MAISON PYRAMIDE</b> Company
+                    A <b>MAISON PYRAMIDE</b> COMPANY
                 </a>
                 <ul className={styles.socials}>
                     <li>

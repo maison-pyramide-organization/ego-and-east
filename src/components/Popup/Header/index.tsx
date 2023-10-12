@@ -13,7 +13,7 @@ const Header = (props: Iprops) => {
             <div className={styles.logoContainer}>
                 <Logo className={styles.logo} />
                 <h5 className={styles.logoText}>
-                    A <span className={styles.logoTextBold}>maison pyramide</span> company
+                    A <span className={styles.logoTextBold}>maison pyramide</span> COMPANY
                 </h5>
             </div>
 

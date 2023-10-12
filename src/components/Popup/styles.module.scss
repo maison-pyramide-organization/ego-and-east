@@ -1,12 +1,20 @@
 .popup {
-    width: 100vw;
-    height: 100dvh;
+    width: 80vw;
+    height: 80dvh;
     background-color: var(--beige);
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 60px;
+    left: 150px;
     padding: 0 40px;
     z-index: 999;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.8);
 }
 .popupHeader {
     width: 100%;
@@ -41,11 +49,12 @@
     display: flex;
     gap: 40px;
     align-items: flex-start;
-    height: calc(100dvh - 173px);
+    // height: calc(100dvh - 173px);
     padding-bottom: 24px;
 }
 .popupTitle {
-    font-size: 48px;
+    font-size: 36px;
+    font-family: SuisseIntBold;
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: mixed;
@@ -81,6 +90,12 @@
 }
 
 @media screen and (max-width: 768px) {
+    .popup{
+        width: 100vw;
+        height: 100dvh;
+        top:0;
+        left:0;
+    }
     .popupTitle {
         font-size: 24px;
         letter-spacing: 1px;

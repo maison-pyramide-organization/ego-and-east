@@ -10,7 +10,7 @@ const Hero = () => {
                 <h1 className={styles.title}>Zeyne x YUNG & Miu Miu</h1>
             </div>
             <p className={styles.company}>
-                a <b>MAISON PYRAMIDE</b> company
+                A <b> MAISON PYRAMIDE </b> COMPANY
             </p>
             <h3 className={styles.info}>
                 We connect top global luxury, beauty and fashion brands with the most compelling <br/> celebrities, actors, musicians, creatives and influencers in the Middle East – and beyond.

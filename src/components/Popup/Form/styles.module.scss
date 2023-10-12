@@ -8,17 +8,18 @@
     width: 40%;
     display: flex;
     flex-direction: column;
-    gap: 64px;
+    gap: 4px;
     margin-bottom: 26px;
     height: fit-content;
 }
 .formInput {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    margin-bottom: 15px;
+    gap: 4px;
 }
 label {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
 }
@@ -27,6 +28,7 @@ select {
     padding-bottom: 8px;
     border-bottom: 1px solid #333;
     color: black;
+    font-size: 16px;
     &:focus {
         border-bottom: 1px solid black;
     }
@@ -40,7 +42,7 @@ select {
     align-items: flex-end;
 }
 .message {
-    height: 100%;
+    height: 85%;
     width: 100%;
     background-color: transparent;
     border: 1px solid #333;
