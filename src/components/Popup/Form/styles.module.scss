@@ -9,23 +9,23 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    margin-bottom: 26px;
-    height: fit-content;
+    margin-bottom: 18px;
+    height: 100%;
 }
 .formInput {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
-    gap: 4px;
+    gap: 8px;
 }
 label {
-    font-size: 18px;
-    font-weight: bold;
-    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: capitalize;
 }
 input,
 select {
-    padding-bottom: 8px;
+    padding-bottom: 4px;
     border-bottom: 1px solid #333;
     color: black;
     font-size: 16px;
@@ -42,7 +42,7 @@ select {
     align-items: flex-end;
 }
 .message {
-    height: 85%;
+    height: 100%;
     width: 100%;
     background-color: transparent;
     border: 1px solid #333;
@@ -62,6 +62,7 @@ select {
     letter-spacing: 1px;
     font-size: 14px;
     height: 26px;
+    flex-shrink: 0;
 }
 
 /***************/

@@ -27,27 +27,17 @@
     flex-shrink: 0;
     align-self: flex-end;
 }
-.company {
-    margin-top: 24px;
-    font-size: 16px;
-    text-transform: capitalize;
-    text-align: center;
-    font-family: SuisseIntThin;
-    b{
-        font-family: SuisseInt;
-        font-weight: 300;
-    }
+.companyLogo {
+    width: 260px;
+    margin: 24px auto 0;
 }
 .info {
-    text-align: center;
-    font-size: 18px;
     width: clamp(200px, 100%, 900px);
     margin: 64px auto 0;
+    font-size: 20px;
     font-weight: 400;
-    span {
-        font-weight: normal;
-        font-style: italic;
-    }
+    text-align: center;
+    line-height: 28px;
 }
 
 //////////////

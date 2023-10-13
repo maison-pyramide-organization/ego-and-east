@@ -1,6 +1,7 @@
 import styles from "../styles.module.scss";
 import { ReactComponent as Logo } from "../../../assets/logo.svg";
 import { ReactComponent as CloseIcon } from "../../../assets/Icons/close.svg";
+import { ReactComponent as MpCompanyLogo } from "../../../assets/MP Company logo.svg";
 
 interface Iprops {
     close: () => void;
@@ -12,9 +13,7 @@ const Header = (props: Iprops) => {
             {/* LOGO */}
             <div className={styles.logoContainer}>
                 <Logo className={styles.logo} />
-                <h5 className={styles.logoText}>
-                    A <span className={styles.logoTextBold}>maison pyramide</span> COMPANY
-                </h5>
+                <MpCompanyLogo className={styles.MpCompanyLogo} />
             </div>
 
             {/* CLOSE ICON */}

@@ -67,15 +67,9 @@
     font-size: 12px;
     text-transform: uppercase;
 }
-.company {
-    font-size: 18px;
-    font-weight: 400;
-    white-space: nowrap;
-    color: white;
-    font-family: SuisseIntThin;
-    b{
-        font-family: SuisseInt;
-    }
+.companyLogo {
+    fill: var(--beige);
+    width: 260px;
 }
 .socials {
     display: flex;

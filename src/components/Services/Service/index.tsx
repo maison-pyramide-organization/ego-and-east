@@ -32,7 +32,6 @@ const Service = (props: Iprops) => {
     };
 
     const openPopup = (popup: string) => {
-        console.log(popup);
         setPopup(popup);
     };
 

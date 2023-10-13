@@ -1,23 +1,23 @@
-.galleryContainer{
+.galleryContainer {
     width: 100%;
     overflow: hidden;
 }
-.gallery{
+.gallery {
     display: flex;
     gap: 24px;
     align-items: center;
     height: 440px;
     // transform: translateX(0);
-    & > *{
+    & > * {
         flex-shrink: 0;
     }
 }
-.gallerySpace{
+.gallerySpace {
     width: 40vw;
     align-self: stretch;
 }
 
-.imageWraper{
+.imageWraper {
     width: 100px;
     background-position: top center;
     background-repeat: no-repeat;
@@ -25,25 +25,25 @@
     background-color: var(--gray-300);
     aspect-ratio: 1/4;
     overflow: hidden;
-    transition: all .3s ease-out;
+    transition: all 0.3s ease-out;
     display: grid;
-    place-content:center ;
-    &:hover{
+    place-content: center;
+    &:hover {
         filter: brightness(70%);
         width: 110px;
-        & .igIcon{
+        & .igIcon {
             display: block;
         }
     }
 }
-.igIcon{
+.igIcon {
     display: none;
 }
-.image{
+.image {
     width: 100%;
     object-fit: cover;
 }
-.igLink{
+.igLink {
     margin: 40px auto 0;
     width: -moz-fit-content;
     width: fit-content;
@@ -53,20 +53,21 @@
     justify-content: center;
     gap: 16px;
 }
-.igUserName{
+.igUserName {
     font-size: 24px;
+    font-weight: 300;
     text-transform: uppercase;
 }
-.followBtn{
+.followBtn {
     padding: 12px 40px;
     font-size: 14px;
     font-weight: bold;
     text-transform: uppercase;
-    border: 3px solid black;
+    border: 2px solid black;
     // border-radius: 10px;
-    transition: all .2s ease-out;
-    &:hover{
+    transition: all 0.2s ease-out;
+    &:hover {
         background-color: black;
-        color: white;
+        color: var(--beige);
     }
 }

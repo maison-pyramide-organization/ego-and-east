@@ -8,13 +8,13 @@
     padding: 0 40px;
     z-index: 999;
 }
-.overlay{
+.overlay {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0,0,0,.8);
+    background: rgba(0, 0, 0, 0.8);
 }
 .popupHeader {
     width: 100%;
@@ -23,22 +23,20 @@
     justify-content: space-between;
     align-items: flex-start;
 }
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
 .logo {
-    width: 160px;
+    width: 260px;
     height: auto;
 }
-.logoText {
-    margin-top: 24px;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: normal;
-}
-.logoTextBold {
-    text-transform: uppercase;
-    font-weight: bold;
+.MpCompanyLogo {
+    width: 260px;
 }
 .closeIcon {
-    width: 40px;
+    width: 32px;
     height: auto;
     stroke: black;
     cursor: pointer;
@@ -53,17 +51,15 @@
     padding-bottom: 24px;
 }
 .popupTitle {
-    font-size: 36px;
-    font-family: SuisseIntBold;
+    font-size: 32px;
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     transform: rotate(180deg);
     flex-shrink: 0;
     align-self: flex-start;
-    margin: auto 0px;
 }
 
 /***************/
@@ -90,11 +86,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    .popup{
+    .popup {
         width: 100vw;
         height: 100dvh;
-        top:0;
-        left:0;
+        top: 0;
+        left: 0;
     }
     .popupTitle {
         font-size: 24px;
