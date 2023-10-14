@@ -1,9 +1,11 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
+import Select from "./Select";
 
 interface field {
     name: string;
     type: string;
+    placeholder?: string;
     options?: string[];
 }
 
@@ -11,11 +13,13 @@ const book: field[] = [
     {
         name: "talent",
         type: "drop",
+        placeholder: "Select talent",
         options: ["mohamed", "fab", "nourhan"],
     },
     {
         name: "country / region",
         type: "drop",
+        placeholder: "Select country",
         options: ["mohamed", "fab", "nourhan"],
     },
     {
@@ -36,11 +40,13 @@ const become: field[] = [
     {
         name: "talent",
         type: "drop",
+        placeholder: "Select talent",
         options: ["mohamed", "fab", "nourhan"],
     },
     {
         name: "country / region",
         type: "drop",
+        placeholder: "Select country",
         options: ["mohamed", "fab", "nourhan"],
     },
     {
@@ -87,7 +93,7 @@ interface Iprops {
 const Form = (props: Iprops) => {
     const { popup } = props;
     // const inputs = popup == "book" ? book : become;
-    let inputs :field[];
+    let inputs: field[];
 
     switch (popup) {
         case "book a talent":
@@ -116,11 +122,7 @@ const Form = (props: Iprops) => {
                         return (
                             <div className={styles.formInput}>
                                 <label htmlFor={input.name}>{input.name}</label>
-                                <select id={input.name} className={styles.select}>
-                                    {input.options!.map((option: string) => (
-                                        <option value={option}>{option}</option>
-                                    ))}
-                                </select>
+                                <Select placeholder={input.placeholder!} options={input.options!} />
                             </div>
                         );
                     }

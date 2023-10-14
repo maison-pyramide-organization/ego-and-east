@@ -120,17 +120,8 @@
     //
     // SERVICE
     //
-    .serviceHeader {
-        justify-content: space-between;
-    }
     .serviceTitle {
-        text-align: center;
-    }
-    .headerIcon {
-        margin-left: unset;
-        svg {
-            width: 32px;
-        }
+        font-size: 24px;
     }
 }
 
@@ -155,10 +146,5 @@
     }
     .serviceTitle {
         font-size: 18px;
-    }
-    .headerIcon {
-        svg {
-            width: 24px;
-        }
     }
 }

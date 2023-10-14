@@ -16,7 +16,6 @@ const Popup = () => {
         setPopup(null);
     };
 
-
     return (
         <div className={styles.overlay}>
             <div className={classNames(styles.popup, "disable-scroll")}>
