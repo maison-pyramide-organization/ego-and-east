@@ -83,6 +83,10 @@ select {
         width: 20px;
         flex-shrink: 0;
         margin-left: auto;
+        transition: transform 0.2s ease-out;
+    }
+    &.active &_icon {
+        transform: rotate(180deg);
     }
 }
 .dropdown {

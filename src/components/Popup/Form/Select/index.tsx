@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../styles.module.scss";
 import { ReactComponent as DownChevron } from "../../../../assets/Icons/down chevron.svg";
+import classNames from "classnames";
 
 interface Iprops {
     placeholder: string;
@@ -20,8 +21,12 @@ const Select = (props: Iprops) => {
         // toogleDropdown();
     };
 
+    const selectClasses = dropdownState
+        ? classNames(styles.select, styles.active)
+        : classNames(styles.select);
+
     return (
-        <div className={styles.select} onClick={toogleDropdown}>
+        <div className={selectClasses} onClick={toogleDropdown}>
             <p className={styles.select_value}>{selected}</p>
             <DownChevron className={styles.select_icon} />
 
