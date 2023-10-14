@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import image from "../../assets/Images/About.webp";
+import image from "../../assets/Images/about.webp";
 import classNames from "classnames";
 
 const About = () => {
