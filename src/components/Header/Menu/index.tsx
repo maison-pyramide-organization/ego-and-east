@@ -11,7 +11,7 @@ const Menu = (props: Iprops) => {
     const { setPopup } = useContext(PopupContext) as IPopupContext;
 
     const handleClick = () => {
-        setPopup("get in touch");
+        setPopup("get in contact");
         closeMenu();
     };
 
@@ -37,7 +37,7 @@ const Menu = (props: Iprops) => {
                 </ul>
 
                 <div className={styles.menu_contact}>
-                    <h4>want to get in touch with us about our services</h4>
+                    <h4>want to get in contact with us about our services</h4>
                     <button type="button" onClick={handleClick}>
                         get in contact
                     </button>

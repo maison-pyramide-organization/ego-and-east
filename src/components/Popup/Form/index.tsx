@@ -6,6 +6,7 @@ interface field {
     name: string;
     type: string;
     placeholder?: string;
+    message?: string;
     options?: string[];
 }
 
@@ -92,18 +93,23 @@ interface Iprops {
 
 const Form = (props: Iprops) => {
     const { popup } = props;
+    let message = "";
     // const inputs = popup == "book" ? book : become;
     let inputs: field[];
+    
 
     switch (popup) {
         case "book a talent":
             inputs = book;
+            message="What kind of talent are you looking for?";
             break;
         case "become a talent":
             inputs = become;
+            message="Tell us about yourself – and your goals";
             break;
-        case "get in touch":
+        case "get in contact":
             inputs = contact;
+            message="Tell us more...";
             break;
     }
 
@@ -130,7 +136,7 @@ const Form = (props: Iprops) => {
             </div>
 
             <div className={styles.messageContainer}>
-                <textarea placeholder="Your message" className={styles.message} />
+                <textarea placeholder={message} className={styles.message} />
                 <button type="submit" className={styles.sendBtn}>
                     send
                 </button>

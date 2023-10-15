@@ -29,7 +29,7 @@ const Footer = () => {
                             <br />
                             events, activations?
                         </h4>
-                        <button type="button" onClick={() => openPopup("get in touch")}>
+                        <button type="button" onClick={() => openPopup("get in contact")}>
                             get in contact
                         </button>
                     </div>

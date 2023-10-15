@@ -12,14 +12,16 @@
     gap: 56px;
 }
 .imageContainer {
-    flex-basis: 100%;
+    // flex-basis: 100%;
+    max-width: 535px;
     overflow: hidden;
 }
 .image {
     width: 100%;
 }
 .textContainer {
-    flex-basis: 88%;
+    // flex-basis: 88%;
+    max-width: 500px;
     padding-top: 16px;
     display: flex;
     flex-direction: column;

@@ -7,7 +7,7 @@ const LeftNav = () => {
     const { setPopup } = useContext(PopupContext) as IPopupContext;
 
     const handleContactClick = () => {
-        setPopup("get in touch");
+        setPopup("get in contact");
     };
     return (
         <nav className={styles.nav}>
