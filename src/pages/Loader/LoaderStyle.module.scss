@@ -22,8 +22,8 @@
     width:50%;
     // height: 180px;
     .logo{
-        // width:100%;
-        // height: 180px;
+        width:100%;
+        height: 180px;
 
     }
 }
@@ -37,11 +37,8 @@
     top:0;
 }
 @media (min-width:200px) and (max-width:600px) {
-    .main{
-        h1{
-            font-size: 48px;
-            line-height: 48px;
-        }
-    }
+   .logo{
+    width: 80%;
+   }
 
 }

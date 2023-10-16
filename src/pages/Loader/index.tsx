@@ -6,7 +6,7 @@ const LoaderComponent = ({ isLoading }: { isLoading: boolean }) => {
     <div>
       {isLoading && (
         <div className={loaderStyle.main}>
-          <Logo />
+          <Logo className={loaderStyle.logo} />
         </div>
       )}
     </div>
