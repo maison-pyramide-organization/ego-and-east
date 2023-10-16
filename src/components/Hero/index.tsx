@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss";
-import image from "../../assets/Images/hero.png";
+import image from "../../assets/e&e-slideshow.gif";
 import { ReactComponent as MpCompanyLogo } from "../../assets/MP Company logo.svg";
 const Hero = () => {
     return (
@@ -8,7 +8,7 @@ const Hero = () => {
                 <div className={styles.imageContainer}>
                     <img src={image} className={styles.image} alt="EGO & EAST" />
                 </div>
-                <h1 className={styles.title}>Zeyne x YUNG & Miu Miu</h1>
+                {/* <h1 className={styles.title}>Zeyne x YUNG & Miu Miu</h1> */}
             </div>
             <MpCompanyLogo className={styles.companyLogo} />
             <h3 className={styles.info}>

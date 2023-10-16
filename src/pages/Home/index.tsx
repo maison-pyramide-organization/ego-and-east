@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import About from "../../components/About";
 import Footer from "../../components/Footer";
 import Gallery from "../../components/Gallery";
@@ -7,10 +8,19 @@ import Music from "../../components/Music";
 import Popup from "../../components/Popup";
 import Services from "../../components/Services";
 import styles from "./styles.module.scss";
+import LoaderComponent from "../Loader";
+
 
 const Home = () => {
+    const [isLoading, setIsLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+          }, 600);
+    }, [])
     return (
         <>
+            <LoaderComponent isLoading={isLoading}/>
             <div className={styles.page}>
                 <Header />
                 <Hero />
