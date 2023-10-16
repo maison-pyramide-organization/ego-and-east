@@ -16,7 +16,7 @@
     max-height: 80dvh;
     aspect-ratio: 2/1.2;
     background-color: var(--beige);
-    padding: 0 40px;
+    padding: 20px 80px;
 }
 .popupHeader {
     width: 100%;
@@ -48,10 +48,11 @@
 .popupBody {
     width: 100%;
     display: flex;
-    gap: 40px;
+    gap: 30px;
     align-items: flex-start;
 }
 .popupTitle {
+    font-family: SuisseBold;
     font-size: 32px;
     white-space: nowrap;
     writing-mode: vertical-rl;

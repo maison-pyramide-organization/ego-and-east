@@ -21,7 +21,7 @@ const Popup = () => {
             <div className={classNames(styles.popup, "disable-scroll")}>
                 <Header close={closePopup} />
                 <main className={styles.popupBody}>
-                    <h2 className={styles.popupTitle}>{popup}</h2>
+                    <span className={styles.popupTitle}>{popup}</span>
                     <Form popup={popup} />
                 </main>
             </div>

@@ -29,7 +29,7 @@
     src: url('./fonts/SuisseIntl-Medium.ttf') format('truetype');
   }
   @font-face {
-    font-family: 'Suisse';
+    font-family: 'SuisseBold';
     font-style: normal;
     font-weight: 600;
     src: url('./fonts/SuisseIntl-Bold.ttf') format('truetype');
