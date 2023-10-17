@@ -9,8 +9,8 @@
     margin: var(--md-space) auto 0;
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
     gap: 40px;
+    align-items: center;
 }
 .imageContainer {
     width: 540px;
@@ -22,7 +22,6 @@
 }
 .textContainer {
     max-width: 520px;
-    padding-top: 16px;
     display: flex;
     flex-direction: column;
     gap: 24px;

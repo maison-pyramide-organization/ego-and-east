@@ -5,6 +5,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding-top: 120px;
+    align-items: center;
 }
 .title {
     font-family: SuisseBold;
@@ -16,7 +17,6 @@
     flex-shrink: 0;
     letter-spacing: 1px;
     transform: rotate(180deg);
-    align-self: flex-start;
 }
 .servicesList {
     flex-basis: 100%;
