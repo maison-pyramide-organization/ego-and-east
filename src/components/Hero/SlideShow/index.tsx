@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import slideshowImages from "../../../data/slideshow";
+import { useEffect } from "react";
 
 const SlideShow = () => {
     let i = 0;
@@ -13,12 +14,15 @@ const SlideShow = () => {
 
         setTimeout(changeImage, time);
     };
-    window.onload = changeImage;
+
+    useEffect(() => {
+        changeImage();
+    }, []);
 
     return (
         <div className={styles.slideshow}>
             <div id="slide" className={styles.slide}>
-                <img src={slideshowImages[1]} className={styles.slide} alt="image" />
+                <img src={slideshowImages[0]} className={styles.slide} alt="image" />
             </div>
         </div>
     );
