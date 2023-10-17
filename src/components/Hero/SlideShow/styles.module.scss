@@ -1,7 +1,6 @@
 .slideshow {
     margin: 0 auto;
     width: clamp(0px, 100%, 700px);
-    overflow: hidden;
     &_wraper {
         display: flex;
     }
@@ -15,6 +14,7 @@
         background-color: var(--beige);
         width: 100%;
         aspect-ratio: 20/23;
+        margin-left: 4%;
     }
 }
 

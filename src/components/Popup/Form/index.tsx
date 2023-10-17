@@ -101,17 +101,17 @@ const Form = (props: Iprops) => {
     switch (popup) {
         case "book a talent":
             inputs = book;
-            message = `What kind of talent are you looking for?
+            message = `What kind of talent are you looking for?\n
 (max 100 characters)`;
             break;
         case "become a talent":
             inputs = become;
-            message = `Tell us about yourself – and your goals!
+            message = `Tell us about yourself – and your goals!\n
 (max 100 characters)`;
             break;
         case "get in contact":
             inputs = contact;
-            message = `Tell us more...
+            message = `Tell us more...\n
 (max 100 characters)`;
             break;
     }

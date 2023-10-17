@@ -10,8 +10,8 @@ const Menu = (props: Iprops) => {
     const { closeMenu } = props;
     const { setPopup } = useContext(PopupContext) as IPopupContext;
 
-    const handleClick = () => {
-        setPopup("get in contact");
+    const handleClick = (popup: string) => {
+        setPopup(popup);
         closeMenu();
     };
 
@@ -25,20 +25,20 @@ const Menu = (props: Iprops) => {
                     <li onClick={closeMenu}>
                         <a href="#services">our services</a>
                     </li>
-                    <li onClick={closeMenu}>
-                        <a href="#become_a_talent">become a talent</a>
+                    <li onClick={() => handleClick("become a talent")}>
+                        <a>become a talent</a>
                     </li>
-                    <li onClick={closeMenu}>
-                        <a href="#book">book a talent</a>
+                    <li onClick={() => handleClick("book a talent")}>
+                        <a>book a talent</a>
                     </li>
-                    <li onClick={handleClick}>
+                    <li onClick={() => handleClick("get in contact")}>
                         <a>contact us</a>
                     </li>
                 </ul>
 
                 <div className={styles.menu_contact}>
                     <h4>want to get in contact with us about our services</h4>
-                    <button type="button" onClick={handleClick}>
+                    <button type="button" onClick={() => handleClick("get in contact")}>
                         get in contact
                     </button>
                 </div>
