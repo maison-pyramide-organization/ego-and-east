@@ -67,17 +67,14 @@ button{
   color:black;
   cursor: pointer;
 }
-input{
+input,select{
   display: block;
   outline: none;
   border: none;
   background-color: transparent;
-}
-select{
-  display: block;
-  outline: none;
-  border: none;
-  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
 }
 /*******************/
 /*** GLOBAL CSS ****/
