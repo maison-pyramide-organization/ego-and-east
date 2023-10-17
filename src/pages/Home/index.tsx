@@ -10,25 +10,24 @@ import Services from "../../components/Services";
 import styles from "./styles.module.scss";
 import LoaderComponent from "../Loader";
 
-
 const Home = () => {
-    const [isLoading, setIsLoading] = useState(true)
+    const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false);
-          }, 1000);
-    }, [])
+        }, 1000);
+    }, []);
     return (
         <>
-            <LoaderComponent isLoading={isLoading}/>
-            <div className={styles.page}>
-                <Header />
+            <LoaderComponent isLoading={isLoading} />
+            <Header />
+            <main className={styles.page}>
                 <Hero />
                 <Services />
                 <About />
                 <Gallery />
                 <Music />
-            </div>
+            </main>
             <Footer />
             <Popup />
         </>

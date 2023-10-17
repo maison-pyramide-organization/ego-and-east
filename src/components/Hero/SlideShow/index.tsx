@@ -18,7 +18,7 @@ const SlideShow = () => {
     return (
         <div className={styles.slideshow}>
             <div id="slide" className={styles.slide}>
-                <img className={styles.slide} alt="image" />
+                <img src={slideshowImages[1]} className={styles.slide} alt="image" />
             </div>
         </div>
     );

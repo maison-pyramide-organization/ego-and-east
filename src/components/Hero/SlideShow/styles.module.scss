@@ -1,6 +1,6 @@
 .slideshow {
     margin: 0 auto;
-    width: clamp(0px, 100%, 500px);
+    width: clamp(0px, 100%, 700px);
     overflow: hidden;
     &_wraper {
         display: flex;
@@ -15,5 +15,14 @@
         background-color: var(--beige);
         width: 100%;
         aspect-ratio: 20/23;
+    }
+}
+
+//////////////
+/// TABLET //
+////////////
+@media screen and (max-width: 1024px) {
+    .slideshow {
+        width: clamp(0px, 90%, 600px);
     }
 }

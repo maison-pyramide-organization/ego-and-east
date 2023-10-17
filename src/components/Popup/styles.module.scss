@@ -20,7 +20,7 @@
 }
 .popupHeader {
     width: 100%;
-    padding: 40px 0px 80px;
+    padding: 40px 0px 64px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -29,13 +29,14 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+    width: 240px;
 }
 .logo {
-    width: 260px;
+    width: 100%;
     height: auto;
 }
 .MpCompanyLogo {
-    width: 260px;
+    width: 100%;
 }
 .closeIcon {
     width: 32px;
@@ -52,7 +53,7 @@
     align-items: flex-start;
 }
 .popupTitle {
-    font-family: SuisseBold;
+    font-family: "Suisse";
     font-size: 32px;
     white-space: nowrap;
     writing-mode: vertical-rl;
@@ -60,7 +61,8 @@
     text-transform: uppercase;
     transform: rotate(180deg);
     flex-shrink: 0;
-    align-self: flex-start;
+    align-self: flex-end;
+    margin-bottom: 26px;
 }
 
 /***************/
@@ -69,15 +71,17 @@
 
 @media screen and (max-width: 1024px) {
     .popup {
+        width: 100vw;
+        height: 100dvh;
+        max-height: unset;
         padding: 0 24px;
-    }
-    .popupHeader {
-        padding: 40px 0px;
     }
     .popupTitle {
         writing-mode: unset;
         transform: unset;
         align-self: unset;
+        margin: 0;
+        font-size: 40px;
     }
     .popupBody {
         flex-direction: column;
@@ -86,14 +90,26 @@
     }
 }
 
+/***************/
+/**** MOBILE ****/
+/*************/
+
 @media screen and (max-width: 768px) {
-    .popup {
-        width: 100vw;
-        height: 100dvh;
-        max-height: unset;
-    }
     .popupTitle {
-        font-size: 24px;
-        letter-spacing: 1px;
+        font-size: 28px;
+    }
+    .popupHeader {
+        justify-content: center;
+    }
+    .closeIcon {
+        position: absolute;
+        right: 24px;
+    }
+    .logoContainer {
+        width: 180px;
+        gap: 14px;
+    }
+    .popupBody {
+        gap: 32px;
     }
 }

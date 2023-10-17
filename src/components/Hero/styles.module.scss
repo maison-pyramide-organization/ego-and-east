@@ -4,29 +4,6 @@
     display: grid;
     place-content: center;
 }
-.heroWraper {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-}
-.imageContainer {
-    max-width: 500px;
-}
-.image {
-    width: 100%;
-    display: block;
-    background-color: gray;
-}
-.title {
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: 5%;
-    white-space: nowrap;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    flex-shrink: 0;
-    align-self: flex-end;
-}
 .companyLogo {
     width: 260px;
     margin: 24px auto 0;
@@ -44,23 +21,20 @@
 /// TABLET //
 ////////////
 @media screen and (max-width: 1024px) {
+    .info {
+        width: clamp(200px, 90%, 500px);
+    }
 }
 //////////////
 /// MOBILE //
 ////////////
 @media screen and (max-width: 600px) {
     .hero {
-        padding-top: 56px;
         width: 100%;
         min-height: unset;
     }
-    .title {
-        font-size: 16px;
-        text-align: center;
-    }
     .info {
         font-size: 16px;
-        width: 100%;
         line-height: 24px;
         margin: 40px auto 0;
         span {

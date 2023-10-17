@@ -38,11 +38,10 @@ const Service = (props: Iprops) => {
     return (
         <li className={styles.service} id={service.ref}>
             <div className={styles.serviceHeader} ref={serviceRef} onClick={handleClick}>
-                <div className={styles.serviceIndex}>
-                    <span>0</span>
-                    <span>{service.id}</span>
-                </div>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
+                <h3 className={styles.serviceTitle}>
+                    <span className={styles.serviceIndex}>0{service.id}</span>
+                    {service.title}
+                </h3>
                 <div className={styles.headerIcon}>
                     {isExpanded ? <CloseIcon /> : <ChevronIcon />}
                 </div>

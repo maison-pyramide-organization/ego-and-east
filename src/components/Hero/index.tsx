@@ -3,7 +3,7 @@ import { ReactComponent as MpCompanyLogo } from "../../assets/MP Company logo.sv
 import SlideShow from "./SlideShow";
 const Hero = () => {
     return (
-        <main className={styles.hero}>
+        <div className={styles.hero}>
             <SlideShow />
             <MpCompanyLogo className={styles.companyLogo} />
             <h3 className={styles.info}>
@@ -11,7 +11,7 @@ const Hero = () => {
                 <br /> celebrities, actors, musicians, creatives and influencers in the Middle East
                 – and beyond.
             </h3>
-        </main>
+        </div>
     );
 };
 export default Hero;
