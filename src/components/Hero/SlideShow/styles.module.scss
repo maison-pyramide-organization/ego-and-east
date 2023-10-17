@@ -12,6 +12,8 @@
     display: flex;
     width: 100%;
     img {
+        background-color: var(--beige);
         width: 100%;
+        aspect-ratio: 20/23;
     }
 }
