@@ -1,0 +1,17 @@
+.slideshow {
+    margin: 0 auto;
+    width: clamp(0px, 100%, 500px);
+    overflow: hidden;
+    &_wraper {
+        display: flex;
+    }
+}
+
+.slide {
+    flex-shrink: 0;
+    display: flex;
+    width: 100%;
+    img {
+        width: 100%;
+    }
+}
