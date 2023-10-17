@@ -2,6 +2,8 @@
 .services {
     display: flex;
     gap: 48px;
+    max-width: calc(1200px + 240px);
+    margin: 0 auto;
 }
 .title {
     font-family: SuisseBold;

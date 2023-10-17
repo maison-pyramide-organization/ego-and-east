@@ -16,13 +16,11 @@ const SlideShow = () => {
     window.onload = changeImage;
 
     return (
-        <>
-            <div className={styles.slideshow}>
-                <div id="slide" className={styles.slide}>
-                    <img className={styles.slide} alt="image" />
-                </div>
+        <div className={styles.slideshow}>
+            <div id="slide" className={styles.slide}>
+                <img className={styles.slide} alt="image" />
             </div>
-        </>
+        </div>
     );
 };
 
