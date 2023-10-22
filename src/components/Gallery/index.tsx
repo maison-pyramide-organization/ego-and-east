@@ -18,8 +18,6 @@ const Gallery = () => {
         <section className="section">
             <div className={styles.galleryContainer}>
                 <div id="gallery" className={styles.gallery}>
-                    <div className={styles.gallerySpace} />
-
                     {/* IMAGES  */}
                     {images.map((image) => (
                         <div

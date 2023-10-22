@@ -4,10 +4,6 @@
     display: grid;
     place-content: center;
 }
-.companyLogo {
-    width: 260px;
-    margin: 24px auto 0;
-}
 .info {
     width: clamp(200px, 100%, 900px);
     margin: 64px auto 0;
