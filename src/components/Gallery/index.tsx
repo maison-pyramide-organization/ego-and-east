@@ -61,14 +61,14 @@ const Gallery = () => {
         gsap.registerPlugin(ScrollTrigger);
         animate();
     }, [instaItems]);
-    // console.log("instaItems",instaItems)
+    console.log("instaItems", instaItems);
     return (
         <section className="section">
             <div className={styles.galleryContainer}>
                 <div id="gallery" className={styles.gallery}>
                     {/* IMAGES  */}
                     {instaItems.map((image) => {
-                        if (image.mediaType !== "VIDEO") {
+                        if (image.mediaType !== "VIDEO" && image.mediaUrl) {
                             return (
                                 <a
                                     target="_blank"
