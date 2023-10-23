@@ -5,9 +5,9 @@ const Hero = () => {
         <div className={styles.hero}>
             <SlideShow />
             <h3 className={styles.info}>
-                We connect top global luxury, beauty and fashion brands with the most compelling{" "}
-                <br /> celebrities, actors, musicians, creatives and influencers in the Middle East
-                – and beyond.
+                We connect top global luxury, beauty and fashion brands with the most compelling
+                celebrities, actors, musicians, creatives and influencers in the Middle East – and
+                beyond.
             </h3>
         </div>
     );
