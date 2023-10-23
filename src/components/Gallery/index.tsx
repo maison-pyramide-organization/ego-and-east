@@ -40,16 +40,16 @@ const Gallery = () => {
             }
 
             const res = await fetch(instaUrl);
-            const json = (await res.json()).data;
-            console.log(json);
+            const json = await res.json();
+            let data = json.data;
 
             const fetchedItems: InstaItem[] = [];
+            data = data?.slice(0, 16);
+            console.log(data);
+            const ids = data.map((item: any) => item.id);
 
-            for (let i = 0; i < json.length && i < 25; i++) {
-                const item = json[i];
-                const itemId = item.id;
-
-                const instaItem = await fetchMedia(itemId);
+            for (const id of ids) {
+                const instaItem = await fetchMedia(id);
                 fetchedItems.push(instaItem);
             }
             setInstaItems(fetchedItems);
@@ -61,7 +61,6 @@ const Gallery = () => {
         gsap.registerPlugin(ScrollTrigger);
         animate();
     }, [instaItems]);
-    console.log("instaItems", instaItems);
     return (
         <section className="section">
             <div className={styles.galleryContainer}>
