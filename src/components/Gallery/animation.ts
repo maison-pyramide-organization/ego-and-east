@@ -7,7 +7,7 @@ const animate = () => {
     const screenHeight: number = window.innerHeight;
 
     const galleryTrigger: ScrollTrigger.Vars = {
-        markers: true,
+        // markers: true,
         trigger: "#gallery",
         start: `top ${screenHeight - galleryHeight}`,
         end: `top end`,
