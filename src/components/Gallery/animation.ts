@@ -9,7 +9,7 @@ const animate = () => {
     const galleryTrigger: ScrollTrigger.Vars = {
         // markers: true,
         trigger: "#gallery",
-        start: `top ${screenHeight - galleryHeight}`,
+        start: `top ${screenHeight - (galleryHeight + 40)}`,
         end: `top end`,
         scrub: 4,
         // pin: true,

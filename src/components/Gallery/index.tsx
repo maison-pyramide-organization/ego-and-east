@@ -13,26 +13,26 @@ export interface InstaItem {
 }
 const Gallery = () => {
     const ig_url = "https://www.instagram.com/egoandeast/";
-    const accessToken = "IGQWRQU2x1azV5OXlvMXBVVFluU3Y0SGlqTlZAUUDdXZAXBPTGJWcFZAfSV9tMndMMDFMaERNSXVtWDVxTmtaLVBIbkp0bnNHOEkxOGM2NVh3aVA1SWVIYW5wVTVvcDNYRU1WTnJsYkt2dXFPaVowTUMzWlpXMTE5ZAUkZD"
-    const userId = "23949713848007342"
-    const instaUrl = `https://graph.instagram.com/${userId}/media?access_token=${accessToken}`
+    const accessToken =
+        "IGQWRQU2x1azV5OXlvMXBVVFluU3Y0SGlqTlZAUUDdXZAXBPTGJWcFZAfSV9tMndMMDFMaERNSXVtWDVxTmtaLVBIbkp0bnNHOEkxOGM2NVh3aVA1SWVIYW5wVTVvcDNYRU1WTnJsYkt2dXFPaVowTUMzWlpXMTE5ZAUkZD";
+    const userId = "23949713848007342";
+    const instaUrl = `https://graph.instagram.com/${userId}/media?access_token=${accessToken}`;
 
-    const [instaItems, setInstaItems] = useState<InstaItem[]>([])
-  
+    const [instaItems, setInstaItems] = useState<InstaItem[]>([]);
+
     useEffect(() => {
-       
         const fetchMedia = async (id: string) => {
-            const mediaUrl = `https://graph.instagram.com/${id}?access_token=${accessToken}&fields=media_url,media_type,permalink`
+            const mediaUrl = `https://graph.instagram.com/${id}?access_token=${accessToken}&fields=media_url,media_type,permalink`;
             const res = await fetch(mediaUrl);
-            const json = (await res.json());
-            
+            const json = await res.json();
+
             const instaItem = {
                 permalink: json.permalink,
                 mediaUrl: json.media_url,
                 mediaType: json.media_type,
-            }
-            return instaItem
-        }
+            };
+            return instaItem;
+        };
         const doFetch = async () => {
             if (!userId || !accessToken) {
                 console.log("userId or accessToken is undefined: ", { userId, accessToken });
@@ -53,11 +53,11 @@ const Gallery = () => {
                 fetchedItems.push(instaItem);
             }
             setInstaItems(fetchedItems);
-        }
+        };
         doFetch();
     }, [userId, accessToken, instaUrl]);
-    
-    useEffect(() => { 
+
+    useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
         animate();
     }, [instaItems]);
@@ -68,20 +68,20 @@ const Gallery = () => {
                 <div id="gallery" className={styles.gallery}>
                     {/* IMAGES  */}
                     {instaItems.map((image) => {
-                        if(image.mediaType !== "VIDEO"){
-                      
-                     return( <a target="_blank" href={image.permalink}>
-                            <div
-
-                                className={styles.imageWraper}
-                                key={image.permalink}
-                                style={{ backgroundImage: `url(${image.mediaUrl})` }}
-                            >
-                                <IgIcon className={styles.igIcon} />
-                            </div>
-                        </a>)
-                    }}
-                    )}
+                        if (image.mediaType !== "VIDEO") {
+                            return (
+                                <a
+                                    target="_blank"
+                                    href={image.permalink}
+                                    className={styles.imageWraper}
+                                    key={image.permalink}
+                                    style={{ backgroundImage: `url(${image.mediaUrl})` }}
+                                >
+                                    <IgIcon className={styles.igIcon} />
+                                </a>
+                            );
+                        }
+                    })}
                 </div>
             </div>
             <a href={ig_url} target="_default" className={styles.igLink}>

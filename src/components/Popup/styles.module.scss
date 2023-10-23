@@ -11,12 +11,11 @@
 }
 .popup {
     overflow: auto;
-    width: 1000px;
-    max-width: 1200px;
-    max-height: 80dvh;
-    aspect-ratio: 2/1.2;
+    width: 80vw;
+    max-width: 1000px;
+    max-height: 90dvh;
     background-color: var(--beige);
-    padding: 20px 80px;
+    padding: 20px 40px 32px;
 }
 .popupHeader {
     width: 100%;
