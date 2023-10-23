@@ -23,7 +23,7 @@ const services: Iservice[] = [
     {
         id: 3,
         ref: "fashion_week",
-        title: "fashion week service",
+        title: "fashion week services",
         description:
             "With extensive experience of Haute Couture and Ready-to-Wear shows in New York, London, Milan and Paris, Ego & East takes you to the heart of Fashion Week’s most exclusive shows, presentations and seasonal events.",
         button: "get in contact",

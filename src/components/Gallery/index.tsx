@@ -45,7 +45,6 @@ const Gallery = () => {
 
             const fetchedItems: InstaItem[] = [];
             data = data?.slice(0, 16);
-            console.log(data);
             const ids = data.map((item: any) => item.id);
 
             for (const id of ids) {
@@ -63,7 +62,7 @@ const Gallery = () => {
     }, [instaItems]);
     return (
         <section className="section">
-            <div className={styles.galleryContainer}>
+            <div className={styles.galleryContainer} id="gallery-container">
                 <div id="gallery" className={styles.gallery}>
                     {/* IMAGES  */}
                     {instaItems.map((image) => {

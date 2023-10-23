@@ -56,7 +56,10 @@ const Footer = () => {
 
             <div className={styles.footer_tail}>
                 <p className={styles.copyright}>2022 all rights reserved</p>
-                <MpCompanyLogo className={styles.companyLogo} />
+
+                <div className={styles.logoContainer}>
+                    <MpCompanyLogo className={styles.companyLogo} />
+                </div>
                 <ul className={styles.socials}>
                     <li>
                         <a target="_blank" href="https://www.instagram.com/egoandeast/">
