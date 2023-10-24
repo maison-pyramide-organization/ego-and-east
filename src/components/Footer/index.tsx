@@ -39,11 +39,7 @@ const Footer = () => {
                     </button>
                 </div>
                 <div className={styles.action}>
-                    <h4>
-                        looking for powerful
-                        <br />
-                        new talent?
-                    </h4>
+                    <h4>looking for powerful new talent?</h4>
                     <button type="button" onClick={() => openPopup("book a talent")}>
                         book a talent
                     </button>
