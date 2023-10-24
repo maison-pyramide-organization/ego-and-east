@@ -1,92 +1,8 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import Select from "./Select";
-
-interface field {
-    name: string;
-    type: string;
-    placeholder?: string;
-    message?: string;
-    options?: string[];
-}
-
-const book: field[] = [
-    {
-        name: "talent",
-        type: "drop",
-        placeholder: "Select talent",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        placeholder: "Select country",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "company name",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
-
-const become: field[] = [
-    {
-        name: "talent",
-        type: "drop",
-        placeholder: "Select talent",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        placeholder: "Select country",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "surname",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
-const contact: field[] = [
-    {
-        name: "subject",
-        type: "input",
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        placeholder: "Select country / region",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "surname",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
+import { field } from "../../../types/fields";
+import { becomeATalentFields, bookAtalentFields, contactFields } from "../../../data/popups";
 
 interface Iprops {
     popup: string;
@@ -100,17 +16,17 @@ const Form = (props: Iprops) => {
 
     switch (popup) {
         case "book a talent":
-            inputs = book;
+            inputs = bookAtalentFields;
             message = `What kind of talent are you looking for? \n
 (max 100 characters)`;
             break;
         case "become a talent":
-            inputs = become;
+            inputs = becomeATalentFields;
             message = `Tell us about yourself – and your goals! \n
 (max 100 characters)`;
             break;
         case "get in contact":
-            inputs = contact;
+            inputs = contactFields;
             message = `Tell us more... \n
 (max 100 characters)`;
             break;
