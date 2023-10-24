@@ -17,6 +17,7 @@
     transform: rotate(180deg);
 }
 .servicesList {
+    width: 100%;
     flex-basis: 100%;
 }
 //
@@ -45,6 +46,7 @@
     font-size: 32px;
     overflow: hidden;
     margin-right: 32px;
+    white-space: nowrap;
 }
 .serviceTitle {
     height: fit-content;
@@ -53,6 +55,7 @@
     text-transform: uppercase;
     -webkit-user-select: none;
     user-select: none;
+    white-space: nowrap;
 }
 .headerIcon {
     margin-left: auto;
@@ -143,7 +146,8 @@
     // SERVICE
     //
     .serviceHeader {
-        padding: 16px;
+        padding: 20px 10px;
+        gap: 12px;
     }
     .serviceIndex {
         font-size: 18px;
@@ -156,5 +160,8 @@
     .descriptionContainer {
         padding-left: calc(18px + 32px);
         padding-right: calc(16px + 24px);
+    }
+    .serviceDescription {
+        font-size: 14px;
     }
 }

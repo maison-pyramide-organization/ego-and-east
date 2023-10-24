@@ -6,7 +6,7 @@
   --grey-800:#1D1D1B;
   --header-height: calc(46px);
   --lg-space: 64px;
-  --md-space:32px;
+  --md-space:40px;
 }
 
 /* FONTS */
@@ -130,7 +130,7 @@ input,select{
 :root{
   --header-height: calc(83px);
   --lg-space: 80px;
-  --md-space:40px;
+  --md-space:32px;
 }
 .home{
   padding: 0 16px;

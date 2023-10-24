@@ -117,7 +117,7 @@ const Form = (props: Iprops) => {
     }
 
     return (
-        <form className={classNames(styles.form, "hide-scrollbar")}>
+        <form className={classNames(styles.form)}>
             <div className={styles.inputsWraper}>
                 {inputs!.map((input) => {
                     if (input.type == "input") {

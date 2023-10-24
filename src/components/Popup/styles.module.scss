@@ -15,16 +15,18 @@
     max-width: 1000px;
     max-height: 95dvh;
     background-color: var(--beige);
-    padding: 40px;
+    padding: 0 40px 40px;
     display: flex;
     flex-direction: column;
     gap: 48px;
 }
 .popupHeader {
+    padding-top: 40px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    position: relative;
 }
 .logoContainer {
     width: 240px;
@@ -75,7 +77,8 @@
         width: 100vw;
         height: 100dvh;
         max-height: unset;
-        padding: 40px 24px;
+        padding-left: 24px;
+        padding-right: 24px;
     }
     .popupTitle {
         writing-mode: unset;

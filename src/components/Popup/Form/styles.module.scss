@@ -136,17 +136,15 @@ textarea::placeholder {
     .form {
         flex-direction: column;
         max-width: 800px;
-        padding-bottom: 32px;
     }
     .inputsWraper {
         width: 100%;
         margin: 0;
+        height: unset;
     }
     .messageContainer {
         width: 100%;
         min-height: 200px;
-    }
-    .messageContainer {
         gap: 24px;
         align-items: center;
     }
