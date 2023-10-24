@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactComponent as IgIcon } from "../../assets/Icons/instagram.svg";
 import animate from "./animation";
+import classNames from "classnames";
 
 export interface InstaItem {
     permalink: string;
@@ -60,8 +61,9 @@ const Gallery = () => {
         gsap.registerPlugin(ScrollTrigger);
         animate();
     }, [instaItems]);
+
     return (
-        <section className="section">
+        <section className={classNames("section", styles.gallerySection)}>
             <div className={styles.galleryContainer} id="gallery-container">
                 <div id="gallery" className={styles.gallery}>
                     {/* IMAGES  */}

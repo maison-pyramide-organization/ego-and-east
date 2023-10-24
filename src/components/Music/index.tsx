@@ -7,7 +7,7 @@ import classNames from "classnames";
 const Music = () => {
     return (
         <section className={classNames("section")}>
-            <h1 className={styles.title}>hit shuffle and enjoy</h1>
+            <h1 className={classNames("title")}>hit shuffle and enjoy</h1>
             <ul className={styles.musicList}>
                 {playslists.map((playlist) => (
                     <Fragment key={playlist.id}>

@@ -1,21 +1,19 @@
 // SERVICES LIST
 .services {
-    display: flex;
-    gap: 48px;
     max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 64px;
+    display: flex;
+    // gap: 48px;
+    gap: var(--lg-space);
     align-items: center;
 }
 .title {
-    font-family: SuisseBold;
+    font-family: "suisse";
     text-transform: uppercase;
     font-size: 48px;
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     flex-shrink: 0;
-    letter-spacing: 1px;
     transform: rotate(180deg);
 }
 .servicesList {
@@ -33,14 +31,11 @@
 }
 .serviceHeader {
     padding: 32px;
-    stroke: #444;
+    stroke: black;
     display: flex;
     gap: 32px;
     align-items: center;
     cursor: pointer;
-    &:hover {
-        stroke: black;
-    }
     &:hover .chevronIcon {
         transform: translateY(5px);
     }
@@ -82,7 +77,7 @@
     padding: 16px 32px 40px;
 }
 .serviceDescription {
-    font-size: 16px;
+    font-size: 18px;
     line-height: 24px;
 }
 
@@ -102,7 +97,7 @@
 @media screen and (max-width: 1024px) {
     .services {
         flex-direction: column;
-        padding-top: 80px;
+        gap: var(--md-space);
     }
     .title {
         writing-mode: unset;
@@ -138,7 +133,6 @@
 
 @media screen and (max-width: 600px) {
     .services {
-        padding-top: 60px;
     }
     .title {
         font-size: 28px;

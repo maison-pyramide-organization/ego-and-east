@@ -7,6 +7,7 @@
     background-color: var(--grey-800);
     padding: var(--header-height) 24px 40px;
     z-index: 99;
+    color: var(--beige);
 }
 
 .menu_wrapper {
@@ -21,8 +22,8 @@
     align-items: center;
     li {
         text-transform: uppercase;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 18px;
+        font-weight: 400;
     }
     a {
         color: var(--beige);
@@ -34,9 +35,10 @@
     h4 {
         text-transform: uppercase;
         text-align: center;
-        font-size: 17px;
-        color: var(--beige);
-        width: 260px;
+        font-size: 18px;
+        line-height: 1.6;
+        font-weight: 500;
+        max-width: 360px;
         margin: 0 auto;
     }
     button {
@@ -46,7 +48,6 @@
         font-size: 14px;
         font-weight: 600;
         background-color: var(--beige);
-        border-radius: 8px;
     }
 }
 

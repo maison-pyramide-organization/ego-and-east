@@ -22,33 +22,31 @@ const Footer = () => {
                         </li>
                     ))}
                 </ul>
-                <div className={styles.actionsList}>
-                    <div className={styles.action}>
-                        <h4>
-                            want to chat about talent,
-                            <br />
-                            events, activations?
-                        </h4>
-                        <button type="button" onClick={() => openPopup("get in contact")}>
-                            get in contact
-                        </button>
-                    </div>
-                    <div className={styles.action}>
-                        <h4>want to get scouted?</h4>
-                        <button type="button" onClick={() => openPopup("become a talent")}>
-                            become a talent
-                        </button>
-                    </div>
-                    <div className={styles.action}>
-                        <h4>
-                            looking for powerful
-                            <br />
-                            new talent?
-                        </h4>
-                        <button type="button" onClick={() => openPopup("book a talent")}>
-                            book a talent
-                        </button>
-                    </div>
+                <div className={styles.action}>
+                    <h4>
+                        want to chat about talent,
+                        <br />
+                        events, activations?
+                    </h4>
+                    <button type="button" onClick={() => openPopup("get in contact")}>
+                        get in contact
+                    </button>
+                </div>
+                <div className={styles.action}>
+                    <h4>want to get scouted?</h4>
+                    <button type="button" onClick={() => openPopup("become a talent")}>
+                        become a talent
+                    </button>
+                </div>
+                <div className={styles.action}>
+                    <h4>
+                        looking for powerful
+                        <br />
+                        new talent?
+                    </h4>
+                    <button type="button" onClick={() => openPopup("book a talent")}>
+                        book a talent
+                    </button>
                 </div>
             </div>
 

@@ -5,8 +5,8 @@
   --beige: #EAE7DE;
   --grey-800:#1D1D1B;
   --header-height: calc(46px);
-  --lg-space: 120px;
-  --md-space:80px;
+  --lg-space: 64px;
+  --md-space:32px;
 }
 
 /* FONTS */
@@ -114,7 +114,13 @@ input,select{
   display: none;
 }
 .section{
-  padding: 60px 0;
+    margin: 0 auto;
+    padding: var(--md-space) 0;
+}
+.title{
+  text-align: center;
+    font-size: 48px;
+    text-transform: uppercase;
 }
 
 /***************/
@@ -126,11 +132,11 @@ input,select{
   --lg-space: 80px;
   --md-space:40px;
 }
-.section{
-  padding: 40px 0;
-}
 .home{
   padding: 0 16px;
+}
+.title{
+  font-size: 32px;
 }
 }
 

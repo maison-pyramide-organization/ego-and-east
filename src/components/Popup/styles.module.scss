@@ -13,22 +13,24 @@
     overflow: auto;
     width: 80vw;
     max-width: 1000px;
-    max-height: 90dvh;
+    max-height: 95dvh;
     background-color: var(--beige);
-    padding: 20px 40px 32px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 .popupHeader {
     width: 100%;
-    padding: 40px 0px 64px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
 .logoContainer {
+    width: 240px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    width: 240px;
+    gap: 16px;
 }
 .logo {
     width: 100%;
@@ -73,7 +75,7 @@
         width: 100vw;
         height: 100dvh;
         max-height: unset;
-        padding: 0 24px;
+        padding: 40px 24px;
     }
     .popupTitle {
         writing-mode: unset;
