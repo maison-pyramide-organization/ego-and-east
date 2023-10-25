@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 // import images from "../../data/gallery";
 import styles from "./styles.module.scss";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import { gsap } from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactComponent as IgIcon } from "../../assets/Icons/instagram.svg";
-import animate from "./animation";
+// import animate from "./animation";
 import classNames from "classnames";
 
 export interface InstaItem {

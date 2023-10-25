@@ -11,10 +11,6 @@ const LeftNav = () => {
     };
 
     const handleLinkClick = (id: string) => {
-        // document
-        //     .getElementById(id)
-        //     ?.scrollIntoView({ behavior: "auto", block: "center", inline: "center" });
-
         let element = document.getElementById(id)!;
         element.scrollIntoView();
         window.scrollBy(0, -100);
