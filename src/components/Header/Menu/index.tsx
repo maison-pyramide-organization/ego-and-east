@@ -15,15 +15,21 @@ const Menu = (props: Iprops) => {
         closeMenu();
     };
 
+    const handleLinkClick = (id: string) => {
+        let element = document.getElementById(id)!;
+        element.scrollIntoView();
+        window.scrollBy(0, -100);
+    };
+
     return (
         <div className={styles.menu}>
             <div className={classNames(styles.menu_wrapper, "hide-scrollbar")}>
                 <ul className={styles.menu_nav}>
                     <li onClick={closeMenu}>
-                        <a href="#about">about us</a>
+                        <a onClick={() => handleLinkClick("about")}>about us</a>
                     </li>
                     <li onClick={closeMenu}>
-                        <a href="#services">our services</a>
+                        <a onClick={() => handleLinkClick("services")}>our services</a>
                     </li>
                     <li onClick={() => handleClick("become a talent")}>
                         <a>become a talent</a>
