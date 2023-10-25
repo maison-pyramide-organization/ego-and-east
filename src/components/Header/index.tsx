@@ -13,6 +13,7 @@ const Header = () => {
 
     const toogleMenu = () => {
         document.body.classList.toggle("disable-scroll");
+        document.getElementById("header")?.classList.toggle("menu-opened");
         setMenuOpened((prev) => !prev);
     };
 
@@ -22,7 +23,7 @@ const Header = () => {
 
     return (
         <>
-            <header className={styles.header}>
+            <header className={styles.header} id="header">
                 <div className={styles.header_wrapper}>
                     <LeftNav />
                     <div className={styles.logoContainer}>

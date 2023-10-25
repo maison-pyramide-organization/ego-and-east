@@ -122,6 +122,9 @@ input,select{
     font-size: 48px;
     text-transform: uppercase;
 }
+.menu-opened{
+  background-color: var(--grey-800) !important;
+}
 
 /***************/
 /****MOBILE****/

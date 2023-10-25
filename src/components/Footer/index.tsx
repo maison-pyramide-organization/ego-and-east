@@ -51,9 +51,13 @@ const Footer = () => {
             <div className={styles.footer_tail}>
                 <p className={styles.copyright}>2022 all rights reserved</p>
 
-                <div className={styles.logoContainer}>
+                <a
+                    href="https://maisonpyramide.com/"
+                    target="_blank"
+                    className={styles.logoContainer}
+                >
                     <MpCompanyLogo className={styles.companyLogo} />
-                </div>
+                </a>
                 <ul className={styles.socials}>
                     <li>
                         <a target="_blank" href="https://www.instagram.com/egoandeast/">

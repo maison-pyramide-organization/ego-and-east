@@ -57,10 +57,10 @@ const Gallery = () => {
         doFetch();
     }, [userId, accessToken, instaUrl]);
 
-    useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
-        animate();
-    }, [instaItems]);
+    // useEffect(() => {
+    //     gsap.registerPlugin(ScrollTrigger);
+    //     animate();
+    // }, [instaItems]);
 
     return (
         <section className={classNames("section", styles.gallerySection)}>
