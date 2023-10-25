@@ -64,7 +64,10 @@ const Gallery = () => {
 
     return (
         <section className={classNames("section", styles.gallerySection)}>
-            <div className={styles.galleryContainer} id="gallery-container">
+            <div
+                className={classNames(styles.galleryContainer, "hide-scrollbar")}
+                id="gallery-container"
+            >
                 <div id="gallery" className={styles.gallery}>
                     {/* IMAGES  */}
                     {instaItems.map((image) => {
