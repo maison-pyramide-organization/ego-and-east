@@ -34,7 +34,7 @@ const services: Iservice[] = [
         ref: "brand_strategy",
         title: "brand strategy",
         description:
-            "We help talented storytellers and creatives elevate their personal brand to be consistent, compelling and authentic, amplifying your resonance and reach. We identify your objectives, then craft a strategic trajectory to success, consulting on creative direction and styling inspiration. Thanks to our strong connections with top-tier luxury, fashion and beauty brands, we can help our talents enhance their profile through meaningful relationships with key industry players.",
+            "We help talented storytellers and creatives elevate their personal brand to be consistent, compelling and authentic, amplifying their resonance and reach. We identify their objectives, then craft a strategic trajectory to success, consulting on creative direction and styling inspiration. Thanks to our strong connections with top-tier luxury, fashion and beauty brands, we can help our talents enhance their profile through meaningful relationships with key industry players.",
         button: "get in contact",
         popup: "get in contact",
     },
