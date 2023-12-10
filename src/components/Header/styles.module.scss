@@ -3,76 +3,68 @@ $animation-time: 0.1s;
 
 //
 .header {
-    padding: 24px 40px 0;
-    position: sticky;
-    background-color: var(--beige);
-    top: 0;
-    left: 0;
-    z-index: 999;
+  padding: 24px 40px;
+  position: sticky;
+  background-color: black;
+  color: white;
+  top: 0;
+  left: 0;
+  z-index: 999;
 }
 .header_wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav {
-    width: 272px;
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px 2px;
-    a {
-        text-transform: uppercase;
-        font-size: 14px;
-        text-wrap: nowrap;
-        cursor: pointer;
-    }
+  width: 272px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-wrap: nowrap;
+    cursor: pointer;
+  }
 }
 
-.logoContainer {
-    width: 160px;
-}
 .logo {
-    width: 100%;
-}
-.lightLogo {
-    g {
-        fill: var(--beige);
-    }
+  width: 160px;
+  fill: white;
 }
 
 .menuIcon {
-    display: none;
+  display: none;
 }
 .humIcon {
-    width: 40px;
-    aspect-ratio: 1;
+  width: 40px;
+  aspect-ratio: 1;
 }
 .closeIcon {
-    width: 40px;
-    stroke: var(--beige);
+  width: 40px;
+  stroke: var(--beige);
 }
 
 //////////////
 /// TABLET //
 ////////////
 @media screen and (max-width: 1024px) {
-    .nav {
-        display: none;
-    }
-    .menuIcon {
-        display: block;
-    }
+  .nav {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
 }
 
 //////////////
 /// MOBILE //
 ////////////
 @media screen and (max-width: 600px) {
-    .header {
-        padding: 24px 24px 0;
-    }
+  .header {
+    padding: 24px 24px 0;
+  }
 }
