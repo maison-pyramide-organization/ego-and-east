@@ -3,26 +3,27 @@ import { field } from "../types/fields";
 export const bookAtalentFields: field[] = [
     {
         name: "talent",
+        placeholder: "talent",
         type: "input",
-        // placeholder: "Select talent",
-        // options: ["mohamed", "fab", "nourhan"],
     },
     {
-        name: "country / region",
+        name: "country",
+        placeholder: "country / region",
         type: "input",
-        // placeholder: "Select country",
-        // options: ["mohamed", "fab", "nourhan"],
     },
     {
         name: "name",
+        placeholder: "name",
         type: "input",
     },
     {
         name: "company name",
+        placeholder: "company",
         type: "input",
     },
     {
         name: "email",
+        placeholder: "email",
         type: "input",
     },
 ];
@@ -30,50 +31,54 @@ export const bookAtalentFields: field[] = [
 export const becomeATalentFields: field[] = [
     {
         name: "talent",
+        placeholder: "talent",
         type: "input",
-        // placeholder: "Select talent",
-        // options: ["mohamed", "fab", "nourhan"],
     },
     {
-        name: "country / region",
+        name: "country",
+        placeholder: "country / region",
         type: "input",
-        // placeholder: "Select country",
-        // options: ["mohamed", "fab", "nourhan"],
     },
     {
         name: "name",
+        placeholder: "name",
         type: "input",
     },
     {
         name: "surname",
+        placeholder: "surname",
         type: "input",
     },
     {
         name: "email",
+        placeholder: "email",
         type: "input",
     },
 ];
 export const contactFields: field[] = [
     {
         name: "subject",
+        placeholder: "subject",
         type: "input",
     },
     {
-        name: "country / region",
+        name: "country",
+        placeholder: "country / region",
         type: "input",
-        // placeholder: "Select country / region",
-        // options: ["mohamed", "fab", "nourhan"],
     },
     {
         name: "name",
+        placeholder: "name",
         type: "input",
     },
     {
         name: "surname",
+        placeholder: "surname",
         type: "input",
     },
     {
         name: "email",
+        placeholder: "email",
         type: "input",
     },
 ];
