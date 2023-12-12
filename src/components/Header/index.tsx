@@ -4,7 +4,6 @@ import RightNav from "./Right Nav";
 import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { useState } from "react";
 import Menu from "./Menu";
-import classNames from "classnames";
 import { ReactComponent as HumIcon } from "../../assets/Icons/hum.svg";
 import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
 
