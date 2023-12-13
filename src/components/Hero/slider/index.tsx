@@ -6,7 +6,6 @@ import { Autoplay } from "swiper/modules";
 
 const Slider = () => {
     return (
-        <div className={styles.slider_container}>
             <Swiper
                 modules={[Autoplay]}
                 loop={true}
@@ -28,7 +27,6 @@ const Slider = () => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </div>
     );
 };
 

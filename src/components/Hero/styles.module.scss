@@ -1,19 +1,25 @@
 .hero {
+  width: 100%;
   margin-top: 24px;
-  padding-bottom: 32px;
+  padding: 0px var(--side-padding);
   @media (width > 1024px) {
-    margin: 36px -40px 0px; 
+    margin-top: 36px;
   }
+}
+.slider_container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .info {
-  margin: 36px auto 0;
-  width: clamp(200px, 90%, 900px);
+  margin: 32px auto 0;
+  width: clamp(200px, 90%, 1000px);
   font-size: 22px;
   font-weight: 400;
   text-align: center;
   line-height: normal;
-  letter-spacing: 1.1;
+  letter-spacing: 1.1px;
 }
 
 //////////////
