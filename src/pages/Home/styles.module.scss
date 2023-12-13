@@ -1,14 +1,14 @@
 .page {
-    padding: 40px;
-    width: 100%;
-    overflow: hidden;
+  padding: 0 40px 40px;
+  width: 100%;
+  overflow: hidden;
 }
 
 /**
 * MOBILE VIEW
 */
 @media screen and (max-width: 600px) {
-    .page {
-        padding: 24px 16px;
-    }
+  .page {
+    padding: 24px 16px;
+  }
 }
