@@ -69,8 +69,7 @@
 //////////////
 /// TABLET //
 ////////////
-@media screen and (max-width: 600px) {
-}
+///
 //////////////
 /// MOBILE //
 ////////////
@@ -78,5 +77,8 @@
   .title {
     font-size: 28px;
     letter-spacing: 0;
+  }
+  .playlist {
+    max-width: 200px;
   }
 }

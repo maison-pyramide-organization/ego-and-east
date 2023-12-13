@@ -1,10 +1,7 @@
 .hero {
   width: 100%;
-  margin-top: 24px;
   padding: 0px var(--side-padding);
-  @media (width > 1024px) {
-    margin-top: 36px;
-  }
+  margin-top: 36px;
 }
 .slider_container {
   width: 100%;
@@ -27,7 +24,7 @@
 ////////////
 @media screen and (max-width: 1024px) {
   .hero {
-    padding-bottom: var(--md-space);
+    margin-top: 24px;
   }
 }
 //////////////

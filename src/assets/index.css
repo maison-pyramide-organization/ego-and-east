@@ -133,8 +133,8 @@ select {
 @media screen and (max-width: 600px) {
   :root {
     --header-height: calc(83px);
-    --lg-space: 80px;
     --md-space: 32px;
+    --lg-space: 56px;
     --side-padding: 24px;
   }
   .home {
