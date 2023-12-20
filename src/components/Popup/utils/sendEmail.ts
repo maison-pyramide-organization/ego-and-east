@@ -15,7 +15,6 @@ const sendEmail = async (formData: any) => {
         surname: formData.surname || "-",
         talent: formData.talent || "-",
     };
-    console.log(templateParams);
 
     await emailjs.send(serviceID, templateID, templateParams, publicKey);
 };
