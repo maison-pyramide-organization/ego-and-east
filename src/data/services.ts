@@ -15,8 +15,8 @@ const services: Iservice[] = [
     ref: "book_a_talent",
     title: "talent booking",
     description:
-      "We provide top-caliber talent for high-end fashion and luxury brands expanding their presence in MENA and beyond. Our curated talent deck includes exclusive talents, established creatives, celebrities and new faces. We build strong and trusted long-term relationships with clients around the world.",
-
+      // "We provide top-caliber talent for high-end fashion and luxury brands expanding their presence in MENA and beyond. Our curated talent deck includes exclusive talents, established creatives, celebrities and new faces. We build strong and trusted long-term relationships with clients around the world.",
+      "We provide top-caliber talent for global and regional events, campaigns as well as influencer marketing. Our curated talent deck includes exclusive talents, established creatives, international celebrities and new faces. We build strong and trusted long-term relationships with our clients around the world.",
     button: "book a talent",
     popup: "book a talent",
   },
