@@ -1,18 +1,18 @@
 import styles from "./styles.module.scss";
-import image from "../../assets/Images/hero.png";
+import Slider from "./slider";
+
 const Hero = () => {
-    return (
-        <main className={styles.hero}>
-            <div className={styles.heroWraper}>
-                <div className={styles.imageContainer}>
-                    <img src={image} className={styles.image} alt="EGO & EAST" />
-                </div>
-                <h1 className={styles.title}>Zeyne x YUNG & Miu Miu</h1>
-            </div>
-            <p className={styles.info}>
-                A <span>maison pyramide</span> company
-            </p>
-        </main>
-    );
+  return (
+    <div className={styles.hero}>
+      <div className={styles.slider_container}>
+        <Slider />
+      </div>
+      <h3 className={styles.info}>
+        We connect top global luxury, beauty and fashion brands with the most
+        compelling celebrities, actors, musicians, creatives and influencers in
+        the Middle East – and beyond.
+      </h3>
+    </div>
+  );
 };
 export default Hero;

@@ -1,84 +1,9 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
-
-interface field {
-    name: string;
-    type: string;
-    options?: string[];
-}
-
-const book: field[] = [
-    {
-        name: "talent",
-        type: "drop",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "company name",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
-
-const become: field[] = [
-    {
-        name: "talent",
-        type: "drop",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "surname",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
-const contact: field[] = [
-    {
-        name: "subject",
-        type: "input",
-    },
-    {
-        name: "country / region",
-        type: "drop",
-        options: ["mohamed", "fab", "nourhan"],
-    },
-    {
-        name: "name",
-        type: "input",
-    },
-    {
-        name: "surname",
-        type: "input",
-    },
-    {
-        name: "email",
-        type: "input",
-    },
-];
+import Select from "./Select";
+import { field } from "../../../types/fields";
+import { becomeATalentFields, bookAtalentFields, contactFields } from "../../../data/popups";
+import sendEmail from "../utils/sendEmail";
 
 interface Iprops {
     popup: string;
@@ -86,41 +11,66 @@ interface Iprops {
 
 const Form = (props: Iprops) => {
     const { popup } = props;
+    let message = "";
     // const inputs = popup == "book" ? book : become;
-    let inputs :field[];
+    let inputs: field[];
 
     switch (popup) {
         case "book a talent":
-            inputs = book;
+            inputs = bookAtalentFields;
+            message = `What kind of talent are you looking for? \n
+(max 100 characters)`;
             break;
         case "become a talent":
-            inputs = become;
+            inputs = becomeATalentFields;
+            message = `Tell us about yourself – and your goals! \n
+(max 100 characters)`;
             break;
-        case "get in touch":
-            inputs = contact;
+        case "get in contact":
+            inputs = contactFields;
+            message = `Tell us more... \n
+(max 100 characters)`;
             break;
     }
 
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+        const form = document.getElementById("form") as any;
+        const formData: any = {
+            requestType: form.requestType.value,
+            message: form.message.value,
+        };
+        inputs.forEach((input: any) => {
+            const name = input.name;
+            const value = form[name].value;
+            formData[name] = value;
+        });
+        sendEmail(formData);
+
+        form.reset();
+    };
+
     return (
-        <form className={classNames(styles.form, "hide-scrollbar")}>
+        <form className={classNames(styles.form)} onSubmit={handleSubmit} id="form">
             <div className={styles.inputsWraper}>
+                <input type="hidden" value={popup} id="requestType" hidden />
                 {inputs!.map((input) => {
                     if (input.type == "input") {
                         return (
                             <div className={styles.formInput}>
-                                <label htmlFor={input.name}>{input.name}</label>
-                                <input type="text" id={input.name} />
+                                <label htmlFor={input.name}></label>
+                                <input placeholder={input.name} type="text" id={input.name} />
                             </div>
                         );
                     } else {
                         return (
                             <div className={styles.formInput}>
-                                <label htmlFor={input.name}>{input.name}</label>
-                                <select id={input.name} className={styles.select}>
-                                    {input.options!.map((option: string) => (
-                                        <option value={option}>{option}</option>
-                                    ))}
-                                </select>
+                                {/* <label htmlFor={input.name}>{input.name}</label> */}
+                                <Select
+                                    label={input.name}
+                                    placeholder={input.placeholder!}
+                                    options={input.options!}
+                                />
                             </div>
                         );
                     }
@@ -128,7 +78,7 @@ const Form = (props: Iprops) => {
             </div>
 
             <div className={styles.messageContainer}>
-                <textarea placeholder="Your message" className={styles.message} />
+                <textarea placeholder={message} id="message" className={styles.message} />
                 <button type="submit" className={styles.sendBtn}>
                     send
                 </button>

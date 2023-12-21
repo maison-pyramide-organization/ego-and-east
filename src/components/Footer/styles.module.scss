@@ -1,137 +1,143 @@
 .footer {
-    width: 100%;
-    padding: 40px;
-    background-color: var(--grey-800);
-    color: var(--beige);
+  width: 100%;
+  margin-top: var(--lg-space);
+  padding: 32px 40px 24px;
+  background-color: black;
+  color: var(--beige);
 }
 .footer_wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  & > * {
+    width: 224px;
+  }
 }
 .citiesList {
-    flex-shrink: 0;
-    flex-basis: calc((100% - 40px * 3) / 4);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 .city {
-    h4 {
-        font-size: 16px;
-        text-transform: uppercase;
-    }
-    p {
-        margin-top: 6px;
-        font-size: 12px;
-        text-transform: uppercase;
-    }
-}
-.actionsList {
-    width: 100%;
-    display: flex;
-    gap: 40px;
+  h4 {
+    font-weight: 500;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
+  p {
+    margin-top: 6px;
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+  }
 }
 .action {
-    flex-basis: calc((100% - 40px * 2) / 3);
-    max-height: 114px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    h4 {
-        font-size: 14px;
-        font-weight: 400;
-        text-transform: uppercase;
-    }
-    button {
-        margin-top: auto;
-        background-color: var(--beige);
-        text-transform: uppercase;
-        padding: 8px 16px;
-        text-transform: uppercase;
-        font-size: 14px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  h4 {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  button {
+    margin-top: auto;
+    background-color: var(--beige);
+    text-transform: uppercase;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
 }
 .divider {
-    background-color: #4d4d4d;
-    height: 0.5px;
-    width: 100%;
-    margin: 32px 0px;
+  background-color: #4d4d4d;
+  height: 0.5px;
+  width: 100%;
+  margin: 24px 0px;
 }
 .footer_tail {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .copyright {
-    font-size: 12px;
-    text-transform: uppercase;
+  font-size: 12px;
+  text-transform: uppercase;
+  width: 224px;
 }
-.company {
-    font-size: 18px;
-    font-weight: 400;
-    white-space: nowrap;
-    color: white;
+
+.companyLogo {
+  fill: var(--beige);
+  width: 260px;
 }
 .socials {
-    display: flex;
-    font-size: 12px;
-    align-items: flex-start;
-    li {
-        padding: 0 8px;
-        text-transform: uppercase;
-        &:not(:last-child) {
-            border-right: 1px solid white;
-        }
+  width: 224px;
+  display: flex;
+  font-size: 12px;
+  align-items: flex-start;
+  li {
+    padding: 0 8px;
+    text-transform: uppercase;
+    &:first-child {
+      padding-left: 0;
     }
-    a {
-        color: white;
+    &:not(:last-child) {
+      border-right: 1px solid white;
     }
+  }
+  a {
+    color: var(--bbeige);
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .footer_wrapper {
-        flex-direction: column;
-        gap: 72px;
+  .footer_wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--md-space);
+    & > * {
+      width: 100%;
     }
-    .footer_tail {
-        flex-direction: column;
-        align-items: center;
-        gap: 16px;
+  }
+  .footer_tail {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .citiesList {
+    order: 2;
+    gap: 24px;
+  }
+  .city {
+    text-align: center;
+    h4 {
+      font-size: 16px;
     }
-    .citiesList {
-        order: 2;
-        gap: 24px;
+  }
+  .actionsList {
+    order: 1;
+    flex-direction: column;
+    gap: 56px;
+  }
+  .action {
+    align-items: center;
+    gap: 24px;
+    h4 {
+      text-align: center;
+      font-size: 16px;
     }
-    .city {
-        text-align: center;
-        h4 {
-            font-size: 16px;
-        }
-    }
-    .actionsList {
-        order: 1;
-        flex-direction: column;
-        gap: 56px;
-    }
-    .action {
-        align-items: center;
-        gap: 24px;
-        h4 {
-            text-align: center;
-            font-size: 16px;
-        }
-    }
-    .copyright {
-        order: 3;
-    }
-    .company {
-        order: 2;
-    }
-    .socials {
-        order: 1;
-    }
+  }
+  .copyright {
+    order: 3;
+    width: unset;
+  }
+  .company {
+    order: 2;
+  }
+  .socials {
+    width: unset;
+    order: 1;
+  }
 }
-
-// @media screen and (max-width: 1024px) {
-// }

@@ -1,38 +1,52 @@
 import { Iservice } from "../types/services";
 
 const services: Iservice[] = [
-    {
-        id: 1,
-        ref: "become_a_talent",
-        title: "talent management",
-        description:
-            "Our Brand Strategy service offers industry level expertise in profile building and personal brand elevation. We identify goals and create a strategic trajectory towards achieving these objectives all the while consulting on creative direction and styling inspiration as well as using our connections to the industry’s most relevant beauty, fashion and luxury brands to help build strategic relationships with key industry players.",
-        button: "become a talent",
-        popup: "become a talent",
-    },
-    {
-        id: 2,
-        ref: "book_a_talent",
-        title: "talent booking",
-        description:
-            "With our long-standing experience of organizing logistics for the Ready to Wear Men’s and Women’s as well as Haute Couture shows in New York, London, Milan and Paris, our Fashion Week service takes you to some of the industry’s most exclusive shows, presentations and events during the season.",
-        button: "book a talent",
-        popup: "book a talent",
-    },
-    {
-        id: 3,
-        ref: "fashion_week",
-        title: "fashion week service",
-        description:
-            "Our carefully curated selection of talents ranges from micro to macro digital influencers to celebrity talents. Our Talent Deck is a boutique selection of profiles offering high quality content, relevance and above all, substance.",
-    },
-    {
-        id: 4,
-        ref: "brand_strategy",
-        title: "brand strategy",
-        description:
-            "Beyond the exclusive talents represented by Ego & East, we offer Talent Booking on a wider scale for international events or activations.",
-    },
+  {
+    id: 1,
+    ref: "become_a_talent",
+    title: "talent management",
+    description:
+      "Our curated talent collection includes new faces, emerging talent, and established celebrities, actors, musicians, models and influencers. We tap into our distinguished connections and deep knowledge of the luxury, fashion and beauty industries to provide truly personalized management tailored to each individual.",
+    button: "become a talent",
+    popup: "become a talent",
+  },
+  {
+    id: 2,
+    ref: "book_a_talent",
+    title: "talent booking",
+    description:
+      // "We provide top-caliber talent for high-end fashion and luxury brands expanding their presence in MENA and beyond. Our curated talent deck includes exclusive talents, established creatives, celebrities and new faces. We build strong and trusted long-term relationships with clients around the world.",
+      "We provide top-caliber talent for global and regional events, campaigns as well as influencer marketing. Our curated talent deck includes exclusive talents, established creatives, international celebrities and new faces. We build strong and trusted long-term relationships with our clients around the world.",
+    button: "book a talent",
+    popup: "book a talent",
+  },
+  {
+    id: 3,
+    ref: "fashion_week",
+    title: "fashion week services",
+    description:
+      "With extensive experience of Haute Couture and Ready-to-Wear shows in New York, London, Milan and Paris, Ego & East takes you to the heart of Fashion Week’s most exclusive shows, presentations and seasonal events.",
+    button: "get in contact",
+    popup: "get in contact",
+  },
+  {
+    id: 4,
+    ref: "brand_strategy",
+    title: "brand strategy",
+    description:
+      "We help talented storytellers and creatives elevate their personal brand to be consistent, compelling and authentic, amplifying their resonance and reach. We identify their objectives, then craft a strategic trajectory to success, consulting on creative direction and styling inspiration. Thanks to our strong connections with top-tier luxury, fashion and beauty brands, we can help our talents enhance their profile through meaningful relationships with key industry players.",
+    button: "get in contact",
+    popup: "get in contact",
+  },
+  {
+    id: 5,
+    ref: "influencer_marketing",
+    title: "influencer marketing services",
+    description:
+      "We harness the power of digital talents with our tailor-made Influencer Marketing Strategies, connecting brands with the perfect influencers to achieve specific goals. From concept to reporting, we amplify your brand’s DNA and vision, simplifying the process and maximizing the impact.",
+    button: "get in contact",
+    popup: "get in contact",
+  },
 ];
 
 export default services;

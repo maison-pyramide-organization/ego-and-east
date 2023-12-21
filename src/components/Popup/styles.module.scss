@@ -1,59 +1,70 @@
-.popup {
+.overlay {
     width: 100vw;
-    height: 100vh;
-    background-color: var(--beige);
+    height: 100dvh;
     position: fixed;
     top: 0;
     left: 0;
-    padding: 0 40px;
-    z-index: 999;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+    display: grid;
+    place-content: center;
+}
+.popup {
+    overflow: auto;
+    width: 80vw;
+    max-width: 1000px;
+    max-height: 95dvh;
+    background-color: var(--beige);
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
 }
 .popupHeader {
+    padding-top: 40px;
     width: 100%;
-    padding: 40px 0px 80px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
 }
+.logoContainer {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
 .logo {
-    width: 160px;
+    width: 100%;
     height: auto;
 }
-.logoText {
-    margin-top: 24px;
-    font-size: 16px;
-    text-transform: capitalize;
-    font-weight: normal;
-}
-.logoTextBold {
-    text-transform: uppercase;
-    font-weight: bold;
+.MpCompanyLogo {
+    width: 100%;
 }
 .closeIcon {
-    width: 40px;
+    width: 32px;
     height: auto;
+    stroke: black;
     cursor: pointer;
 }
 
 // POPUP BODY
 .popupBody {
+    width: 100%;
     display: flex;
-    gap: 40px;
+    gap: 30px;
     align-items: flex-start;
-    height: calc(100dvh - 173px);
-    padding-bottom: 24px;
 }
 .popupTitle {
-    font-size: 48px;
+    font-family: "Suisse";
+    font-size: 32px;
     white-space: nowrap;
     writing-mode: vertical-rl;
     text-orientation: mixed;
     text-transform: uppercase;
-    letter-spacing: 2px;
     transform: rotate(180deg);
     flex-shrink: 0;
-    align-self: flex-start;
-    margin: auto 0px;
+    align-self: flex-end;
+    margin-bottom: 26px;
 }
 
 /***************/
@@ -62,15 +73,18 @@
 
 @media screen and (max-width: 1024px) {
     .popup {
-        padding: 0 24px;
-    }
-    .popupHeader {
-        padding: 40px 0px;
+        width: 100vw;
+        height: 100dvh;
+        max-height: unset;
+        padding-left: 24px;
+        padding-right: 24px;
     }
     .popupTitle {
         writing-mode: unset;
         transform: unset;
         align-self: unset;
+        margin: 0;
+        font-size: 40px;
     }
     .popupBody {
         flex-direction: column;
@@ -79,9 +93,26 @@
     }
 }
 
+/***************/
+/**** MOBILE ****/
+/*************/
+
 @media screen and (max-width: 768px) {
     .popupTitle {
-        font-size: 24px;
-        letter-spacing: 1px;
+        font-size: 28px;
+    }
+    .popupHeader {
+        justify-content: center;
+    }
+    .closeIcon {
+        position: absolute;
+        right: 16px;
+    }
+    .logoContainer {
+        width: 180px;
+        gap: 14px;
+    }
+    .popupBody {
+        gap: 32px;
     }
 }

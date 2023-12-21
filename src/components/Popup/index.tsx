@@ -16,14 +16,15 @@ const Popup = () => {
         setPopup(null);
     };
 
-
     return (
-        <div className={classNames(styles.popup, "disable-scroll")}>
-            <Header close={closePopup} />
-            <main className={styles.popupBody}>
-                <h2 className={styles.popupTitle}>{popup}</h2>
-                <Form popup={popup} />
-            </main>
+        <div className={styles.overlay}>
+            <div className={classNames(styles.popup, "disable-scroll")}>
+                <Header close={closePopup} />
+                <main className={styles.popupBody}>
+                    <h2 className={styles.popupTitle}>{popup}</h2>
+                    <Form popup={popup} />
+                </main>
+            </div>
         </div>
     );
 };

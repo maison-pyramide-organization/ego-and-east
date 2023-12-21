@@ -3,41 +3,39 @@ $animation-time: 0.1s;
 
 //
 .header {
-    padding-top: 24px;
-    position: relative;
+    padding: 24px 40px;
+    position: sticky;
+    background-color: black;
+    color: white;
+    top: 0;
+    left: 0;
     z-index: 999;
 }
 .header_wrapper {
     width: 100%;
-    z-index: 99;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 .nav {
-    width: 307px;
+    width: 272px;
     display: flex;
     justify-content: space-between;
     gap: 32px;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    padding: 10px 2px;
     a {
+        color: white;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: 14px;
+        text-wrap: nowrap;
         cursor: pointer;
     }
 }
 
-.logoContainer {
-    width: 160px;
-}
 .logo {
-    width: 100%;
-}
-.lightLogo {
-    g {
-        fill: var(--beige);
+    width: 140px;
+    fill: white;
+    @media (width > 1024px) {
+        width: 160px;
     }
 }
 
@@ -45,7 +43,7 @@ $animation-time: 0.1s;
     display: none;
 }
 .humIcon {
-    width: 40px;
+    width: 32px;
     aspect-ratio: 1;
 }
 .closeIcon {
@@ -69,4 +67,7 @@ $animation-time: 0.1s;
 /// MOBILE //
 ////////////
 @media screen and (max-width: 600px) {
+    .header {
+        padding: 16px;
+    }
 }

@@ -7,14 +7,27 @@ const LeftNav = () => {
     const { setPopup } = useContext(PopupContext) as IPopupContext;
 
     const handleContactClick = () => {
-        setPopup("get in touch");
+        setPopup("get in contact");
     };
+
+    const handleLinkClick = (id: string) => {
+        let element = document.getElementById(id)!;
+        element.scrollIntoView();
+        window.scrollBy(0, -100);
+    };
+
     return (
         <nav className={styles.nav}>
-            <a className={classNames(styles.navLink, "navLink")} href="#services">
+            <a
+                className={classNames(styles.navLink, "navLink")}
+                onClick={() => handleLinkClick("services")}
+            >
                 services
             </a>
-            <a className={classNames(styles.navLink, "navLink")} href="#about">
+            <a
+                className={classNames(styles.navLink, "navLink")}
+                onClick={() => handleLinkClick("about")}
+            >
                 about us
             </a>
             <a className={classNames(styles.navLink, "navLink")} onClick={handleContactClick}>
