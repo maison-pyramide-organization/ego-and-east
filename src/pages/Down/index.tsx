@@ -14,7 +14,7 @@ const Down = () => {
                     <a href="https://www.instagram.com/egoandeast/">instagram</a>
                 </li>
                 <li>
-                    <a href="">linkedin</a>
+                    <a href="https://www.linkedin.com/company/maison-pyramide">linkedin</a>
                 </li>
             </ul>
         </main>
