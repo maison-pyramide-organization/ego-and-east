@@ -7,7 +7,7 @@ main {
 }
 .logo {
     display: block;
-    width: clamp(260px, 40%, 400px );
+    width: clamp(260px, 40%, 300px );
     height: auto;
 }
 .company {
@@ -16,7 +16,7 @@ main {
 }
 .title {
     text-transform: uppercase;
-    font-size: clamp(40px, 6vw, 120px);
+    font-size: clamp(40px, 5vw, 100px);
     margin-top: 80px;
 }
 .socials {
