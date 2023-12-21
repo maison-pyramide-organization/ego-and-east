@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-// import images from "../../data/gallery";
 import styles from "./styles.module.scss";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ReactComponent as IgIcon } from "../../assets/Icons/instagram.svg";
-// import animate from "./animation";
 import classNames from "classnames";
 
 export interface InstaItem {
@@ -26,7 +22,6 @@ const Gallery = () => {
             const mediaUrl = `https://graph.instagram.com/${id}?access_token=${accessToken}&fields=media_url,media_type,permalink`;
             const res = await fetch(mediaUrl);
             const json = await res.json();
-
             const instaItem = {
                 permalink: json.permalink,
                 mediaUrl: json.media_url,
@@ -34,6 +29,7 @@ const Gallery = () => {
             };
             return instaItem;
         };
+
         const doFetch = async () => {
             if (!userId || !accessToken) {
                 console.log("userId or accessToken is undefined: ", { userId, accessToken });
@@ -43,10 +39,11 @@ const Gallery = () => {
             const res = await fetch(instaUrl);
             const json = await res.json();
             let data = json.data;
+            console.log(data);
 
             const fetchedItems: InstaItem[] = [];
             data = data?.slice(0, 16);
-            const ids = data.map((item: any) => item.id);
+            const ids = data?.map((item: any) => item.id);
 
             for (const id of ids) {
                 const instaItem = await fetchMedia(id);
@@ -56,11 +53,6 @@ const Gallery = () => {
         };
         doFetch();
     }, [userId, accessToken, instaUrl]);
-
-    // useEffect(() => {
-    //     gsap.registerPlugin(ScrollTrigger);
-    //     animate();
-    // }, [instaItems]);
 
     return (
         <section className={classNames("section", styles.gallerySection)}>
