@@ -10,10 +10,9 @@ export interface InstaItem {
 }
 const Gallery = () => {
     const ig_url = "https://www.instagram.com/egoandeast/";
-    const accessToken =
-        // "IGQWRQU2x1azV5OXlvMXBVVFluU3Y0SGlqTlZAUUDdXZAXBPTGJWcFZAfSV9tMndMMDFMaERNSXVtWDVxTmtaLVBIbkp0bnNHOEkxOGM2NVh3aVA1SWVIYW5wVTVvcDNYRU1WTnJsYkt2dXFPaVowTUMzWlpXMTE5ZAUkZD";
-        "IGQWROR2pTTGFzNG1fejJ1V3dGNHZA6bmlHQVpaeTl4emVucGF4ZAzl5WnZApSG9IdUphaW1mQWw4eUJ5bEFLR2trSDh1cHAxa0tQWC1GdEc0T0lUd3ZAhbHZANQkUxczBFY2hJdU50VDZAES3dCbXZASYWFmdUhNVjBtLUEZD";
-    const userId = "23949713848007342";
+    const userId = import.meta.env.VITE_USER_ID;
+    const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
+
     const instaUrl = `https://graph.instagram.com/${userId}/media?access_token=${accessToken}`;
 
     const [instaItems, setInstaItems] = useState<InstaItem[]>([]);
@@ -40,7 +39,6 @@ const Gallery = () => {
             const res = await fetch(instaUrl);
             const json = await res.json();
             let data = json.data;
-            console.log(data);
 
             const fetchedItems: InstaItem[] = [];
             data = data?.slice(0, 16);
