@@ -12,9 +12,7 @@ const Gallery = () => {
     const ig_url = "https://www.instagram.com/egoandeast/";
     const userId = import.meta.env.VITE_USER_ID;
     const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
-
     const instaUrl = `https://graph.instagram.com/${userId}/media?access_token=${accessToken}`;
-
     const [instaItems, setInstaItems] = useState<InstaItem[]>([]);
 
     useEffect(() => {
@@ -50,41 +48,47 @@ const Gallery = () => {
             }
             setInstaItems(fetchedItems);
         };
-        doFetch();
+        doFetch().catch((err) => {
+            console.log("merr: ", err);
+        });
     }, [userId, accessToken, instaUrl]);
 
     return (
-        <section className={classNames("section", styles.gallerySection)}>
-            <div
-                className={classNames(styles.galleryContainer, "hide-scrollbar")}
-                id="gallery-container"
-            >
-                <div id="gallery" className={styles.gallery}>
-                    {/* IMAGES  */}
-                    {instaItems.map((image) => {
-                        if (image.mediaType !== "VIDEO" && image.mediaUrl) {
-                            return (
-                                <a
-                                    target="_blank"
-                                    href={image.permalink}
-                                    className={styles.imageWraper}
-                                    key={image.permalink}
-                                    style={{ backgroundImage: `url(${image.mediaUrl})` }}
-                                >
-                                    <IgIcon className={styles.igIcon} />
-                                </a>
-                            );
-                        }
-                    })}
-                </div>
-            </div>
-            <a href={ig_url} target="_default" className={styles.igLink}>
-                <span className={styles.igUserName}>@egoandeast</span>
-                <button type="button" className={styles.followBtn}>
-                    follow us
-                </button>
-            </a>
-        </section>
+        <>
+            {instaItems.length && (
+                <section className={classNames("section", styles.gallerySection)}>
+                    <div
+                        className={classNames(styles.galleryContainer, "hide-scrollbar")}
+                        id="gallery-container"
+                    >
+                        <div id="gallery" className={styles.gallery}>
+                            {/* IMAGES  */}
+                            {instaItems.map((image) => {
+                                if (image.mediaType !== "VIDEO" && image.mediaUrl) {
+                                    return (
+                                        <a
+                                            target="_blank"
+                                            href={image.permalink}
+                                            className={styles.imageWraper}
+                                            key={image.permalink}
+                                            style={{ backgroundImage: `url(${image.mediaUrl})` }}
+                                        >
+                                            <IgIcon className={styles.igIcon} />
+                                        </a>
+                                    );
+                                }
+                            })}
+                        </div>
+                    </div>
+                    <a href={ig_url} target="_default" className={styles.igLink}>
+                        <span className={styles.igUserName}>@egoandeast</span>
+                        <button type="button" className={styles.followBtn}>
+                            follow us
+                        </button>
+                    </a>
+                </section>
+            )}
+        </>
     );
 };
 export default Gallery;
