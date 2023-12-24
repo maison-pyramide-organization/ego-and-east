@@ -1,61 +1,31 @@
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { ReactComponent as IgIcon } from "../../assets/Icons/instagram.svg";
 import classNames from "classnames";
+import posts from "../../data/posts.json";
+import fetchPosts from "./utils/fetchPosts";
+import { post } from "../../types/post";
+import Post from "./post";
 
-export interface InstaItem {
-    permalink: string;
-    mediaUrl: string;
-    mediaType: string;
-}
 const Gallery = () => {
     const ig_url = "https://www.instagram.com/egoandeast/";
     const userId = import.meta.env.VITE_USER_ID;
     const accessToken = import.meta.env.VITE_ACCESS_TOKEN;
-    const instaUrl = `https://graph.instagram.com/${userId}/media?access_token=${accessToken}`;
-    const [instaItems, setInstaItems] = useState<InstaItem[]>([]);
+    const [igPosts, setIgPosts] = useState<post[] | null>(null);
 
     useEffect(() => {
-        const fetchMedia = async (id: string) => {
-            const mediaUrl = `https://graph.instagram.com/${id}?access_token=${accessToken}&fields=media_url,media_type,permalink`;
-            const res = await fetch(mediaUrl);
-            const json = await res.json();
-            const instaItem = {
-                permalink: json.permalink,
-                mediaUrl: json.media_url,
-                mediaType: json.media_type,
-            };
-            return instaItem;
-        };
-
-        const doFetch = async () => {
-            if (!userId || !accessToken) {
-                console.log("userId or accessToken is undefined: ", { userId, accessToken });
-                return;
-            }
-
-            const res = await fetch(instaUrl);
-            const json = await res.json();
-            let data = json.data;
-
-            const fetchedItems: InstaItem[] = [];
-            data = data?.slice(0, 16);
-            const ids = data?.map((item: any) => item.id);
-
-            for (const id of ids) {
-                const instaItem = await fetchMedia(id);
-                fetchedItems.push(instaItem);
-            }
-            setInstaItems(fetchedItems);
-        };
-        doFetch().catch((err) => {
-            console.log("merr: ", err);
-        });
-    }, [userId, accessToken, instaUrl]);
+        fetchPosts(userId, accessToken)
+            .then((posts) => {
+                setIgPosts(posts);
+            })
+            .catch((err) => {
+                console.log(err);
+                setIgPosts(posts);
+            });
+    }, []);
 
     return (
         <>
-            {instaItems.length && (
+            {igPosts && (
                 <section className={classNames("section", styles.gallerySection)}>
                     <div
                         className={classNames(styles.galleryContainer, "hide-scrollbar")}
@@ -63,21 +33,10 @@ const Gallery = () => {
                     >
                         <div id="gallery" className={styles.gallery}>
                             {/* IMAGES  */}
-                            {instaItems.map((image) => {
-                                if (image.mediaType !== "VIDEO" && image.mediaUrl) {
-                                    return (
-                                        <a
-                                            target="_blank"
-                                            href={image.permalink}
-                                            className={styles.imageWraper}
-                                            key={image.permalink}
-                                            style={{ backgroundImage: `url(${image.mediaUrl})` }}
-                                        >
-                                            <IgIcon className={styles.igIcon} />
-                                        </a>
-                                    );
-                                }
-                            })}
+
+                            {igPosts.map((post, index) => (
+                                <Post post={post} key={index} />
+                            ))}
                         </div>
                     </div>
                     <a href={ig_url} target="_default" className={styles.igLink}>
