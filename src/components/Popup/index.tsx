@@ -13,16 +13,19 @@ const Popup = () => {
   document.body.classList.toggle("disable-scroll");
 
   const closePopup = () => {
-    document.body.classList.toggle("disable-scroll");
+    document.body.classList.remove("disable-scroll");
     setPopup(null);
     setIsSent(false);
   };
+
   const bodyClasses = isSent
     ? classNames(styles.popupBody, styles.hide)
     : classNames(styles.popupBody);
+
   const sentContainerClasses = isSent
     ? classNames(styles.sent_container)
     : classNames(styles.sent_container, styles.hide);
+
   const viewSentMessage = () => {
     setIsSent(true);
     setTimeout(closePopup, 1000);

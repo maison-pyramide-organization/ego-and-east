@@ -16,7 +16,6 @@ interface Iprops {
 const Form = (props: Iprops) => {
   const { popup, viewSentMessage } = props;
   let message = "";
-  // const inputs = popup == "book" ? book : become;
   let inputs: field[];
 
   switch (popup) {
@@ -50,7 +49,6 @@ const Form = (props: Iprops) => {
       formData[name] = value;
     });
 
-    
     sendEmail(formData);
     viewSentMessage();
 
