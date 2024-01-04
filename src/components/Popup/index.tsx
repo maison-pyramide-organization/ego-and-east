@@ -1,31 +1,50 @@
 import styles from "./styles.module.scss";
 import classNames from "classnames";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { IPopupContext, PopupContext } from "../../context/PopupContext";
 import Header from "./Header";
 import Form from "./Form";
 
 const Popup = () => {
-    const { popup, setPopup } = useContext(PopupContext) as IPopupContext;
+  const { popup, setPopup } = useContext(PopupContext) as IPopupContext;
+  const [isSent, setIsSent] = useState(false);
 
-    if (!popup) return null;
+  if (!popup) return null;
+  document.body.classList.toggle("disable-scroll");
+
+  const closePopup = () => {
     document.body.classList.toggle("disable-scroll");
+    setPopup(null);
+    setIsSent(false);
+  };
+  const bodyClasses = isSent
+    ? classNames(styles.popupBody, styles.hide)
+    : classNames(styles.popupBody);
+  const sentContainerClasses = isSent
+    ? classNames(styles.sent_container)
+    : classNames(styles.sent_container, styles.hide);
+  const viewSentMessage = () => {
+    setIsSent(true);
+    setTimeout(closePopup, 1000);
+  };
 
-    const closePopup = () => {
-        document.body.classList.toggle("disable-scroll");
-        setPopup(null);
-    };
+  return (
+    <div className={styles.overlay}>
+      <div className={classNames(styles.popup, "disable-scroll")}>
+        <Header close={closePopup} />
 
-    return (
-        <div className={styles.overlay}>
-            <div className={classNames(styles.popup, "disable-scroll")}>
-                <Header close={closePopup} />
-                <main className={styles.popupBody}>
-                    <h2 className={styles.popupTitle}>{popup}</h2>
-                    <Form popup={popup} />
-                </main>
-            </div>
+        <main className={bodyClasses}>
+          <h2 className={styles.popupTitle}>{popup}</h2>
+          <Form popup={popup} viewSentMessage={viewSentMessage} />
+        </main>
+
+        {/* MESSAGE SENT */}
+        <div className={sentContainerClasses}>
+          <h3 className={styles.sent_text}>We’ve received your message!</h3>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
+
 export default Popup;
