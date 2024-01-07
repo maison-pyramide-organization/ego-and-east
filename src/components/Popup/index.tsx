@@ -28,7 +28,7 @@ const Popup = () => {
 
   const viewSentMessage = () => {
     setIsSent(true);
-    // setTimeout(closePopup, 2500);
+    setTimeout(closePopup, 2500);
   };
 
   return (

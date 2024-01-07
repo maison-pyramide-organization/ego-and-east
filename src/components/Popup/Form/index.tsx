@@ -50,7 +50,7 @@ const Form = (props: Iprops) => {
       formData[name] = value;
     });
 
-    // sendEmail(formData);
+    sendEmail(formData);
     viewSentMessage();
 
     form.reset();
