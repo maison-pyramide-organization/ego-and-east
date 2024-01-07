@@ -10,7 +10,7 @@ const Popup = () => {
   const [isSent, setIsSent] = useState(false);
 
   if (!popup) return null;
-  document.body.classList.toggle("disable-scroll");
+  document.body.classList.add("disable-scroll");
 
   const closePopup = () => {
     document.body.classList.remove("disable-scroll");
@@ -28,7 +28,7 @@ const Popup = () => {
 
   const viewSentMessage = () => {
     setIsSent(true);
-    setTimeout(closePopup, 1000);
+    // setTimeout(closePopup, 2500);
   };
 
   return (

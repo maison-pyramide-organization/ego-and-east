@@ -38,6 +38,7 @@ const Form = (props: Iprops) => {
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    // GET FORM DATA
     const form = document.getElementById("form") as any;
     const formData: any = {
       requestType: form.requestType.value,
@@ -49,7 +50,7 @@ const Form = (props: Iprops) => {
       formData[name] = value;
     });
 
-    sendEmail(formData);
+    // sendEmail(formData);
     viewSentMessage();
 
     form.reset();

@@ -25,7 +25,7 @@ const Home = () => {
         <Hero />
         <Services />
         <About />
-        <Gallery />
+        {/* <Gallery /> */}
         <Music />
       </main>
       <Footer />
