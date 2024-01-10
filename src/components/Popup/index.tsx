@@ -41,6 +41,7 @@ const Popup = () => {
           <Form popup={popup} viewSentMessage={viewSentMessage} />
         </main>
 
+
         {/* MESSAGE SENT */}
         <div className={sentContainerClasses}>
           <h3 className={styles.sent_text}>We’ve received your message!</h3>

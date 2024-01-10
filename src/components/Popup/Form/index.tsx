@@ -7,6 +7,8 @@ import {
   contactFields,
 } from "../../../data/popups";
 import sendEmail from "../utils/sendEmail";
+import { useState } from "react";
+import checkFormData from "../utils/checkFormData";
 
 interface Iprops {
   popup: string;
@@ -17,6 +19,7 @@ const Form = (props: Iprops) => {
   const { popup, viewSentMessage } = props;
   let message = "";
   let inputs: field[];
+  const [error, setError] = useState(false);
 
   switch (popup) {
     case "book a talent":
@@ -37,6 +40,7 @@ const Form = (props: Iprops) => {
   }
 
   const handleSubmit = (e: any) => {
+    setError(false);
     e.preventDefault();
     // GET FORM DATA
     const form = document.getElementById("form") as any;
@@ -44,11 +48,18 @@ const Form = (props: Iprops) => {
       requestType: form.requestType.value,
       message: form.message.value,
     };
+    // Input Data
     inputs.forEach((input: any) => {
       const name = input.name;
       const value = form[name].value;
       formData[name] = value;
     });
+
+    const isValid = checkFormData(formData);
+    if (!isValid) {
+      setError(true);
+      return;
+    }
 
     sendEmail(formData);
     viewSentMessage();
@@ -58,16 +69,21 @@ const Form = (props: Iprops) => {
 
   return (
     <form className={classNames(styles.form)} onSubmit={handleSubmit} id="form">
+      {/* FORM INPUTS */}
       <div className={styles.inputsWraper}>
         <input type="hidden" value={popup} id="requestType" hidden />
         {inputs!.map((input) => (
-          <div className={styles.formInput} key={input.name}>
-            <label htmlFor={input.name}></label>
-            <input placeholder={input.name} type="text" id={input.name} />
-          </div>
+          <input
+            placeholder={input.placeholder}
+            type="text"
+            id={input.name}
+            key={input.name}
+            className={styles.formInput}
+          />
         ))}
       </div>
 
+      {/* FORM MESSAGE */}
       <div className={styles.messageContainer}>
         <textarea
           placeholder={message}
@@ -78,6 +94,13 @@ const Form = (props: Iprops) => {
           send
         </button>
       </div>
+
+      {/* FORM ERROR */}
+      {error && (
+        <div className={styles.form_error}>
+          Please fill all the feilds above!
+        </div>
+      )}
     </form>
   );
 };

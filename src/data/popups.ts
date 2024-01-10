@@ -37,14 +37,15 @@ export const becomeATalentFields: field[] = [
         placeholder: "name",
     },
     {
-        name: "surname",
-        placeholder: "surname",
+        name: "igUsername",
+        placeholder: "IG username",
     },
     {
         name: "email",
         placeholder: "email",
     },
 ];
+
 export const contactFields: field[] = [
     {
         name: "subject",
