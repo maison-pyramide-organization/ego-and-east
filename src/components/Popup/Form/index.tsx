@@ -105,7 +105,7 @@ const Form = (props: Iprops) => {
       {/* FORM ERROR */}
       {error && (
         <div className={styles.form_error}>
-          Please fill all the feilds above!
+          Please fill all the fields above!
         </div>
       )}
     </form>
