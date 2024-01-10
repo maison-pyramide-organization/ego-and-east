@@ -1,47 +1,51 @@
 import classNames from "classnames";
 import styles from "./styles.module.scss";
 import { field } from "../../../types/fields";
-import { becomeATalentFields, bookAtalentFields, contactFields } from "../../../data/popups";
+import {
+  becomeATalentFields,
+  bookAtalentFields,
+  contactFields,
+} from "../../../data/popups";
 import sendEmail from "../utils/sendEmail";
 import { useRef } from "react";
 import { useState } from "react";
 import checkFormData from "../utils/checkFormData";
 
 interface Iprops {
-    popup: string;
-    viewSentMessage: () => void;
+  popup: string;
+  viewSentMessage: () => void;
 }
 
 const Form = (props: Iprops) => {
-    const formRef = useRef(null);
+  const formRef = useRef(null);
   const { popup, viewSentMessage } = props;
   let message = "";
   let inputs: field[];
   const [error, setError] = useState(false);
 
-    switch (popup) {
-        case "book a talent":
-            inputs = bookAtalentFields;
-            message = `What kind of talent are you looking for? \n
+  switch (popup) {
+    case "book a talent":
+      inputs = bookAtalentFields;
+      message = `What kind of talent are you looking for? \n
 (max 100 characters)`;
-            break;
-        case "become a talent":
-            inputs = becomeATalentFields;
-            message = `Tell us about yourself – and your goals! \n
+      break;
+    case "become a talent":
+      inputs = becomeATalentFields;
+      message = `Tell us about yourself – and your goals! \n
 (max 100 characters)`;
-            break;
-        case "get in contact":
-            inputs = contactFields;
-            message = `Tell us more... \n
+      break;
+    case "get in contact":
+      inputs = contactFields;
+      message = `Tell us more... \n
 (max 100 characters)`;
-            break;
-    }
+      break;
+  }
 
   const handleSubmit = (e: any) => {
     setError(false);
     e.preventDefault();
     // GET FORM DATA
-    const form = document.getElementById("form") as any;
+    const form = formRef.current as any;
     const formData: any = {
       requestType: form.requestType.value,
       message: form.message.value,
@@ -59,14 +63,19 @@ const Form = (props: Iprops) => {
       return;
     }
 
-        sendEmail(formData);
-        viewSentMessage();
+    sendEmail(formData);
+    viewSentMessage();
 
-        form.reset();
-    };
+    form.reset();
+  };
 
   return (
-    <form className={classNames(styles.form)} onSubmit={handleSubmit} id="form">
+    <form
+      className={classNames(styles.form)}
+      onSubmit={handleSubmit}
+      id="form"
+      ref={formRef}
+    >
       {/* FORM INPUTS */}
       <div className={styles.inputsWraper}>
         <input type="hidden" value={popup} id="requestType" hidden />
