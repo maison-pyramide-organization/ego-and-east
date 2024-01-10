@@ -15,10 +15,8 @@ const sendEmail = async (formData: any) => {
     igUsername: formData.igUsername || "-",
     talent: formData.talent || "-",
   };
-  
-  console.log(templateParams);
 
-  // await emailjs.send(serviceID, templateID, templateParams, publicKey);
+  await emailjs.send(serviceID, templateID, templateParams, publicKey);
 };
 
 export default sendEmail;
