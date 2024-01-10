@@ -40,10 +40,11 @@ const Popup = () => {
             <div className={classNames(styles.popup, "disable-scroll")} ref={popupRef}>
                 <Header close={closePopup} />
 
-                <main className={bodyClasses}>
-                    <h2 className={styles.popupTitle}>{popup}</h2>
-                    <Form popup={popup} viewSentMessage={viewSentMessage} />
-                </main>
+        <main className={bodyClasses}>
+          <h2 className={styles.popupTitle}>{popup}</h2>
+          <Form popup={popup} viewSentMessage={viewSentMessage} />
+        </main>
+
 
                 {/* MESSAGE SENT */}
                 <div className={sentContainerClasses}>
