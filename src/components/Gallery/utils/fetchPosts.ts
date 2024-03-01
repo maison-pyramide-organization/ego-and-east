@@ -9,6 +9,7 @@ const fetchPosts = async (userId: string, accessToken: string): Promise<post[] |
 
         const res = await fetch(igUrl);
         const data = await res.json();
+        if (data?.error) throw new Error(data.error.message);
         const postsData = data.data?.slice(0, 20);
         const postsIds = postsData?.map((post: any) => post.id);
 
