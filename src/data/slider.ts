@@ -6,22 +6,14 @@ import image5 from "../assets/Images/slider/5.webp";
 import image6 from "../assets/Images/slider/6.webp";
 import image7 from "../assets/Images/slider/7.webp";
 import image8 from "../assets/Images/slider/8.webp";
-import image9 from "../assets/Images/slider/9.webp";
-import image10 from "../assets/Images/slider/10.webp";
-import image11 from "../assets/Images/slider/11.webp";
-import image12 from "../assets/Images/slider/12.webp";
 
 export default [
     { img: image1, title: "NATHALIE FANJ X PRADA" },
     { img: image2, title: "ALEXANDRA PEREIRA X LOEWE" },
-    { img: image3, title: "KAREN WAZEN X GUERLAIN" },
-    { img: image4, title: "ZEYNE X YUNG X MIU MIU" },
-    { img: image5, title: "NOOR TAHER X FENDI" },
+    { img: image3, title: "NOOR TAHER FOR VALENTINO" },
+    { img: image4, title: "JAMILA AWAD FOR ELLE ARABIA" },
+    { img: image5, title: "AMINA KHALIL FOR TONY WARD COUTURE" },
     { img: image6, title: "NATHALIE FANJ X PRADA" },
-    { img: image7, title: "ALEXANDRA PEREIRA X LOEWE" },
-    { img: image8, title: "KAREN WAZEN X GUERLAIN" },
-    { img: image9, title: "NOOR TAHER X FENDI" },
-    { img: image10, title: "NATHALIE FANJ X PRADA" },
-    { img: image11, title: "ALEXANDRA PEREIRA X LOEWE" },
-    { img: image12, title: "NOOR TAHER X FENDI" },
+    { img: image7, title: "ZEYNE FOR GUCCI" },
+    { img: image8, title: "KAREN WAZEN FOR JAMALOUKI" },
 ];
