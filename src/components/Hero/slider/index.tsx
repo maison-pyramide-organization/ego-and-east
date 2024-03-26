@@ -1,6 +1,5 @@
 import styles from "./styles.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import sliderImages from "../../../data/slider";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
 
