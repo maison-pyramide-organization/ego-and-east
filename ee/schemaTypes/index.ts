@@ -1,2 +1,4 @@
 import slide from './slide'
-export const schemaTypes = [slide]
+import service from './service'
+
+export const schemaTypes = [slide, service]
