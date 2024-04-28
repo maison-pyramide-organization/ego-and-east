@@ -14,6 +14,7 @@ const Services = () => {
       setServices(services);
     });
   }, []);
+
   return (
     <section className={classNames(styles.services, "section")} id="services">
       <h1 className={styles.title}>our services</h1>
