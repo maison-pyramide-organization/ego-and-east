@@ -14,26 +14,33 @@ const About = () => {
         {/* IMAGE CONTAINER */}
         <div className={styles.textContainer}>
           <p className={styles.text}>
-            Co-founders Reem and Natalya Kanj have propelled Ego & East into one
-            of the most prominent and reputable talent management agencies in
-            the Middle East. The Lebanese sisters and business partners have
-            crafted an innovative approach to talent management, fuelled by
-            positive collaboration and underpinned by strategic insights from 24
-            years of combined experience spanning from London to the Middle
-            East. They’ve built a roster of the region’s most vibrant and
-            exciting talent.
+            Reem and Natalya Kanj, Lebanese sisters and business partners, have
+            propelled Ego & East into one of the most prominent and reputable
+            talent management and booking agencies in the Middle East. Their
+            innovative approach to talent management, influenced by their
+            extensive experience in London and the MENA region, has solidified
+            Ego & East as a leader in Middle East and GCC talent management,
+            particularly within the KSA. Ego & East connects top luxury, beauty,
+            and fashion brands with the most compelling talent across the MENA
+            region, including influencers, celebrities, actors, musicians, and
+            creatives. As a celebrity and brand ambassador management agency,
+            they specialize in elevating brands through influencer marketing and
+            strategic talent partnerships.
           </p>
           <p className={styles.text}>
             Their distinctively mindful – yet tenacious – approach to brand
-            elevation has seen them featured on the pages of Vogue Business,
-            Emirates Woman, Vogue Arabia, Grazia, and Cosmopolitan, as well as
-            guest lecture at one the world’s most prestigious fashion schools,
-            Istituto Marangoni.
+            elevation has earned them features in leading publications such as
+            Vogue Business, Emirates Woman, Vogue Arabia, Grazia, and
+            Cosmopolitan. Additionally, they have been recognized for their
+            expertise in fashion week services and invited to guest lecture at
+            Istituto Marangoni, one of the world's most prestigious fashion
+            schools.
           </p>
           <p className={styles.text}>
-            Ego & East has now embarked on an exciting new adventure,
-            merging with leading agency Maison Pyramide in what is set to be
-            ‘one of the most forward-thinking mergers in the industry’.
+            Recently, Ego & East embarked on an exciting new venture, merging
+            with the leading agency Maison Pyramide. This partnership is set to
+            become ‘one of the most forward-thinking mergers in the talent
+            management and influencer marketing industry’.
           </p>
         </div>
       </div>
