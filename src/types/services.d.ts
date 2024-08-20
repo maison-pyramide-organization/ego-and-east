@@ -1,8 +1,7 @@
 export interface Iservice {
-    id: number;
-    title: string;
-    description: string;
-    ref: string;
-    button?: string;
-    popup?: string;
+  index: number;
+  title: string;
+  body: string;
+  cta?: string;
+  popup?: string;
 }
