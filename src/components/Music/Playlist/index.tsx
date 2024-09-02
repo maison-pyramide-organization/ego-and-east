@@ -10,14 +10,16 @@ interface Iprops {
 
 const Playlist = (props: Iprops) => {
   const { playlist } = props;
+  console.log("p", playlist.image);
+
   const playBtnClass =
-    playlist.playBtn == "black"
+    playlist.button_color == "black"
       ? classNames(styles.playBtn, styles.blackBtn)
       : classNames(styles.playBtn, styles.whiteBtn);
 
   return (
     <div className={styles.playlist}>
-      <img className={styles.playlistImage} src={playlist.image} alt="" />
+      <img className={styles.playlistImage} src={playlist.image?.asset.url} alt="" />
       <SpotifyIcon className={styles.spotifyIcon} />
       <a
         target="_blank"
@@ -29,7 +31,6 @@ const Playlist = (props: Iprops) => {
       </a>
     </div>
   );
-
 };
 
 export default Playlist;

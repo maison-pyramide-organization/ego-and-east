@@ -40,8 +40,9 @@
   width: 100%;
   height: auto;
 }
-.MpCompanyLogo {
+.mp-co-logo {
   width: 100%;
+  object-fit: cover;
 }
 .closeIcon {
   width: 32px;

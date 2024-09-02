@@ -1,6 +1,6 @@
 export interface Iplaylist {
-    id: number;
-    image: string;
-    link: stinrg;
-    playBtn: string;
+  id: number;
+  image: any;
+  link: stinrg;
+  button_color: string;
 }
