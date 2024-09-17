@@ -1,10 +1,17 @@
-import ReactDOM from "react-dom/client";
 import "./assets/index.css";
+import ReactDOM from "react-dom/client";
 import Home from "./pages/Home";
 import PopupProvider from "./context/PopupContext";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Talents from "./pages/Talents";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <PopupProvider>
-        <Home />
-    </PopupProvider>
+  <PopupProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="talents" element={<Talents />} />
+      </Routes>
+    </BrowserRouter>
+  </PopupProvider>
 );

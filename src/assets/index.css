@@ -42,6 +42,7 @@
 }
 html {
   /* scroll-behavior: smooth; */
+  font-size: calc(100vw / 1440);
 }
 body {
   background-color: var(--beige);
