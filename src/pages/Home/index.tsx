@@ -1,3 +1,4 @@
+import s from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import About from "../../components/About";
 import Footer from "../../components/Footer";
@@ -6,7 +7,6 @@ import Hero from "../../components/Hero";
 import Music from "../../components/Music";
 import Popup from "../../components/Popup";
 import Services from "../../components/Services";
-import styles from "./styles.module.scss";
 import LoaderComponent from "../Loader";
 import Gallery from "../../components/Gallery";
 
@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <LoaderComponent isLoading={isLoading} />
       <Header />
-      <main className={styles.page}>
+      <main className={s.p}>
         <Hero />
         <Services />
         <About />

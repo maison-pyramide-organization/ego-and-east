@@ -20,7 +20,7 @@ export default defineType({
       title: 'Category',
       type: 'string',
       options: {
-        list: ['artist', 'creative', 'musician'],
+        list: ['actor', 'creative', 'musician'],
       },
     }),
     defineField({

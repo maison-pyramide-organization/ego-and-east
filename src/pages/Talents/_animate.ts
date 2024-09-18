@@ -2,12 +2,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
 const animate = () => {
-  const list = document.querySelector("#list") as HTMLElement;
+  let list = document.querySelector("#list") as HTMLElement;
+  // if (!list || list.childElementCount) return;
   let items = [...document.querySelectorAll("#list li")];
   let clones = [] as HTMLElement[];
-  let listHeight;
-  let clonesHeight;
-  if (!list) return null;
+  let listHeight = 0;
+  let clonesHeight = 0;
 
   const cloneItems = () => {
     items.forEach((item) => {
@@ -59,6 +59,7 @@ const getTalentImage = (images, id) => {
   const image = images.find((img) => img.dataset.id == id);
   return image;
 };
+
 const animate2 = () => {
   const items = [...document.querySelectorAll("#list li")] as HTMLElement[];
   const images = [...document.querySelectorAll("#image")] as HTMLElement[];

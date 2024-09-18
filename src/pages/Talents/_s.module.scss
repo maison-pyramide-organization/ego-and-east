@@ -1,13 +1,13 @@
 .p {
   width: 100vw;
-  height: 100vh;
-  height: 100dvh;
-  padding-inline: 40rem;
-  position: relative;
+  height: calc(100vh - 70px);
+  height: calc(100dvh - 70px);
+  position: fixed;
+  bottom: 0;
 }
 
 .img-w {
-  position: fixed;
+  position: absolute;
   width: 440rem;
   aspect-ratio: 3/4;
   background-color: #dedede;
@@ -47,6 +47,7 @@
 }
 .list h2 {
   font-size: 64rem;
+  font-weight: normal;
 }
 .list span {
   font-size: 24rem;

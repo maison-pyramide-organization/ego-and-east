@@ -3,71 +3,72 @@ $animation-time: 0.1s;
 
 //
 .header {
-    padding: 24px 40px;
-    position: sticky;
-    background-color: black;
-    color: white;
-    top: 0;
-    left: 0;
-    z-index: 999;
+  padding: 24px 40px;
+  position: fixed;
+  background-color: black;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 .header_wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .nav {
-    width: 272px;
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
-    a {
-        color: white;
-        text-transform: uppercase;
-        font-size: 14px;
-        text-wrap: nowrap;
-        cursor: pointer;
-    }
+  width: 272px;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-wrap: nowrap;
+    cursor: pointer;
+  }
 }
 
 .logo {
-    width: 140px;
-    fill: white;
-    @media (width > 1024px) {
-        width: 160px;
-    }
+  width: 140px;
+  fill: white;
+  @media (width > 1024px) {
+    width: 160px;
+  }
 }
 
 .menuIcon {
-    display: none;
+  display: none;
 }
 .humIcon {
-    width: 32px;
-    aspect-ratio: 1;
+  width: 32px;
+  aspect-ratio: 1;
 }
 .closeIcon {
-    width: 40px;
-    stroke: var(--beige);
+  width: 40px;
+  stroke: var(--beige);
 }
 
 //////////////
 /// TABLET //
 ////////////
 @media screen and (max-width: 1024px) {
-    .nav {
-        display: none;
-    }
-    .menuIcon {
-        display: block;
-    }
+  .nav {
+    display: none;
+  }
+  .menuIcon {
+    display: block;
+  }
 }
 
 //////////////
 /// MOBILE //
 ////////////
 @media screen and (max-width: 600px) {
-    .header {
-        padding: 16px;
-    }
+  .header {
+    padding: 16px;
+  }
 }

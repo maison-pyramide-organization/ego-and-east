@@ -1,46 +1,61 @@
 import s from "./_s.module.scss";
-import img from "../../assets/Images/talent.png";
 import { useEffect, useState } from "react";
 import getTalents from "../../services/api/getTalents";
 import animate from "./_animate";
+import Header from "../../components/Header";
+import Filters from "./components/filter";
+import filterTalents from "./utils/filterTalents";
+import { useLocation } from "react-router-dom";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const category = searchParams.get("category") || "all";
+  const [ft, setFt] = useState(null) as any;
 
   useEffect(() => {
     getTalents().then((talents) => {
       setTalents(talents);
+      const filteredTalents = filterTalents(talents, category);
+      setFt(filteredTalents);
     });
   }, []);
+
   useEffect(() => {
-    animate();
+    if (ft?.length) animate();
   }, [talents]);
 
   if (!talents) return null;
+
   return (
-    <div className={s["p"]}>
-      <div className={s["img-w"]}>
-        {talents.map((talent) => (
-          <img
-            key={talent.index}
-            id="image"
-            data-id={talent.index}
-            src={talent.image.asset.url}
-            alt={talent.name}
-          />
-        ))}
-      </div>
-      <div className={s["list-w"]}>
-        <ul id="list" className={s["list"]}>
-          {talents.map((talent) => (
-            <li data-id={talent.index} className={s.talent} key={talent.index}>
-              <h2>{talent.name}</h2>
-              <span>{talent.category}</span>
-            </li>
+    <>
+      {/* <Header /> */}
+      <div className={s["p"]}>
+        <Filters category={category} />
+        <div className={s["img-w"]}>
+          {ft?.map((talent) => (
+            <img
+              key={talent.index}
+              id="image"
+              data-id={talent.index}
+              src={talent.image.asset.url}
+              alt={talent.name}
+            />
           ))}
-        </ul>
+        </div>
+        <div className={s["list-w"]}>
+          <ul id="list" className={s["list"]}>
+            {ft?.map((talent) => (
+              <li data-id={talent.index} className={s.talent} key={talent.name}>
+                <h2>{talent.name}</h2>
+                <span>{talent.category}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
