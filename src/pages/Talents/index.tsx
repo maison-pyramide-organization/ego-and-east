@@ -6,7 +6,7 @@ import animate from "./_animate";
 import Filters from "./components/filter";
 import filterTalents from "./utils/filterTalents";
 import { useLocation } from "react-router-dom";
-import Ruler from "../../components/ruler/ruler";
+// import Ruler from "../../components/ruler/ruler";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
