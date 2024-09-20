@@ -58,6 +58,9 @@
 :global(#list .active) {
   color: black;
   margin-left: 120rem;
+  h2{
+    font-weight: 500;
+  }
   span {
     display: block;
   }
