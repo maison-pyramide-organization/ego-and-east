@@ -1,57 +1,51 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
 
-const animate = () => {
+const vph = window.innerHeight;
+const itemHeight = 130;
+
+const setScrollPos = (pos) => {
+  window.scrollTo({ top: pos });
+};
+
+const slAnimation = () => {
+  const list = document.querySelector("#list") as HTMLElement;
+  const listW = list?.parentElement as HTMLElement;
+  listW.style.top = `calc(50% - ${130 / 2}px)`;
+  const itemsNo = list?.childElementCount as number;
+  const extraScroll = itemHeight * (itemsNo - 1);
+  document.body.style.height = `${vph + extraScroll}px`;
+
+  const slUpdateScroll = () => {
+    list.style.transform = `translateY(${-window.scrollY}px)`;
+    requestAnimationFrame(slUpdateScroll);
+  };
+  slUpdateScroll();
+};
+
+const llAnimation = () => {
   let list = document.querySelector("#list") as HTMLElement;
-  // if (!list || list.childElementCount) return;
   let items = [...document.querySelectorAll("#list li")];
-  let clones = [] as HTMLElement[];
-  let listHeight = 0;
-  let clonesHeight = 0;
 
   const cloneItems = () => {
     items.forEach((item) => {
       const clone = item.cloneNode(true) as HTMLElement;
       clone.classList.add("clone");
       list.appendChild(clone);
-      clones.push(clone);
     });
   };
-
-  const getClonesHeight = () => {
-    let height = 0;
-    clones.forEach((clone) => {
-      height += clone.offsetHeight;
-    });
-    return height;
-  };
-
-  const setScrollPos = (pos) => {
-    window.scrollTo({ top: pos });
-  };
-
-  const calcDimensions = () => {
-    listHeight = list.offsetHeight;
-    clonesHeight = getClonesHeight();
-  };
-
   const updateScroll = () => {
     const scrollPos = window.scrollY;
-    if (scrollPos >= clonesHeight) setScrollPos(0);
+    if (scrollPos >= listH / 2) setScrollPos(0);
     list.style.transform = `translateY(${-window.scrollY}px)`;
     requestAnimationFrame(updateScroll);
   };
 
-  function onLoad() {
-    setScrollPos(0);
-    cloneItems();
-    calcDimensions();
-    document.body.style.height = `${listHeight * 2}px`;
-    updateScroll();
-  }
-
-  onLoad();
-  animate2();
+  cloneItems();
+  let listH = list.offsetHeight;
+  document.body.style.height = `${listH * 2}px`;
+  updateScroll();
 };
 
 const getTalentImage = (images, id) => {
@@ -60,13 +54,10 @@ const getTalentImage = (images, id) => {
   return image;
 };
 
-const animate2 = () => {
-  const items = [...document.querySelectorAll("#list li")] as HTMLElement[];
+const observeItems = (items) => {
+  if (!items.length) return;
   const images = [...document.querySelectorAll("#image")] as HTMLElement[];
   let ci;
-
-  gsap.registerPlugin(ScrollTrigger);
-  const elH = items[0].offsetHeight;
 
   const enter = (item) => {
     const id = parseInt(item.dataset.id);
@@ -85,13 +76,23 @@ const animate2 = () => {
     ScrollTrigger.create({
       trigger: item,
       start: "top center",
-      end: `+=${elH + 1}`,
+      end: `+=${itemHeight + 1}`,
       onEnter: () => enter(item),
       onLeave: () => leave(item),
       onEnterBack: () => enter(item),
       onLeaveBack: () => leave(item),
     });
   });
+};
+
+const animate = () => {
+  setScrollPos(0);
+  let items = [...document.querySelectorAll("#list li")] as HTMLElement[];
+  const numberOfVisibleItems = Math.ceil(vph / itemHeight);
+  if (numberOfVisibleItems < items.length) llAnimation();
+  else slAnimation();
+  items = [...document.querySelectorAll("#list li")] as HTMLElement[];
+  observeItems(items);
 };
 
 export default animate;

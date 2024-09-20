@@ -6,6 +6,7 @@ import animate from "./_animate";
 import Filters from "./components/filter";
 import filterTalents from "./utils/filterTalents";
 import { useLocation } from "react-router-dom";
+import Ruler from "../../components/ruler/ruler";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
@@ -30,9 +31,12 @@ const Talents = () => {
 
   return (
     <>
+      {/* <Ruler /> */}
       {/* <Header /> */}
       <div className={s["p"]}>
         <Filters category={category} />
+
+        {/* IMAGES */}
         <div className={s["img-w"]}>
           {ft?.map((talent) => (
             <img
@@ -44,6 +48,8 @@ const Talents = () => {
             />
           ))}
         </div>
+
+        {/* LIST */}
         <div className={s["list-w"]}>
           <ul id="list" className={s["list"]}>
             {ft?.map((talent) => (
