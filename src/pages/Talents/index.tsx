@@ -2,7 +2,7 @@ import s from "./_s.module.scss";
 import { useEffect, useState } from "react";
 import getTalents from "../../services/api/getTalents";
 import animate from "./_animate";
-// import Header from "../../components/Header";
+import Header from "../../components/Header";
 import Filters from "./components/filter";
 import filterTalents from "./utils/filterTalents";
 import { useLocation } from "react-router-dom";
@@ -32,7 +32,7 @@ const Talents = () => {
   return (
     <>
       {/* <Ruler /> */}
-      {/* <Header /> */}
+      <Header />
       <div className={s["p"]}>
         <Filters category={category} />
 
