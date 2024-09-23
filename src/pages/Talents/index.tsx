@@ -6,7 +6,7 @@ import Header from "../../components/Header";
 import Filters from "./components/filter";
 import filterTalents from "./utils/filterTalents";
 import { useLocation } from "react-router-dom";
-// import Ruler from "../../components/ruler/ruler";
+import Ruler from "../../components/ruler/ruler";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
@@ -33,7 +33,7 @@ const Talents = () => {
     <>
       {/* <Ruler /> */}
       <Header />
-      <div className={s["p"]}>
+      <div id="p" className={s["p"]}>
         <Filters category={category} />
 
         {/* IMAGES */}
@@ -50,7 +50,7 @@ const Talents = () => {
         </div>
 
         {/* LIST */}
-        <div className={s["list-w"]}>
+        <div id="list-w" className={s["list-w"]}>
           <ul id="list" className={s["list"]}>
             {ft?.map((talent) => (
               <li data-id={talent.index} className={s.talent} key={talent.name}>

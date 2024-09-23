@@ -1,5 +1,5 @@
-import filters from "../../../../data/talentFilters";
 import s from "./_s.module.scss";
+import filters from "../../../../data/talentFilters";
 
 interface Iprops {
   category: string;

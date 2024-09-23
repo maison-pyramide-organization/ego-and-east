@@ -3,6 +3,11 @@
   top: 50%;
   left: 40rem;
   transform: translateY(-50%);
+  @media (width < 768px) {
+    top: 145rem;
+    left: 20rem;
+    transform: unset;
+  }
 }
 
 .categories button {
@@ -12,6 +17,11 @@
   padding-block: 8rem;
   overflow: hidden;
   cursor: pointer;
+
+  @media (width < 768px) {
+    font-size: 14rem;
+    padding-block: 4rem;
+  }
 }
 
 .categories button:after {

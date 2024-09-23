@@ -8,6 +8,13 @@
   --md-space: 56px;
   --lg-space: 80px;
   --side-padding: 40px;
+  --h-h: 64px;
+  @media (width > 600px) {
+    --h-h: 80px;
+  }
+  @media (width > 1024px) {
+    --h-h: 70px;
+  }
 }
 
 /* FONTS */
@@ -43,6 +50,11 @@
 html {
   /* scroll-behavior: smooth; */
   font-size: calc(100vw / 1440);
+  @media screen and (max-width: 768px) {
+    font-size: calc(100vw / 375);
+  }
+}
+@media screen and (max-width: 768px) {
 }
 body {
   background-color: var(--beige);

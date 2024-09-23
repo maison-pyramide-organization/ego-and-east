@@ -1,21 +1,34 @@
 .p {
   width: 100vw;
-  height: calc(100vh - 70px);
-  height: calc(100dvh - 70px);
   position: fixed;
   bottom: 0;
+  height: calc(100vh - var(--h-h));
+  height: calc(100dvh - var(--h-h));
+  display: flex;
+  flex-direction: column;
+  @media (width > 768px) {
+    display: block;
+  }
 }
 
 .img-w {
-  position: absolute;
-  width: 440rem;
+  width: 240rem;
   aspect-ratio: 3/4;
   background-color: #dedede;
-  top: 50%;
-  left: 270rem;
-  transform: translateY(-50%);
-  z-index: 5;
   filter: grayscale(1);
+  margin-left: auto;
+  margin-right: 20rem;
+  margin-top: 40rem;
+  flex-shrink: 0;
+  @media (width > 768px) {
+    margin: 0;
+    width: 440rem;
+    position: absolute;
+    top: 50%;
+    left: 270rem;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
 }
 .img-w img {
   width: 100%;
@@ -34,34 +47,58 @@
 }
 
 .list-w {
-  position: fixed;
-  left: 615rem;
-  // top: 80rem;
-  top: 0;
+  margin-inline: 20rem;
+  overflow: hidden;
+  height: 100%;
+  @media (width > 768px) {
+    overflow: unset;
+    margin-inline: 615rem 0;
+  }
 }
 
 .list li {
-  height: 130rem;
-  padding-block: 24rem;
+  height: 70rem;
+  padding-block: 8rem;
   color: rgba(#000, 0.2);
+  @media (width > 768px) {
+    height: 131rem;
+    padding-block: 24rem;
+  }
 }
 .list h2 {
   font-size: 64rem;
   font-weight: normal;
+  @media (width < 768px) {
+    font-size: 32px;
+  }
 }
 .list span {
   font-size: 24rem;
   text-transform: capitalize;
   display: none;
+
+  @media (width < 768px) {
+    font-size: 14rem;
+  }
+}
+
+:global(#list-w.sl) {
+  height: unset !important;
+  @media (width > 768px) {
+    margin-top: calc((100vh - var(--h-h)) / 2 - 66rem);
+  }
 }
 
 :global(#list .active) {
   color: black;
   margin-left: 120rem;
-  h2{
+  h2 {
     font-weight: 500;
   }
   span {
     display: block;
+  }
+  @media (width < 768px) {
+    margin-left: 10rem;
   }
 }
