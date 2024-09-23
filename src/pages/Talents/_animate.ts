@@ -2,7 +2,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(ScrollTrigger);
 
-const vph = window.innerHeight;
+const vpw = window.innerWidth;
+let vph = window.innerHeight;
+document.documentElement.style.setProperty("--vh", `${vph}px`);
 
 const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });
@@ -49,13 +51,17 @@ const getTalentImage = (images, id) => {
   return image;
 };
 
-const observeItems = (listW, items, itemHeight) => {
+const observeItems = (isll, listW, items, itemHeight) => {
   if (!items.length) return;
   const images = [...document.querySelectorAll("#image")] as HTMLElement[];
   let ci;
   const p = document.getElementById("p") as HTMLElement;
   const pBCR = p.getBoundingClientRect();
   const pCenter = pBCR.top + pBCR.height / 2;
+  const lWBCR = listW.getBoundingClientRect();
+  const lWCenter = lWBCR.top + lWBCR.height / 2;
+  let center = vpw > 768 ? pCenter : lWCenter;
+  if (!isll) center = lWBCR.top + itemHeight / 2;
 
   const enter = (item) => {
     const id = parseInt(item.dataset.id);
@@ -73,9 +79,10 @@ const observeItems = (listW, items, itemHeight) => {
   items.forEach((item) => {
     ScrollTrigger.create({
       trigger: item,
-      start: `top ${pCenter}`,
+      start: `top ${center}px`,
       end: `+=${itemHeight + 1}`,
       // markers: true,
+      invalidateOnRefresh: true,
       onEnter: () => enter(item),
       onLeave: () => leave(item),
       onEnterBack: () => enter(item),
@@ -85,6 +92,11 @@ const observeItems = (listW, items, itemHeight) => {
 };
 
 const animate = () => {
+  const imgW = document.getElementById("img-w");
+  imgW?.addEventListener("click", () => {
+    window.location.reload();
+  });
+
   setScrollPos(0);
   const list = document.querySelector("#list") as HTMLElement;
   const listW = document.querySelector("#list-w") as HTMLElement;
@@ -93,12 +105,13 @@ const animate = () => {
     .height;
 
   const numberOfVisibleItems = Math.ceil(vph / itemHeight);
+  const isll = numberOfVisibleItems < items.length;
 
-  if (numberOfVisibleItems < items.length) llAnimation(list, items);
+  if (isll) llAnimation(list, items);
   else slAnimation(listW, list, itemHeight);
 
   items = [...document.querySelectorAll("#list li")] as HTMLElement[];
-  observeItems(listW, items, itemHeight);
+  observeItems(isll, listW, items, itemHeight);
 };
 
 export default animate;

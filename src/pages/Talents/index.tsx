@@ -37,7 +37,7 @@ const Talents = () => {
         <Filters category={category} />
 
         {/* IMAGES */}
-        <div className={s["img-w"]}>
+        <div id="img-w" className={s["img-w"]}>
           {ft?.map((talent) => (
             <img
               key={talent.index}

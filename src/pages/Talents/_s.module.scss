@@ -1,9 +1,10 @@
 .p {
   width: 100vw;
   position: fixed;
-  bottom: 0;
-  height: calc(100vh - var(--h-h));
-  height: calc(100dvh - var(--h-h));
+  // bottom: 0;
+  top: var(--h-h);
+  height: calc(var(--vh) - var(--h-h));
+  // height: calc(100dvh - var(--h-h));
   display: flex;
   flex-direction: column;
   @media (width > 768px) {
@@ -20,6 +21,7 @@
   margin-right: 20rem;
   margin-top: 40rem;
   flex-shrink: 0;
+  position: relative;
   @media (width > 768px) {
     margin: 0;
     width: 440rem;
@@ -66,19 +68,19 @@
   }
 }
 .list h2 {
-  font-size: 64rem;
+  font-size: 32rem;
   font-weight: normal;
-  @media (width < 768px) {
-    font-size: 32px;
+  @media (width > 768px) {
+    font-size: 64rem;
   }
 }
 .list span {
-  font-size: 24rem;
+  font-size: 14rem;
   text-transform: capitalize;
   display: none;
 
-  @media (width < 768px) {
-    font-size: 14rem;
+  @media (width > 768px) {
+    font-size: 24rem;
   }
 }
 
@@ -91,14 +93,14 @@
 
 :global(#list .active) {
   color: black;
-  margin-left: 120rem;
+  margin-left: 10rem;
   h2 {
     font-weight: 500;
   }
   span {
     display: block;
   }
-  @media (width < 768px) {
-    margin-left: 10rem;
+  @media (width > 768px) {
+    margin-left: 120rem;
   }
 }
