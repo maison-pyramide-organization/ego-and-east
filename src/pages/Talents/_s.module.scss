@@ -3,8 +3,9 @@
   position: fixed;
   // bottom: 0;
   top: var(--h-h);
-  height: calc(var(--vh) - var(--h-h));
-  // height: calc(100dvh - var(--h-h));
+  // height: calc(var(--vh) - var(--h-h));
+  height: calc(100vh - var(--h-h));
+  height: calc(100dvh - var(--h-h));
   display: flex;
   flex-direction: column;
   @media (width > 768px) {

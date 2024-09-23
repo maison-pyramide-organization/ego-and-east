@@ -52,8 +52,13 @@ const Talents = () => {
         {/* LIST */}
         <div id="list-w" className={s["list-w"]}>
           <ul id="list" className={s["list"]}>
-            {ft?.map((talent) => (
-              <li data-id={talent.index} className={s.talent} key={talent.name}>
+            {ft?.map((talent, i) => (
+              <li
+                id={`item${i}`}
+                data-id={talent.index}
+                className={s.talent}
+                key={talent.name}
+              >
                 <h2>{talent.name}</h2>
                 <span>{talent.category}</span>
               </li>

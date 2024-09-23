@@ -4,7 +4,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const vpw = window.innerWidth;
 let vph = window.innerHeight;
-document.documentElement.style.setProperty("--vh", `${vph}px`);
 
 const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });
@@ -14,33 +13,75 @@ const slAnimation = (listW, list, itemHeight) => {
   listW.classList.add("sl");
   const itemsNo = list?.childElementCount as number;
   const extraScroll = itemHeight * (itemsNo - 1);
-  document.body.style.height = `${vph + extraScroll}px`;
+  document.body.style.height = `${vph + extraScroll - 1}px`;
 
   const slUpdateScroll = () => {
-    list.style.transform = `translateY(${-window.scrollY}px)`;
+    const scrollPos = window.scrollY;
+    const id = Math.ceil(scrollPos / itemHeight);
+
+    const el = document.querySelector(`#item${id}`) as HTMLElement;
+    if (ai !== el) {
+      if (!el) return;
+      const id = parseInt(el.dataset.id as any);
+      const img = getTalentImage(images, id);
+      ai.classList.remove("active");
+      el?.classList.add("active");
+      aimg.classList.remove("active");
+      img.classList.add("active");
+      ai = el;
+      aimg = img;
+    }
+    list.style.transform = `translateY(${-scrollPos}px)`;
     requestAnimationFrame(slUpdateScroll);
   };
+  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+  let ai = list.firstChild;
+  let aimg = getTalentImage(images, ai.dataset.id);
+  ai.classList.add("active");
+  aimg.classList.add("active");
   slUpdateScroll();
 };
 
-const llAnimation = (list, items) => {
+const llAnimation = (itemHeight, list, items) => {
   const cloneItems = () => {
-    items.forEach((item) => {
+    const itemsNo = items.length;
+    items.forEach((item, i) => {
       const clone = item.cloneNode(true) as HTMLElement;
+      clone.id = `item${i + itemsNo}`;
       clone.classList.add("clone");
       list.appendChild(clone);
     });
   };
   const updateScroll = () => {
     const scrollPos = window.scrollY;
+    let id = Math.ceil(scrollPos / itemHeight);
+    id = vpw > 768 ? id + x - 1 : id;
+    const el = document.querySelector(`#item${id}`) as HTMLElement;
+    if (ai !== el) {
+      const id = parseInt(el.dataset.id as any);
+      const img = getTalentImage(images, id);
+      ai.classList.remove("active");
+      el?.classList.add("active");
+      aimg.classList.remove("active");
+      img.classList.add("active");
+      ai = el;
+      aimg = img;
+    }
     if (scrollPos >= listH / 2) setScrollPos(0);
     list.style.transform = `translateY(${-window.scrollY}px)`;
     requestAnimationFrame(updateScroll);
   };
 
+  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+  let ai = list.firstChild;
+  let aimg = getTalentImage(images, ai.dataset.id);
   cloneItems();
+  ai.classList.add("active");
+  aimg.classList.add("active");
   let listH = list.offsetHeight;
   document.body.style.height = `${listH * 2}px`;
+  const numberOfVisibleItems = Math.ceil(vph / itemHeight);
+  const x = Math.floor(numberOfVisibleItems / 2);
   updateScroll();
 };
 
@@ -49,46 +90,6 @@ const getTalentImage = (images, id) => {
   const image = images.find((img) => img.dataset.id == id);
 
   return image;
-};
-
-const observeItems = (isll, listW, items, itemHeight) => {
-  if (!items.length) return;
-  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
-  let ci;
-  const p = document.getElementById("p") as HTMLElement;
-  const pBCR = p.getBoundingClientRect();
-  const pCenter = pBCR.top + pBCR.height / 2;
-  const lWBCR = listW.getBoundingClientRect();
-  const lWCenter = lWBCR.top + lWBCR.height / 2;
-  let center = vpw > 768 ? pCenter : lWCenter;
-  if (!isll) center = lWBCR.top + itemHeight / 2;
-
-  const enter = (item) => {
-    const id = parseInt(item.dataset.id);
-    const image = getTalentImage(images, id);
-    image.classList.add("active");
-    ci = image;
-    item.classList.add("active");
-  };
-
-  const leave = (item) => {
-    ci.classList.remove("active");
-    item.classList.remove("active");
-  };
-
-  items.forEach((item) => {
-    ScrollTrigger.create({
-      trigger: item,
-      start: `top ${center}px`,
-      end: `+=${itemHeight + 1}`,
-      // markers: true,
-      invalidateOnRefresh: true,
-      onEnter: () => enter(item),
-      onLeave: () => leave(item),
-      onEnterBack: () => enter(item),
-      onLeaveBack: () => leave(item),
-    });
-  });
 };
 
 const animate = () => {
@@ -107,11 +108,10 @@ const animate = () => {
   const numberOfVisibleItems = Math.ceil(vph / itemHeight);
   const isll = numberOfVisibleItems < items.length;
 
-  if (isll) llAnimation(list, items);
+  if (isll) llAnimation(itemHeight, list, items);
   else slAnimation(listW, list, itemHeight);
 
   items = [...document.querySelectorAll("#list li")] as HTMLElement[];
-  observeItems(isll, listW, items, itemHeight);
 };
 
 export default animate;
