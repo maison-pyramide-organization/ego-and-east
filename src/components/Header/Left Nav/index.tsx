@@ -18,9 +18,9 @@ const LeftNav = () => {
     }, 100);
   }, []);
 
-  const handleContactClick = () => {
-    setPopup("get in contact");
-  };
+  // const handleContactClick = () => {
+  //   setPopup("get in contact");
+  // };
 
   const handleLinkClick = (id: string) => {
     let element = document.getElementById(id)!;
