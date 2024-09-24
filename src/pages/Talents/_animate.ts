@@ -93,11 +93,6 @@ const getTalentImage = (images, id) => {
 };
 
 const animate = () => {
-  const imgW = document.getElementById("img-w");
-  imgW?.addEventListener("click", () => {
-    window.location.reload();
-  });
-
   setScrollPos(0);
   const list = document.querySelector("#list") as HTMLElement;
   const listW = document.querySelector("#list-w") as HTMLElement;
