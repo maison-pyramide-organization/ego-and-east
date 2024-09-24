@@ -9,14 +9,30 @@ const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });
 };
 
+const updateBH = (isLL, list, itemHeight) => {
+  let height: number | null = null;
+  if (isLL) {
+    let listH = list.offsetHeight;
+    height = listH * 2;
+  } else {
+    const itemsNo = list?.childElementCount as number;
+    const extraScroll = itemHeight * (itemsNo - 1);
+    height = vph + extraScroll - 1;
+  }
+  console.log("nh", height);
+
+  document.body.style.height = `${height}px`;
+};
+
 const slAnimation = (listW, list, itemHeight) => {
   listW.classList.add("sl");
-  const itemsNo = list?.childElementCount as number;
-  const extraScroll = itemHeight * (itemsNo - 1);
-  document.body.style.height = `${vph + extraScroll - 1}px`;
+  // const itemsNo = list?.childElementCount as number;
+  // const extraScroll = itemHeight * (itemsNo - 1);
+  // document.body.style.height = `${vph + extraScroll - 1}px`;
 
   const slUpdateScroll = () => {
     const scrollPos = window.scrollY;
+
     const id = Math.ceil(scrollPos / itemHeight);
 
     const el = document.querySelector(`#item${id}`) as HTMLElement;
@@ -79,7 +95,7 @@ const llAnimation = (itemHeight, list, items) => {
   ai.classList.add("active");
   aimg.classList.add("active");
   let listH = list.offsetHeight;
-  document.body.style.height = `${listH * 2}px`;
+  // document.body.style.height = `${listH * 2}px`;
   const numberOfVisibleItems = Math.ceil(vph / itemHeight);
   const x = Math.floor(numberOfVisibleItems / 2);
   updateScroll();
@@ -106,7 +122,14 @@ const animate = () => {
   if (isll) llAnimation(itemHeight, list, items);
   else slAnimation(listW, list, itemHeight);
 
-  items = [...document.querySelectorAll("#list li")] as HTMLElement[];
+  updateBH(isll, list, itemHeight);
+
+  window.addEventListener("resize", () => {
+    if (window.innerHeight != vph) {
+      vph == window.innerHeight;
+      updateBH(isll, list, itemHeight);
+    }
+  });
 };
 
 export default animate;
