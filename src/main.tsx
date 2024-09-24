@@ -6,7 +6,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Talents from "./pages/Talents";
 import Popup from "./components/Popup";
 
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <PopupProvider>
     <BrowserRouter>
