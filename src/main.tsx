@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import PopupProvider from "./context/PopupContext";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Talents from "./pages/Talents";
+import Popup from "./components/Popup";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <PopupProvider>
@@ -12,6 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="/" element={<Home />} />
         <Route path="talents" element={<Talents />} />
       </Routes>
+      <Popup/>
     </BrowserRouter>
   </PopupProvider>
 );

@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import Hero from "../../components/Hero";
 import Music from "../../components/Music";
-import Popup from "../../components/Popup";
 import Services from "../../components/Services";
 import LoaderComponent from "../Loader";
 import Gallery from "../../components/Gallery";
@@ -13,6 +12,7 @@ import Gallery from "../../components/Gallery";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
+    document.body.style.height = "unset";
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
@@ -29,7 +29,6 @@ const Home = () => {
         <Music />
       </main>
       <Footer />
-      <Popup />
     </>
   );
 };

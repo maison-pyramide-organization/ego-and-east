@@ -6,6 +6,7 @@ import { useState } from "react";
 import Menu from "./Menu";
 import { ReactComponent as HumIcon } from "../../assets/Icons/hum.svg";
 import { ReactComponent as CloseIcon } from "../../assets/Icons/close.svg";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpend, setMenuOpened] = useState(false);
@@ -21,7 +22,9 @@ const Header = () => {
       <header className={styles.header} id="header">
         <div className={styles.header_wrapper}>
           <LeftNav />
-          <Logo className={styles.logo} />
+          <Link to='/'>
+            <Logo className={styles.logo} />
+          </Link>
           <RightNav />
 
           <div className={styles.menuIcon} onClick={toogleMenu}>
