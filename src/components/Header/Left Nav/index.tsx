@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "../styles.module.scss";
 import classNames from "classnames";
-import { IPopupContext, PopupContext } from "../../../context/PopupContext";
+//import { IPopupContext, PopupContext } from "../../../context/PopupContext";
 import { Link, useLocation } from "react-router-dom";
 
 const LeftNav = () => {
-  const { setPopup } = useContext(PopupContext) as IPopupContext;
+  //const { setPopup } = useContext(PopupContext) as IPopupContext;
   const { hash } = useLocation();
 
   useEffect(() => {
