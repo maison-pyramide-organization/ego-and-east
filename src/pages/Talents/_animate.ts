@@ -9,54 +9,92 @@ const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });
 };
 
-const updateBH = (isLL, list, itemHeight) => {
+const updateBH = (isLL, list, itemH) => {
   let height: number | null = null;
   if (isLL) {
     let listH = list.offsetHeight;
     height = listH * 2;
   } else {
     const itemsNo = list?.childElementCount as number;
-    const extraScroll = itemHeight * (itemsNo - 1);
-    height = vph + extraScroll - 1;
+    const extraScroll = itemH * (itemsNo - 1);
+    height = window.innerHeight + extraScroll - 1;
   }
-  console.log("nh", height);
-
   document.body.style.height = `${height}px`;
 };
 
 const slAnimation = (listW, list, itemHeight) => {
   listW.classList.add("sl");
-  // const itemsNo = list?.childElementCount as number;
-  // const extraScroll = itemHeight * (itemsNo - 1);
-  // document.body.style.height = `${vph + extraScroll - 1}px`;
 
-  const slUpdateScroll = () => {
+  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+  let ai = list.firstChild as HTMLElement;
+  let aimg = getTalentImage(images, ai.dataset.id);
+
+  ai.classList.add("active");
+  aimg.classList.add("active");
+
+  const updateScroll = () => {
     const scrollPos = window.scrollY;
-
     const id = Math.ceil(scrollPos / itemHeight);
 
     const el = document.querySelector(`#item${id}`) as HTMLElement;
-    if (ai !== el) {
-      if (!el) return;
-      const id = parseInt(el.dataset.id as any);
-      const img = getTalentImage(images, id);
+    if (el && el !== ai) {
+      const newId = parseInt(el.dataset.id as any);
+      const img = getTalentImage(images, newId);
       ai.classList.remove("active");
-      el?.classList.add("active");
+      el.classList.add("active");
       aimg.classList.remove("active");
       img.classList.add("active");
       ai = el;
       aimg = img;
     }
+
     list.style.transform = `translateY(${-scrollPos}px)`;
-    requestAnimationFrame(slUpdateScroll);
+    requestAnimationFrame(updateScroll);
   };
-  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
-  let ai = list.firstChild;
-  let aimg = getTalentImage(images, ai.dataset.id);
-  ai.classList.add("active");
-  aimg.classList.add("active");
-  slUpdateScroll();
+
+  const onResize = () => {
+    // Recalculate itemHeight if needed and restart animation
+    itemHeight = list.firstChild.offsetHeight; // Update itemHeight based on current elements
+    updateScroll(); // Restart the scroll animation
+    updateBH(false,list,itemHeight)
+  };
+
+  window.addEventListener("resize", onResize);
+  updateScroll();
 };
+
+// const slAnimation = (listW, list, itemHeight) => {
+//   listW.classList.add("sl");
+//   // const itemsNo = list?.childElementCount as number;
+//   // const extraScroll = itemHeight * (itemsNo - 1);
+//   // document.body.style.height = `${vph + extraScroll - 1}px`;
+
+//   const updateScroll = () => {
+//     const scrollPos = window.scrollY;
+//     const id = Math.ceil(scrollPos / itemHeight);
+
+//     const el = document.querySelector(`#item${id}`) as HTMLElement;
+//     if (ai !== el) {
+//       if (!el) return;
+//       const id = parseInt(el.dataset.id as any);
+//       const img = getTalentImage(images, id);
+//       ai.classList.remove("active");
+//       el?.classList.add("active");
+//       aimg.classList.remove("active");
+//       img.classList.add("active");
+//       ai = el;
+//       aimg = img;
+//     }
+//     list.style.transform = `translateY(${-scrollPos}px)`;
+//     requestAnimationFrame(updateScroll);
+//   };
+//   const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+//   let ai = list.firstChild;
+//   let aimg = getTalentImage(images, ai.dataset.id);
+//   ai.classList.add("active");
+//   aimg.classList.add("active");
+//   updateScroll();
+// };
 
 const llAnimation = (itemHeight, list, items) => {
   const cloneItems = () => {
@@ -124,12 +162,12 @@ const animate = () => {
 
   updateBH(isll, list, itemHeight);
 
-  window.addEventListener("resize", () => {
-    if (window.innerHeight != vph) {
-      vph == window.innerHeight;
-      updateBH(isll, list, itemHeight);
-    }
-  });
+  // window.addEventListener("resize", () => {
+  //   if (window.innerHeight != vph) {
+  //     vph == window.innerHeight;
+  //     updateBH(isll, list, itemHeight);
+  //   }
+  // });
 };
 
 export default animate;
