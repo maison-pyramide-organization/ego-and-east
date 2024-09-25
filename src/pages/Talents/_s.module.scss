@@ -85,7 +85,7 @@
 }
 :global(#root) {
   overflow-y: auto;
-  height: var(--vh);
+  height: var(--vh, 100vh);
 }
 :global(#list-w.sl) {
   height: unset !important;
