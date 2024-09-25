@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import styles from "../styles.module.scss";
 import classNames from "classnames";
-import { IPopupContext, PopupContext } from "../../../context/PopupContext";
+// import { IPopupContext, PopupContext } from "../../../context/PopupContext";
 import { Link, useLocation } from "react-router-dom";
 
 const LeftNav = () => {
-  const { setPopup } = useContext(PopupContext) as IPopupContext;
+  // const { setPopup } = useContext(PopupContext) as IPopupContext;
   const { hash } = useLocation();
 
   useEffect(() => {
@@ -18,9 +18,9 @@ const LeftNav = () => {
     }, 100);
   }, []);
 
-  const handleContactClick = () => {
-    setPopup("get in contact");
-  };
+  // const handleContactClick = () => {
+  //   setPopup("get in contact");
+  // };
 
   const handleLinkClick = (id: string) => {
     let element = document.getElementById(id)!;
@@ -50,13 +50,13 @@ const LeftNav = () => {
       >
         about us
       </Link>
-{/*       <Link to="/talents">talents</Link> */}
-      <a
+      <Link to="/talents">talents</Link>
+      {/* <a
         className={classNames(styles.navLink, "navLink")}
         onClick={handleContactClick}
       >
         contact
-      </a>
+      </a> */}
     </nav>
   );
 };

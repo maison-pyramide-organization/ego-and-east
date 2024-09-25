@@ -1,14 +1,6 @@
-.w {
-}
-
 .p {
   width: 100vw;
-  // position: fixed;
-  // bottom: 0;
-  // height: calc(var(--vh) - var(--h-h));
   max-height: calc(var(--vh) - var(--h-h));
-  // height: calc(100vh - var(--h-h));
-  // height: calc(100dvh - var(--h-h));
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -90,7 +82,10 @@
     font-size: 24rem;
   }
 }
-
+:global(#root) {
+  overflow-y: auto;
+  height: var(--vh);
+}
 :global(#list-w.sl) {
   height: unset !important;
   @media (width > 768px) {
