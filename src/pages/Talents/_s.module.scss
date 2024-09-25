@@ -3,8 +3,9 @@
   max-height: calc(var(--vh) - var(--h-h));
   display: flex;
   flex-direction: column;
-  position: sticky;
+  position: fixed;
   top: var(--h-h);
+  pointer-events: none;
   @media (width > 768px) {
     display: block;
     height: var(--vh);
