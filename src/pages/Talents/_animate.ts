@@ -8,69 +8,70 @@ let vph = window.innerHeight;
 // Set the CSS variable
 document.documentElement.style.setProperty("--vh", vph + "px");
 document.body.style.height = vph + "px";
+const root = document.getElementById("root") as HTMLElement;
+root?.classList.add("hide-scrollbar");
 
 const setScrollPos = (pos) => {
-    window.scrollTo({ top: pos });
+  window.scrollTo({ top: pos });
 };
 
 const updateBH = (isLL, list, itemH) => {
-    let height: number | null = null;
-    if (isLL) {
-        let listH = list.offsetHeight;
-        height = listH * 2;
-    } else {
-        const itemsNo = list?.childElementCount as number;
-        const extraScroll = itemH * (itemsNo - 1);
-        height = window.innerHeight + extraScroll - 1;
-        console.log("h", height);
-    }
-    const root = document.getElementById("root") as HTMLElement;
-    const w = document.getElementById("w") as HTMLElement;
-    w.style.height = `${height}px`;
-    root.style.overflowY = `auto`;
-    root.style.height = `${vph}px`;
+  let height: number | null = null;
+  if (isLL) {
+    let listH = list.offsetHeight;
+    height = listH * 2;
+  } else {
+    const itemsNo = list?.childElementCount as number;
+    const extraScroll = itemH * (itemsNo - 1);
+    height = window.innerHeight + extraScroll - 1;
+    console.log("h", height);
+  }
+  const root = document.getElementById("root") as HTMLElement;
+  const w = document.getElementById("w") as HTMLElement;
+  w.style.height = `${height}px`;
+  root.style.overflowY = `auto`;
+  root.style.height = `${vph}px`;
 };
 
 const slAnimation = (listW, list, itemHeight) => {
-    listW.classList.add("sl");
+  listW.classList.add("sl");
 
-    const images = [...document.querySelectorAll("#image")] as HTMLElement[];
-    let ai = list.firstChild as HTMLElement;
-    let aimg = getTalentImage(images, ai.dataset.id);
-    const root = document.getElementById("root") as HTMLElement;
+  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+  let ai = list.firstChild as HTMLElement;
+  let aimg = getTalentImage(images, ai.dataset.id);
+  const root = document.getElementById("root") as HTMLElement;
 
-    ai.classList.add("active");
-    aimg.classList.add("active");
+  ai.classList.add("active");
+  aimg.classList.add("active");
 
-    const updateScroll = () => {
-        const scrollPos = root.scrollTop;
-        const id = Math.ceil(scrollPos / itemHeight);
+  const updateScroll = () => {
+    const scrollPos = root.scrollTop;
+    const id = Math.ceil(scrollPos / itemHeight);
+    const el = document.querySelector(`#item${id}`) as HTMLElement;
+    if (el && el !== ai) {
+      const newId = parseInt(el.dataset.id as any);
+      const img = getTalentImage(images, newId);
+      ai.classList.remove("active");
+      el.classList.add("active");
+      aimg.classList.remove("active");
+      img.classList.add("active");
+      ai = el;
+      aimg = img;
+    }
 
-        const el = document.querySelector(`#item${id}`) as HTMLElement;
-        if (el && el !== ai) {
-            const newId = parseInt(el.dataset.id as any);
-            const img = getTalentImage(images, newId);
-            ai.classList.remove("active");
-            el.classList.add("active");
-            aimg.classList.remove("active");
-            img.classList.add("active");
-            ai = el;
-            aimg = img;
-        }
+    list.style.transform = `translateY(${-scrollPos}px)`;
+    requestAnimationFrame(updateScroll);
+  };
 
-        list.style.transform = `translateY(${-scrollPos}px)`;
-        requestAnimationFrame(updateScroll);
-    };
+  // const onResize = () => {
+  //   // Recalculate itemHeight if needed and restart animation
+  //   itemHeight = list.firstChild.offsetHeight; // Update itemHeight based on current elements
+  //   updateScroll(); // Restart the scroll animation
+  //   updateBH(false,list,itemHeight)
+  // };
 
-    // const onResize = () => {
-    //   // Recalculate itemHeight if needed and restart animation
-    //   itemHeight = list.firstChild.offsetHeight; // Update itemHeight based on current elements
-    //   updateScroll(); // Restart the scroll animation
-    //   updateBH(false,list,itemHeight)
-    // };
-
-    // window.addEventListener("resize", onResize);
-    updateScroll();
+  // window.addEventListener("resize", onResize);
+  updateScroll();
 };
 
 // const slAnimation = (listW, list, itemHeight) => {
@@ -107,89 +108,90 @@ const slAnimation = (listW, list, itemHeight) => {
 // };
 
 const llAnimation = (itemHeight, list, items) => {
-    const cloneItems = () => {
-        const itemsNo = items.length;
-        items.forEach((item, i) => {
-            const clone = item.cloneNode(true) as HTMLElement;
-            clone.id = `item${i + itemsNo}`;
-            clone.classList.add("clone");
-            list.appendChild(clone);
-        });
-    };
-    const updateScroll = () => {
-        const root = document.getElementById("root") as HTMLElement;
-        const scrollPos = root.scrollTop;
-        let id = Math.ceil(scrollPos / itemHeight);
-        id = vpw > 768 ? id + x - 1 : id;
-        const el = document.querySelector(`#item${id}`) as HTMLElement;
-        if (ai !== el) {
-            const id = parseInt(el.dataset.id as any);
-            const img = getTalentImage(images, id);
-            ai.classList.remove("active");
-            el?.classList.add("active");
-            aimg.classList.remove("active");
-            img.classList.add("active");
-            ai = el;
-            aimg = img;
-        }
-        if (scrollPos >= listH / 2) setScrollPos(0);
-        list.style.transform = `translateY(${scrollPos}px)`;
-        requestAnimationFrame(updateScroll);
-    };
+  const cloneItems = () => {
+    const itemsNo = items.length;
+    items.forEach((item, i) => {
+      const clone = item.cloneNode(true) as HTMLElement;
+      clone.id = `item${i + itemsNo}`;
+      clone.classList.add("clone");
+      list.appendChild(clone);
+    });
+  };
+  const updateScroll = () => {
+    const root = document.getElementById("root") as HTMLElement;
+    const scrollPos = root.scrollTop;
+    let id = Math.ceil(scrollPos / itemHeight);
+    id = vpw > 768 ? id + x - 1 : id;
+    const el = document.querySelector(`#item${id}`) as HTMLElement;
+    if (ai !== el) {
+      const id = parseInt(el.dataset.id as any);
+      const img = getTalentImage(images, id);
+      ai.classList.remove("active");
+      el?.classList.add("active");
+      aimg.classList.remove("active");
+      img.classList.add("active");
+      ai = el;
+      aimg = img;
+    }
 
-    const images = [...document.querySelectorAll("#image")] as HTMLElement[];
-    let ai = list.firstChild;
-    let aimg = getTalentImage(images, ai.dataset.id);
-    cloneItems();
-    ai.classList.add("active");
-    aimg.classList.add("active");
-    let listH = list.offsetHeight;
-    // document.body.style.height = `${listH * 2}px`;
-    const numberOfVisibleItems = Math.ceil(vph / itemHeight);
-    const x = Math.floor(numberOfVisibleItems / 2);
-    updateScroll();
+    if (scrollPos >= listH / 2) root.scrollTop = 0;
+    list.style.transform = `translateY(${-scrollPos}px)`;
+    requestAnimationFrame(updateScroll);
+  };
+
+  const images = [...document.querySelectorAll("#image")] as HTMLElement[];
+  let ai = list.firstChild;
+  let aimg = getTalentImage(images, ai.dataset.id);
+  cloneItems();
+  ai.classList.add("active");
+  aimg.classList.add("active");
+  let listH = list.offsetHeight;
+  // document.body.style.height = `${listH * 2}px`;
+  const numberOfVisibleItems = Math.ceil(vph / itemHeight);
+  const x = Math.floor(numberOfVisibleItems / 2);
+  updateScroll();
 };
 
 const getTalentImage = (images, id) => {
-    if (!id) return;
-    const image = images.find((img) => img.dataset.id == id);
+  if (!id) return;
+  const image = images.find((img) => img.dataset.id == id);
 
-    return image;
+  return image;
 };
 
 const animate = () => {
-    setScrollPos(0);
-    const list = document.querySelector("#list") as HTMLElement;
-    const listW = document.querySelector("#list-w") as HTMLElement;
-    let items = [...document.querySelectorAll("#list li")] as HTMLElement[];
-    const itemHeight = (list.firstChild as HTMLElement)?.getBoundingClientRect().height;
+  setScrollPos(0);
+  const list = document.querySelector("#list") as HTMLElement;
+  const listW = document.querySelector("#list-w") as HTMLElement;
+  let items = [...document.querySelectorAll("#list li")] as HTMLElement[];
+  const itemHeight = (list.firstChild as HTMLElement)?.getBoundingClientRect()
+    .height;
 
-    const numberOfVisibleItems = Math.ceil(vph / itemHeight);
-    const isll = numberOfVisibleItems < items.length;
-    if (vpw > 768) {
-        slAnimation(listW, list, itemHeight);
-        updateBH(false, list, itemHeight);
-    } else if (isll) {
-        llAnimation(itemHeight, list, items);
+  const numberOfVisibleItems = Math.ceil(vph / itemHeight);
+  const isll = numberOfVisibleItems < items.length;
+  if (vpw < 768) {
+    slAnimation(listW, list, itemHeight);
+    updateBH(false, list, itemHeight);
+  } else if (isll) {
+    llAnimation(itemHeight, list, items);
+    updateBH(isll, list, itemHeight);
+  } else {
+    slAnimation(listW, list, itemHeight);
+    updateBH(isll, list, itemHeight);
+  }
 
-        updateBH(isll, list, itemHeight);
-    } else {
-        slAnimation(listW, list, itemHeight);
-        updateBH(isll, list, itemHeight);
-    }
+  // if (isll)
+  // else slAnimation(listW, list, itemHeight);
+  // slAnimation(listW, list, itemHeight);
+  // updateBH(isll, list, itemHeight);
+  // updateBH(false, list, itemHeight);
 
-    // if (isll)
-    // else slAnimation(listW, list, itemHeight);
-    // slAnimation(listW, list, itemHeight);
-    // updateBH(isll, list, itemHeight);
-    // updateBH(false, list, itemHeight);
-
-    // window.addEventListener("resize", () => {
-    //   if (window.innerHeight != vph) {
-    //     vph == window.innerHeight;
-    //     updateBH(isll, list, itemHeight);
-    //   }
-    // });
+  // window.addEventListener("resize", () => {
+  //   if (window.innerHeight != vph) {
+  //     vph == window.innerHeight;
+  //     updateBH(isll, list, itemHeight);
+  //   }
+  // });
 };
 
 export default animate;
