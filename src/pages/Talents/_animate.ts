@@ -25,11 +25,12 @@ const initialize = () => {
   itemH = (list.firstChild as HTMLElement)?.getBoundingClientRect().height;
   images = [...document.querySelectorAll("#image")] as HTMLElement[];
   body = document.body;
+  // Set Variables
+  document.documentElement.style.setProperty("--vh", vph + "px");
+  body.style.height = vph + "px";
 };
 
 // Set the CSS variable
-document.documentElement.style.setProperty("--vh", vph + "px");
-body.style.height = vph + "px";
 
 const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });
