@@ -29,7 +29,7 @@ const initialize = () => {
 
 // Set the CSS variable
 document.documentElement.style.setProperty("--vh", vph + "px");
-document.body.style.height = vph + "px";
+body.style.height = vph + "px";
 
 const setScrollPos = (pos) => {
   window.scrollTo({ top: pos });

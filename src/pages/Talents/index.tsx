@@ -32,7 +32,7 @@ const Talents = () => {
   return (
     <>
       {/* <Ruler /> */}
-      <Header />
+      {/* <Header /> */}
       <div className={s.w} id="w">
         <div id="p" className={s["p"]}>
           <Filters category={category} />
