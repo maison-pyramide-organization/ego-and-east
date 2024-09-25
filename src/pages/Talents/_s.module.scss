@@ -8,7 +8,7 @@
   pointer-events: none;
   @media (width > 768px) {
     display: block;
-    height: var(--vh);
+    height: var(--vh,100vh);
   }
 }
 
