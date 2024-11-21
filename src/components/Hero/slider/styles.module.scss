@@ -1,6 +1,9 @@
 .swiper_ {
+  position: relative;
+}
+.swiper_ > div{
+  width: calc(100% - 40px);
   max-width: 1300px;
-  margin: 0 auto;
 }
 .slider_nav {
   width: 100%;
@@ -9,6 +12,7 @@
   position: absolute;
   top: 50%;
   left: 0;
+  z-index: 5;
   @media (max-width: 600px){
     display: none;
   }
