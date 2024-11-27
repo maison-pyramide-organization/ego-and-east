@@ -13,7 +13,7 @@ const Slider = (props: Iprops) => {
   return (
     <div className={s.swiper_}>
       <nav className={s.slider_nav}>
-        <button id="slider-prv" type="button">
+        <button id="slider-prev" type="button">
           <DownChevI />
         </button>
         <button id="slider-next" type="button">
