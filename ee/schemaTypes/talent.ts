@@ -28,6 +28,26 @@ export default defineType({
       title: 'Image',
       type: 'image',
     }),
+    defineField({
+      name: 'location',
+      title: 'Location',
+      type: 'string',
+    }),
+    defineField({
+      name: 'bio',
+      title: 'Bio',
+      type: 'string',
+    }),
+    defineField({
+      name: 'tiktok',
+      title: 'Tiktok',
+      type: 'url',
+    }),
+    defineField({
+      name: 'ig',
+      title: 'IG',
+      type: 'url',
+    }),
   ],
   preview: {
     select: {
