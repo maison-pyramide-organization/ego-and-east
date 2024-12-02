@@ -7,6 +7,15 @@ import postcssPresetEnv from "postcss-preset-env";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
+  // Aliasses
+  resolve: {
+    alias: {
+      "@": "/src",
+      "@c": "/src/components",
+      "@a": "/src/assets",
+      "@s": "/src/assets/styles",
+    },
+  },
   // Post Css
   css: {
     postcss: {
