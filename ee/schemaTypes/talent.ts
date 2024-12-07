@@ -16,6 +16,16 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+      title: 'Slug',
+      name: 'slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+        maxLength: 200, // will be ignored if slugify is set
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
+      },
+    }),
+    defineField({
       name: 'category',
       title: 'Category',
       type: 'string',
@@ -47,6 +57,12 @@ export default defineType({
       name: 'ig',
       title: 'IG',
       type: 'url',
+    }),
+    defineField({
+      title: 'Gallery',
+      name: 'gallery',
+      type: 'array',
+      of: [{type: 'image'}],
     }),
   ],
   preview: {

@@ -3,23 +3,18 @@ import { useEffect, useState } from "react";
 import getTalents from "../../services/api/getTalents";
 import animate from "./_animate";
 import Header from "../../components/Header";
-import Filters from "./components/filter";
-import filterTalents from "./utils/filterTalents";
 import { Link, useLocation } from "react-router-dom";
-// import Ruler from "../../components/ruler/ruler";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
-  const category = searchParams.get("category") || "all";
   const [ft, setFt] = useState(null) as any;
 
   useEffect(() => {
     getTalents().then((talents) => {
       setTalents(talents);
-      const filteredTalents = filterTalents(talents, category);
-      setFt(filteredTalents);
+      setFt(talents);
     });
   }, []);
 
@@ -31,12 +26,9 @@ const Talents = () => {
 
   return (
     <>
-      {/* <Ruler /> */}
-      <Header />
       <div className={s.w} id="w">
+        {/* Page */}
         <div id="p" className={s["p"]}>
-          <Filters category={category} />
-
           {/* IMAGES */}
           <div id="img-w" className={s["img-w"]}>
             {ft?.map((talent) => (
@@ -50,7 +42,7 @@ const Talents = () => {
             ))}
           </div>
 
-          {/* LIST */}
+          {/* NAMES LIST */}
           <div id="list-w" className={s["list-w"]}>
             <ul id="list" className={s["list"]}>
               {ft?.map((talent, i) => (
@@ -60,10 +52,10 @@ const Talents = () => {
                   className={s.talent}
                   key={talent.name}
                 >
-                  {/* <Link to={`${talent.slug}`}> */}
+                  <Link to={`/talents/${talent.slug.current}`}>
                     <h2>{talent.name}</h2>
                     <span>{talent.category}</span>
-                  {/* </Link> */}
+                  </Link>
                 </li>
               ))}
             </ul>

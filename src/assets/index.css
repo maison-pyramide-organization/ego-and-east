@@ -54,14 +54,14 @@
   box-sizing: border-box;
   /* overscroll-behavior: none; */
 }
-html,
+/* html,
 body {
   position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
   width: 100vw;
-}
+} */
 html {
   /* scroll-behavior: smooth; */
   font-size: calc(100vw / 1440);
@@ -74,7 +74,7 @@ body {
   font-family: "Suisse";
 }
 a {
-  color: black;
+  color: inherit;
   text-decoration: none;
 }
 li {

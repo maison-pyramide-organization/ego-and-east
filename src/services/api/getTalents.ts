@@ -5,6 +5,7 @@ const getTalents = async () => {
             *[_type == "talent"]{
                 index,
                 name,
+                slug,
                 category,
                 image{
                   asset->{url}

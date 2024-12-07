@@ -1,17 +1,22 @@
+:global(#root) {
+  overflow-y: auto;
+    height: var(--vh, 100vh);
+}
 .p {
   width: 100vw;
   max-height: calc(var(--vh) - var(--h-h));
   display: flex;
   flex-direction: column;
-  position: fixed;
-  top: var(--h-h);
-  pointer-events: none;
+  position: sticky;
+  top: 0;
+  left: 0;
+  //   top: var(--h-h);
+  //   pointer-events: none;
   @media (width > 768px) {
     display: block;
     height: var(--vh, 100vh);
   }
 }
-
 .img-w {
   width: 240rem;
   aspect-ratio: 3/4;
@@ -42,6 +47,10 @@
   left: 0;
   z-index: 1;
   opacity: 0;
+}
+:global(#image.active) {
+  z-index: 5;
+  opacity: 1;
 }
 .list-w {
   margin-inline: 20rem;
@@ -77,17 +86,6 @@
   @media (width > 768px) {
     font-size: 24rem;
   }
-}
-
-// GLOBAL STYLES
-
-// :global(#root) {
-//   overflow-y: auto;
-//   height: var(--vh, 100vh);
-// }
-:global(#image.active) {
-  z-index: 5;
-  opacity: 1;
 }
 :global(#list-w.sl) {
   height: unset !important;
