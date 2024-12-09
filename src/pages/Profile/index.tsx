@@ -6,9 +6,9 @@ import { ReactComponent as LocationIcon } from "@a/Icons/location.svg";
 import Header from "../../components/Header";
 
 const Profile = () => {
-  const { slug } = useParams();
+    const { slug } = useParams();
 
-  const [talent, setTalent] = useState<any>(null);
+    const [talent, setTalent] = useState<any>(null);
 
   useEffect(() => {
     getTalentProfile(slug).then((talent) => {
