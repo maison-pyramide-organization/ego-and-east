@@ -30,7 +30,8 @@
   @media (width > 768px) {
     margin: 0;
     width: 400rem;
-    position: absolute;
+    position: fixed;
+    pointer-events: none;
     top: 50%;
     left: 270rem;
     transform: translateY(-50%);
@@ -75,7 +76,7 @@
   font-size: 32rem;
   font-weight: normal;
   @media (width > 768px) {
-    font-size: 64rem;
+    font-size: 56rem;
   }
 }
 .list span {

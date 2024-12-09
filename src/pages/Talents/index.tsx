@@ -31,10 +31,10 @@ const Talents = () => {
 
   return (
     <>
-      {/* <Ruler /> */}
       <Header />
       <div className={s.w} id="w">
-        <div id="p" className={s["p"]}>
+        <div className={s.wt}>
+          {/* FILTERS */}
           <Filters category={category} />
 
           {/* IMAGES */}
@@ -49,7 +49,9 @@ const Talents = () => {
               />
             ))}
           </div>
+        </div>
 
+        <div id="p" className={s["p"]}>
           {/* LIST */}
           <div id="list-w" className={s["list-w"]}>
             <ul id="list" className={s["list"]}>
@@ -60,10 +62,10 @@ const Talents = () => {
                   className={s.talent}
                   key={talent.name}
                 >
-                  {/* <Link to={`${talent.slug}`}> */}
+                  <Link to={`${talent.slug.current}`}>
                     <h2>{talent.name}</h2>
                     <span>{talent.category}</span>
-                  {/* </Link> */}
+                  </Link>
                 </li>
               ))}
             </ul>

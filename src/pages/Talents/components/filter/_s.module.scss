@@ -1,14 +1,5 @@
 .categories {
-  position: fixed;
-  top: 50%;
-  left: 40rem;
-  transform: translateY(-50%);
-  pointer-events: all;
-  @media (width < 768px) {
-    top: 145rem;
-    left: 20rem;
-    transform: unset;
-  }
+  margin-left: 40rem;
 }
 
 .categories button {

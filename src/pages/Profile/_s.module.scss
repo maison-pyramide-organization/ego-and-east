@@ -1,11 +1,12 @@
 .p {
-  height: 100vh;
-  height: 100dvh;
+  height: calc(100vh - var(--h-h));
+  height: calc(100dvh - var(--h-h));
   display: flex;
   gap: 20px;
   overflow: hidden;
   padding-inline: 40px;
   padding-block: 48px;
+  margin-top: var(--h-h);
 }
 .l {
   flex-basis: calc(40% - 20px / 2);
@@ -56,6 +57,7 @@
 }
 .img_ {
   aspect-ratio: 4/3;
+  filter: grayscale(1);
   &:not(:first-of-type) {
     margin-top: 40px;
   }

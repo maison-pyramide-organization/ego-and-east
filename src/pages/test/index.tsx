@@ -3,12 +3,10 @@ import { useEffect, useState } from "react";
 import getTalents from "../../services/api/getTalents";
 import animate from "./_animate";
 import Header from "../../components/Header";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
   const [ft, setFt] = useState(null) as any;
 
   useEffect(() => {
@@ -26,21 +24,23 @@ const Talents = () => {
 
   return (
     <>
+      <Header />
       <div className={s.w} id="w">
         {/* Page */}
+        <div id="img-w" className={s["img-w"]}>
+          {ft?.map((talent) => (
+            <img
+              key={talent.index}
+              id="image"
+              data-id={talent.index}
+              src={talent.image.asset.url}
+              alt={talent.name}
+            />
+          ))}
+        </div>
+
         <div id="p" className={s["p"]}>
           {/* IMAGES */}
-          <div id="img-w" className={s["img-w"]}>
-            {ft?.map((talent) => (
-              <img
-                key={talent.index}
-                id="image"
-                data-id={talent.index}
-                src={talent.image.asset.url}
-                alt={talent.name}
-              />
-            ))}
-          </div>
 
           {/* NAMES LIST */}
           <div id="list-w" className={s["list-w"]}>
