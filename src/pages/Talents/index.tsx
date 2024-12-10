@@ -9,71 +9,70 @@ import { Link, useLocation } from "react-router-dom";
 // import Ruler from "../../components/ruler/ruler";
 
 const Talents = () => {
-  const [talents, setTalents] = useState(null) as any;
-  const { search } = useLocation();
-  const searchParams = new URLSearchParams(search);
-  const category = searchParams.get("category") || "all";
-  const [ft, setFt] = useState(null) as any;
+    const [talents, setTalents] = useState(null) as any;
+    const { search } = useLocation();
+    const searchParams = new URLSearchParams(search);
+    const category = searchParams.get("category") || "all";
+    const [ft, setFt] = useState(null) as any;
 
-  useEffect(() => {
-    getTalents().then((talents) => {
-      setTalents(talents);
-      const filteredTalents = filterTalents(talents, category);
-      setFt(filteredTalents);
-    });
-  }, []);
+    useEffect(() => {
+        getTalents().then((talents) => {
+            setTalents(talents);
+            const filteredTalents = filterTalents(talents, category);
+            setFt(filteredTalents);
+        });
+    }, []);
 
-  useEffect(() => {
-    if (ft?.length) animate();
-  }, [talents]);
+    useEffect(() => {
+        if (ft?.length) animate();
+    }, [talents]);
 
-  if (!talents) return null;
+    if (!talents) return null;
 
-  return (
-    <>
-      <Header />
-      <div className={s.w} id="w">
-        <div className={s.wt}>
-          {/* FILTERS */}
-          <Filters category={category} />
+    return (
+        <>
+            <Header />
+            <div className={s.w} id="w">
+                <div id="p" className={s["p"]}>
+                    <div className={s.wt}>
+                        {/* FILTERS */}
+                        <Filters category={category} />
 
-          {/* IMAGES */}
-          <div id="img-w" className={s["img-w"]}>
-            {ft?.map((talent) => (
-              <img
-                key={talent.index}
-                id="image"
-                data-id={talent.index}
-                src={talent.image.asset.url}
-                alt={talent.name}
-              />
-            ))}
-          </div>
-        </div>
-
-        <div id="p" className={s["p"]}>
-          {/* LIST */}
-          <div id="list-w" className={s["list-w"]}>
-            <ul id="list" className={s["list"]}>
-              {ft?.map((talent, i) => (
-                <li
-                  id={`item${i}`}
-                  data-id={talent.index}
-                  className={s.talent}
-                  key={talent.name}
-                >
-                  <Link to={`${talent.slug.current}`}>
-                    <h2>{talent.name}</h2>
-                    <span>{talent.category}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+                        {/* IMAGES */}
+                        <div id="img-w" className={s["img-w"]}>
+                            {ft?.map((talent) => (
+                                <img
+                                    key={talent.index}
+                                    id="image"
+                                    data-id={talent.index}
+                                    src={talent.image.asset.url}
+                                    alt={talent.name}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                    {/* LIST */}
+                    <div id="list-w" className={s["list-w"]}>
+                        <ul id="list" className={s["list"]}>
+                            {ft?.map((talent, i) => (
+                                <li
+                                    id={`item${i}`}
+                                    data-id={talent.index}
+                                    className={s.talent}
+                                    key={talent.name}
+                                >
+                                    <Link to={`${talent.slug.current}`}>
+                                        <h2>{talent.name}</h2>
+                                        <span>{talent.category}</span>
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default Talents;

@@ -71,7 +71,6 @@ const updateBH = () => {
     const itemsNo = list?.childElementCount as number;
     const extraScroll = itemH * (itemsNo - 1);
     height = vph + extraScroll - 1;
-    console.log("h", height);
   }
   w.style.height = `${height}px`;
 };
@@ -110,7 +109,7 @@ const llAnimation = () => {
   const updateScroll = () => {
     const scrollPos = root.scrollTop;
     let id = Math.ceil(scrollPos / itemH);
-    id = vpw > 768 ? id + x - 1 : id;
+    id = vpw > 768 ? id + x  : id;
     const el = document.querySelector(`#item${id}`) as HTMLElement;
     if (ai !== el) {
       const id = parseInt(el.dataset.id as any);
