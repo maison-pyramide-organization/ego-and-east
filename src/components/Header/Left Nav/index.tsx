@@ -6,9 +6,10 @@ import { Link, useLocation } from "react-router-dom";
 
 const LeftNav = () => {
   // const { setPopup } = useContext(PopupContext) as IPopupContext;
-  const { hash } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    if (pathname !== "/") return;
     const id = hash.slice(1);
     let element = document.getElementById(id)!;
 
