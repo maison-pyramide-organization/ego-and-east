@@ -1,8 +1,8 @@
 // import { useEffect } from "react";
 import s from "./_s.module.scss";
+import talent from "@a/Images/talent.png";
 
 const Talents = () => {
-
   // useEffect(() => {
   //   const parent = document.getElementById("parent");
 
@@ -43,9 +43,38 @@ const Talents = () => {
 
   return (
     <>
-      <div className={s.w} id="w">
-        <div id="p" className={s["p"]}>
-          <div id="box"></div>
+      <div id="p" className={s["p"]}>
+        <div className={s.l}>
+          <ul>
+            <li>all</li>
+            <li>actors</li>
+            <li>creatives</li>
+          </ul>
+
+          <figure>
+            <img src={talent} alt="" />
+          </figure>
+        </div>
+
+        <div className={s.r}>
+          <ul>
+            <li>mosa</li>
+            <li>wael</li>
+            <li>mosa</li>
+            <li>donia</li>
+            <li>mosa</li>
+            <li>laila</li>
+            <li>amina</li>
+            <li>farah</li>
+            <li>biba</li>
+            <li>mosa</li>
+            <li>donia</li>
+            <li>mosa</li>
+            <li>laila</li>
+            <li>amina</li>
+            <li>farah</li>
+            <li>biba</li>
+          </ul>
         </div>
       </div>
     </>
