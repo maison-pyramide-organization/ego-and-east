@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import s from "./_s.module.scss";
 
 const Talents = () => {
