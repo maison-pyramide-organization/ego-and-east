@@ -28,32 +28,42 @@ const Profile = () => {
     <>
       <Header />
       <div className={hasGal ? `${s.p} ${s.hasGal}` : s.p}>
-        {/* INFO */}
-        <div className={s.l}>
-          <button type="button" className={s["b-btn"]} onClick={onC}>
-            <ArrowIcon />
-          </button>
-          <div className={s.data}>
-            <div className={s.location}>
-              <LocationIcon />
-              <span>{location || "uae"}</span>
-            </div>
-            <h1 className={s.name}>{name}</h1>
-            <p className={s.bio}>{talent.bio}</p>
-            <div className={s.socials}>
-              {talent.ig && <a href={ig}>INSTAGRAM</a>}
-              {talent.tiktok && <a href={tiktok}>TIKTOK</a>}
+        <div className={s.talent}>
+          {/* INFO */}
+          <div className={s.l}>
+            <button type="button" className={s["b-btn"]} onClick={onC}>
+              <ArrowIcon />
+            </button>
+            <div className={s.data}>
+              <div className={s.location}>
+                <LocationIcon />
+                <span>{location || "uae"}</span>
+              </div>
+              <h1 className={s.name}>{name}</h1>
+              <p className={s.bio}>{talent.bio}</p>
+              <div className={s.socials}>
+                {talent.ig && (
+                  <a target="_blank" href={ig}>
+                    INSTAGRAM
+                  </a>
+                )}
+                {talent.tiktok && (
+                  <a target="_blank" href={tiktok}>
+                    TIKTOK
+                  </a>
+                )}
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* GALLERY */}
-        <div className={`${s.r} hide-scrollbar`}>
-          {gallery?.map((img, i) => (
-            <div className={s.img_} key={i}>
-              <img src={img.imageUrl} alt="" />
-            </div>
-          ))}
+          {/* GALLERY */}
+          <div className={`${s.r} hide-scrollbar`}>
+            {gallery?.map((img, i) => (
+              <div className={s.img_} key={i}>
+                <img src={img.imageUrl} alt="" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
