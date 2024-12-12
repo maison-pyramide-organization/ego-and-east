@@ -109,7 +109,7 @@ const llAnimation = () => {
   const updateScroll = () => {
     const scrollPos = root.scrollTop;
     let id = Math.ceil(scrollPos / itemH);
-    id = vpw > 768 ? id + x  : id;
+    id = vpw > 768 ? id + x - 1 : id;
     const el = document.querySelector(`#item${id}`) as HTMLElement;
     if (ai !== el) {
       const id = parseInt(el.dataset.id as any);

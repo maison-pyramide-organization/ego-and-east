@@ -1,65 +1,51 @@
+import { useEffect } from "react";
 import s from "./_s.module.scss";
-import { useEffect, useState } from "react";
-import getTalents from "../../services/api/getTalents";
-import animate from "./_animate";
-import Header from "../../components/Header";
-import { Link } from "react-router-dom";
 
 const Talents = () => {
-  const [talents, setTalents] = useState(null) as any;
-  const [ft, setFt] = useState(null) as any;
 
-  useEffect(() => {
-    getTalents().then((talents) => {
-      setTalents(talents);
-      setFt(talents);
-    });
-  }, []);
+  // useEffect(() => {
+  //   const parent = document.getElementById("parent");
 
-  useEffect(() => {
-    if (ft?.length) animate();
-  }, [talents]);
+  //   function preventOverscroll(event) {
+  //     const isScrollable = parent.scrollHeight > parent.clientHeight;
+  //     const atTop = parent.scrollTop === 0;
+  //     const atBottom =
+  //       parent.scrollTop + parent.clientHeight >= parent.scrollHeight;
 
-  if (!talents) return null;
+  //     if (
+  //       (event.deltaY < 0 && atTop) || // Scrolling up at the top
+  //       (event.deltaY > 0 && atBottom) // Scrolling down at the bottom
+  //     ) {
+  //       event.preventDefault(); // Prevent overscroll
+  //     }
+  //   }
+
+  //   // Listen for wheel events
+  //   parent.addEventListener("wheel", preventOverscroll, { passive: false });
+
+  //   // Optional: Prevent touchmove for mobile devices
+  //   parent.addEventListener(
+  //     "touchmove",
+  //     (event) => {
+  //       event.preventDefault();
+  //     },
+  //     { passive: false }
+  //   );
+
+  //   // Optional: Prevent arrow key scrolling
+  //   window.addEventListener("keydown", (event) => {
+  //     const keys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Space"];
+  //     if (keys.includes(event.key)) {
+  //       event.preventDefault();
+  //     }
+  //   });
+  // }, []);
 
   return (
     <>
-      <Header />
       <div className={s.w} id="w">
-        {/* Page */}
-        <div id="img-w" className={s["img-w"]}>
-          {ft?.map((talent) => (
-            <img
-              key={talent.index}
-              id="image"
-              data-id={talent.index}
-              src={talent.image.asset.url}
-              alt={talent.name}
-            />
-          ))}
-        </div>
-
         <div id="p" className={s["p"]}>
-          {/* IMAGES */}
-
-          {/* NAMES LIST */}
-          <div id="list-w" className={s["list-w"]}>
-            <ul id="list" className={s["list"]}>
-              {ft?.map((talent, i) => (
-                <li
-                  id={`item${i}`}
-                  data-id={talent.index}
-                  className={s.talent}
-                  key={talent.name}
-                >
-                  <Link to={`/talents/${talent.slug.current}`}>
-                    <h2>{talent.name}</h2>
-                    <span>{talent.category}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div id="box"></div>
         </div>
       </div>
     </>
