@@ -25,6 +25,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 8rem;
+  margin-left: 40rem;
 }
 .l li {
   font-size: 16rem;
@@ -50,7 +51,18 @@ body {
   top: 0;
   left: 620rem;
 }
+.r ul {
+  display: flex;
+  flex-direction: column;
+  gap: 24rem;
+}
 .r li {
   font-size: 64rem;
   text-transform: uppercase;
+  color: rgba(#000000, 0.2);
+}
+
+.r li.active {
+  color: black;
+  margin-left: 119rem;
 }
