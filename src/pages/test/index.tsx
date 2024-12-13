@@ -1,7 +1,6 @@
 // import { useEffect } from "react";
 import s from "./_s.module.scss";
 import talent from "@a/Images/talent.png";
-import gsap from "gsap";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
