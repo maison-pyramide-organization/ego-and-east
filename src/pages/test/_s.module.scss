@@ -17,62 +17,89 @@ body {
 .p {
   height: 100%;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  @media (width > 768px) {
+    display: block;
+  }
 }
 
 .l {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 715rem;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  width: 100%;
+  padding-inline: 20rem;
+  padding-top: 40rem;
+  @media (width > 768px) {
+    position: absolute;
+    width: 715rem;
+    padding-top: 0;
+    padding-inline: 40rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .l ul {
   display: flex;
   flex-direction: column;
   gap: 8rem;
-  margin-left: 40rem;
 }
 .l li {
-  font-size: 16rem;
+  font-size: 14rem;
   text-transform: uppercase;
+  @media (width > 768px) {
+    font-size: 16rem;
+  }
 }
 
 .l figure {
-  width: 400rem;
+  width: 240rem;
   aspect-ratio: 3/4;
   background-color: #ededed;
   filter: grayscale(1);
+  @media (width > 768px) {
+    width: 400rem;
+  }
 }
 .l img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .r {
-  display: flex;
-  flex-direction: column;
-  gap: 24rem;
-  position: absolute;
-  top: 0;
-  left: 620rem;
+  @media (width> 768px) {
+    position: absolute;
+    top: 0;
+    left: 620rem;
+  }
 }
 .r ul {
-  display: flex;
-  flex-direction: column;
+  padding-inline: 20rem;
+  @media (width> 768px) {
+    padding-inline: 0;
+  }
 }
 .r li {
   padding-block: 16rem;
-  font-size: 64rem;
-  text-transform: uppercase;
-  color: rgba(#000000, 0.2);
   position: relative;
   border: 1px solid blue;
 }
+.r li a {
+  font-size: 28rem;
+  text-transform: uppercase;
+  color: rgba(#000000, 0.2);
+  white-space: nowrap;
+  @media (width > 768px) {
+    font-size: 56rem;
+  }
+}
 
-.r li:global(.active) {
+.r li:global(.active) a {
   color: black;
-  margin-left: 119rem;
+  @media (width > 768px) {
+    margin-left: 119rem;
+  }
 }

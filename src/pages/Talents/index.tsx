@@ -57,7 +57,7 @@ const Talents = () => {
                             {ft?.map((talent, i) => (
                                 <li
                                     id={`item${i}`}
-                                    data-id={talent.index}
+                                    data-id={i}
                                     className={s.talent}
                                     key={talent.name}
                                 >

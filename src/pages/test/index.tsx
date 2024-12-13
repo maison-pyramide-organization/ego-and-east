@@ -1,14 +1,17 @@
 // import { useEffect } from "react";
 import s from "./_s.module.scss";
 import talent from "@a/Images/talent.png";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import getTalents from "../../services/api/getTalents";
 
 const Talents = () => {
+  const [talents, setTalents] = useState(null) as any;
   // CLONE
   const cloneItems = (list) => {
     const items = Array.from(list.children) as any;
     const itemsNo = items.length;
+
     items.forEach((item, i) => {
       const clone = item.cloneNode(true) as HTMLElement;
       clone.id = `item${i + itemsNo}`;
@@ -17,13 +20,41 @@ const Talents = () => {
     });
   };
 
+  // PRELOAD IMAGES
+  const preloadTalentsImages = (images) => {
+    images.forEach((src) => {
+      const img = new Image() as any;
+      img.src = src; // This preloads the image into the browser's cache
+    });
+  };
+
+  // FETCH TALENTS
   useEffect(() => {
+    getTalents().then((talents) => {
+      setTalents(talents);
+    });
+  }, []);
+
+  // SCROLLING
+  useEffect(() => {
+    if (!talents) return;
     const list = document.getElementById("talents");
     cloneItems(list);
+
+    // const images = talents.map((talent) => {
+    //   return [talent.index, talent.image.asset.url];
+    // });
+    const images = talents.map((talent) => {
+      return talent.image.asset.url;
+    });
+
+    preloadTalentsImages(images);
+
     const timeout = setTimeout(() => {
       const parent = document.getElementById("p") as any;
       const child = document.getElementById("talents") as any;
-      const items = document.querySelectorAll("#talents li");
+      const items = document.querySelectorAll("#talents li") as any;
+      const image = document.getElementById("talent-image") as any;
       const viewportHeight = window.innerHeight;
 
       let currentOffset = 0; // Tracks the current vertical offset
@@ -38,6 +69,9 @@ const Talents = () => {
         // Clamp the offset between 0 and maxOffset
         currentOffset = Math.max(0, Math.min(currentOffset, maxOffset));
 
+        // Loop if clones top = 0
+        if (currentOffset > 2982) currentOffset = 0;
+
         // Apply the transform to simulate scrolling
         child.style.transform = `translateY(-${currentOffset}px)`;
 
@@ -48,6 +82,8 @@ const Talents = () => {
           const itemCenter = rect.top + rect.height / 2;
           if (Math.abs(viewportCenter - itemCenter) < rect.height / 2) {
             item.classList.add("active");
+            const id = item.dataset.id;
+            image.src = images[id];
           } else {
             item.classList.remove("active");
           }
@@ -56,7 +92,7 @@ const Talents = () => {
     }, 100);
 
     return () => clearTimeout(timeout); // Cleanup timeout
-  }, []);
+  }, [talents]);
 
   return (
     <>
@@ -72,61 +108,20 @@ const Talents = () => {
           </ul>
 
           <figure>
-            <img src={talent} alt="" />
+            <img id="talent-image" src={talent} alt="" />
           </figure>
         </div>
 
         {/* RIGHT */}
         <div className={s.r}>
           <ul id="talents">
-            <li>
-              <Link to="/talents/nour-seraj">mosa mosa</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">wael wael</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">mosa mosa</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">donia donia</Link>
-            </li>
-            <li className={s.active}>
-              <Link to="/talents/nour-seraj">mosa mosa</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">laila laila</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">amina amina</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">farah farah</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">biba biba</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">mosa mosa</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">donia donia</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">mosa mosa</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">laila laila</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">amina anmina</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">farah farah</Link>
-            </li>
-            <li>
-              <Link to="/talents/nour-seraj">biba biba</Link>
-            </li>
+            {talents?.map((talent, i) => (
+              <li key={talent.slug.current} data-id={i}>
+                <Link to={`/talents/${talent.slug.current}`}>
+                  {talent.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
