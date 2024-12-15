@@ -1,32 +1,26 @@
 // import { useEffect } from "react";
 import s from "./_s.module.scss";
 import talent from "@a/Images/talent.png";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import getTalents from "../../services/api/getTalents";
+import preloadTalentImages from "./utils/preloadImages";
+import cloneItems from "./utils/cloneItems";
+import Header from "../../components/Header";
+import filterTalents from "./utils/filterTalents";
 
+const categories = ["all", "actors", "creatives", "musicians"];
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
-  // CLONE
-  const cloneItems = (list) => {
-    const items = Array.from(list.children) as any;
-    const itemsNo = items.length;
+  const [category, setCategory] = useState("all");
+  // const { search } = useLocation();
+  // const searchParams = new URLSearchParams(search);
+  // const category = searchParams.get("category")
+  // const [ft, setFT] = useState(null) as any;
 
-    items.forEach((item, i) => {
-      const clone = item.cloneNode(true) as HTMLElement;
-      clone.id = `item${i + itemsNo}`;
-      clone.classList.add("clone");
-      list.appendChild(clone);
-    });
-  };
+  const fTalents = filterTalents(talents, category);
 
-  // PRELOAD IMAGES
-  const preloadTalentsImages = (images) => {
-    images.forEach((src) => {
-      const img = new Image() as any;
-      img.src = src; // This preloads the image into the browser's cache
-    });
-  };
+  const listRef = useRef(null) as any;
 
   // FETCH TALENTS
   useEffect(() => {
@@ -38,73 +32,126 @@ const Talents = () => {
   // SCROLLING
   useEffect(() => {
     if (!talents) return;
-    const list = document.getElementById("talents");
-    cloneItems(list);
+    const $page = document.getElementById("p") as any;
+    // const $list = document.getElementById("talents") as any;
+    const $list = listRef.current;
+    const $talentImage = document.getElementById("talent-image") as any;
+    console.log("ft", fTalents);
+    console.log("l", $list);
 
-    // const images = talents.map((talent) => {
-    //   return [talent.index, talent.image.asset.url];
-    // });
-    const images = talents.map((talent) => {
-      return talent.image.asset.url;
-    });
+    // VP
+    const vph = window.innerHeight;
+    const vpw = window.innerWidth;
+    const vpCenter = vph / 2;
 
-    preloadTalentsImages(images);
+    // OS
+    let currOS = 0;
+    let maxOS;
+    let touchStartY = 0;
+
+    // needs time to load
+    let itemH;
+    let activeCenter;
+
+    // Clone list Items
+    cloneItems($list);
+    const $listItems = document.querySelectorAll("#talents li") as any;
+
+    // Preload Images
+    const images = preloadTalentImages(talents);
+
+    //
+    // TIMEOUT
+    //
 
     const timeout = setTimeout(() => {
-      const parent = document.getElementById("p") as any;
-      const child = document.getElementById("talents") as any;
-      const items = document.querySelectorAll("#talents li") as any;
-      const image = document.getElementById("talent-image") as any;
-      const viewportHeight = window.innerHeight;
+      itemH = $listItems[0].clientHeight;
+      activeCenter =
+        vpw > 768
+          ? vpCenter
+          : $list.parentElement.getBoundingClientRect().top + itemH / 2;
 
-      let currentOffset = 0; // Tracks the current vertical offset
-      const maxOffset = child.offsetHeight - parent.offsetHeight; // Maximum offset
-
-      parent.addEventListener("wheel", (event) => {
-        event.preventDefault(); // Prevent the default scroll behavior
-
-        // Update the offset based on scroll direction
-        currentOffset += event.deltaY;
-
-        // Clamp the offset between 0 and maxOffset
-        currentOffset = Math.max(0, Math.min(currentOffset, maxOffset));
-
-        // Loop if clones top = 0
-        if (currentOffset > 2982) currentOffset = 0;
-
-        // Apply the transform to simulate scrolling
-        child.style.transform = `translateY(-${currentOffset}px)`;
-
-        // Center Detection
-        const viewportCenter = viewportHeight / 2;
-        items.forEach((item) => {
-          const rect = item.getBoundingClientRect();
-          const itemCenter = rect.top + rect.height / 2;
-          if (Math.abs(viewportCenter - itemCenter) < rect.height / 2) {
-            item.classList.add("active");
-            const id = item.dataset.id;
-            image.src = images[id];
-          } else {
-            item.classList.remove("active");
-          }
-        });
-      });
+      maxOS = $list.clientHeight / 2;
+      updateActiveItem();
     }, 100);
 
-    return () => clearTimeout(timeout); // Cleanup timeout
-  }, [talents]);
+    const onWheel = (e) => {
+      e.preventDefault(); // Prevent the default scroll behavior
+
+      // Update the offset based on scroll direction
+      currOS += e.deltaY;
+
+      // Loop if clones top = 0
+      if (currOS > maxOS || currOS < 0) currOS = 0;
+
+      // Apply the transform to simulate scrolling
+      $list.style.transform = `translateY(-${currOS}px)`;
+
+      // Center Detection
+      updateActiveItem();
+    };
+
+    function handleTouchStart(e) {
+      touchStartY = e.touches[0].clientY;
+    }
+
+    function handleTouchMove(e) {
+      const touchMoveY = e.touches[0].clientY;
+      const delta = touchStartY - touchMoveY;
+      touchStartY = touchMoveY;
+      // + down ==== - up
+
+      currOS = currOS + delta;
+      if (currOS < 0 || currOS > maxOS) currOS = 0;
+
+      console.log("cos", currOS);
+
+      $list.style.transform = `translateY(${-currOS}px)`;
+      updateActiveItem();
+    }
+
+    $page.addEventListener("wheel", onWheel);
+    $page.addEventListener("touchstart", handleTouchStart);
+    $page.addEventListener("touchmove", handleTouchMove);
+
+    const updateActiveItem = () => {
+      $listItems.forEach(($listItem) => {
+        const listItem_ = $listItem.getBoundingClientRect();
+        const itemCenter = listItem_.top + listItem_.height / 2;
+        if (Math.abs(activeCenter - itemCenter) < listItem_.height / 2) {
+          $listItem.classList.add("active");
+          // Activate image
+          const id = $listItem.dataset.id;
+          $talentImage.src = images[id];
+        } else {
+          $listItem.classList.remove("active");
+        }
+      });
+    };
+
+    return () => {
+      clearTimeout(timeout);
+      $page.removeEventListener("wheel", onWheel);
+      $page.removeEventListener("touchstart", handleTouchStart);
+      $page.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, [talents, category]);
 
   return (
     <>
-      <div className={s.cl} />
-
+      <Header />
       <div id="p" className={s["p"]}>
         {/* LEFT */}
         <div className={s.l}>
           <ul>
-            <li>all</li>
-            <li>actors</li>
-            <li>creatives</li>
+            {categories.map((categ) => (
+              <li
+                className={categ == category ? "active" : ""}
+                onClick={() => setCategory(categ)}
+              >
+                {categ}
+              </li>
+            ))}
           </ul>
 
           <figure>
@@ -114,11 +161,12 @@ const Talents = () => {
 
         {/* RIGHT */}
         <div className={s.r}>
-          <ul id="talents">
-            {talents?.map((talent, i) => (
+          <ul id="talents" ref={listRef}>
+            {fTalents?.map((talent, i) => (
               <li key={talent.slug.current} data-id={i}>
                 <Link to={`/talents/${talent.slug.current}`}>
-                  {talent.name}
+                  <h2>{talent.name}</h2>
+                  <span>{talent.category}</span>
                 </Link>
               </li>
             ))}
