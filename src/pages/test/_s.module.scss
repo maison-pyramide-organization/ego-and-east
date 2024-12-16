@@ -1,3 +1,11 @@
+.lg {
+  position: absolute;
+  width: 100%;
+  top: 450px;
+  height: 1px;
+  background-color: red;
+  z-index: 99;
+}
 html {
   overflow: hidden;
   overscroll-behavior: none;
@@ -37,7 +45,7 @@ body {
     width: 715rem;
     padding-top: 0;
     padding-inline: 40rem;
-    top: 50%;
+    top: calc(100vh / 2 + var(--h-h) / 2);
     transform: translateY(-50%);
     z-index: 2;
   }
@@ -55,7 +63,7 @@ body {
     font-size: 16rem;
   }
 }
-.l li:global(.active){
+.l li:global(.active) {
   text-decoration: underline;
 }
 
@@ -77,9 +85,15 @@ body {
 .r {
   overflow: hidden;
   @media (width> 768px) {
+    overflow: unset;
     position: absolute;
     top: 0;
     left: 620rem;
+  }
+}
+.r:global(.s) {
+  @media (width> 768px) {
+    top: calc(100vh / 2);
   }
 }
 .r ul {
@@ -130,4 +144,3 @@ body {
     opacity: 1;
   }
 }
-

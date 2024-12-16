@@ -1,8 +1,6 @@
-// import { useEffect } from "react";
 import s from "./_s.module.scss";
 import talent from "@a/Images/talent.png";
-import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import getTalents from "../../services/api/getTalents";
 import preloadTalentImages from "./utils/preloadImages";
 import cloneItems from "./utils/cloneItems";
@@ -10,17 +8,11 @@ import Header from "../../components/Header";
 import filterTalents from "./utils/filterTalents";
 
 const categories = ["all", "actors", "creatives", "musicians"];
+
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
-  const [category, setCategory] = useState("all");
-  // const { search } = useLocation();
-  // const searchParams = new URLSearchParams(search);
-  // const category = searchParams.get("category")
-  // const [ft, setFT] = useState(null) as any;
-
+  const [category, setCategory] = useState("musicians");
   const fTalents = filterTalents(talents, category);
-
-  const listRef = useRef(null) as any;
 
   // FETCH TALENTS
   useEffect(() => {
@@ -33,11 +25,9 @@ const Talents = () => {
   useEffect(() => {
     if (!talents) return;
     const $page = document.getElementById("p") as any;
-    // const $list = document.getElementById("talents") as any;
-    const $list = listRef.current;
+    const $list = document.getElementById("talents") as any;
     const $talentImage = document.getElementById("talent-image") as any;
-    console.log("ft", fTalents);
-    console.log("l", $list);
+    const $cont = document.getElementById("cont") as any;
 
     // VP
     const vph = window.innerHeight;
@@ -52,26 +42,56 @@ const Talents = () => {
     // needs time to load
     let itemH;
     let activeCenter;
+    let nofVI;
+    let isSL;
 
     // Clone list Items
-    cloneItems($list);
-    const $listItems = document.querySelectorAll("#talents li") as any;
+    // cloneItems($list);
 
     // Preload Images
     const images = preloadTalentImages(talents);
 
+    const addTalents = () => {
+      $list.replaceChildren();
+      currOS = 0;
+      $list.style.transform = `translateY(-1px)`;
+      fTalents.forEach((talent, i) => {
+        const $li = document.createElement("li");
+        $li.setAttribute("data-id", i);
+        $li.innerHTML = `
+            <a to="/talents/${talent.slug.current}">
+              <h2>${talent.name}</h2>
+              <span>${talent.category}</span>
+            </a>
+          `;
+
+        // Append the <li> to the parent list
+        $list.appendChild($li);
+      });
+    };
+
+    addTalents();
+    const $listItems = document.querySelectorAll("#talents li") as any;
+
     //
     // TIMEOUT
     //
-
     const timeout = setTimeout(() => {
       itemH = $listItems[0].clientHeight;
+      nofVI = Math.ceil(vph / itemH);
+      isSL = nofVI > fTalents.length;
+
+      if (isSL) $cont.classList.add("s");
+      else $cont.classList.remove("s");
+
       activeCenter =
         vpw > 768
           ? vpCenter
           : $list.parentElement.getBoundingClientRect().top + itemH / 2;
 
-      maxOS = $list.clientHeight / 2;
+      // maxOS = $list.clientHeight / 2;
+      maxOS = isSL ? $list.clientHeight : $list.clientHeight / 2;
+
       updateActiveItem();
     }, 100);
 
@@ -81,8 +101,17 @@ const Talents = () => {
       // Update the offset based on scroll direction
       currOS += e.deltaY;
 
+      const endofList = currOS > maxOS;
+
       // Loop if clones top = 0
-      if (currOS > maxOS || currOS < 0) currOS = 0;
+      if (isSL && endofList) {
+        currOS = maxOS - 2;
+        console.log("end");
+        console.log(maxOS);
+      }
+      if (!isSL && endofList) {
+        currOS = 0;
+      }
 
       // Apply the transform to simulate scrolling
       $list.style.transform = `translateY(-${currOS}px)`;
@@ -110,10 +139,6 @@ const Talents = () => {
       updateActiveItem();
     }
 
-    $page.addEventListener("wheel", onWheel);
-    $page.addEventListener("touchstart", handleTouchStart);
-    $page.addEventListener("touchmove", handleTouchMove);
-
     const updateActiveItem = () => {
       $listItems.forEach(($listItem) => {
         const listItem_ = $listItem.getBoundingClientRect();
@@ -129,6 +154,10 @@ const Talents = () => {
       });
     };
 
+    $page.addEventListener("wheel", onWheel);
+    $page.addEventListener("touchstart", handleTouchStart);
+    $page.addEventListener("touchmove", handleTouchMove);
+
     return () => {
       clearTimeout(timeout);
       $page.removeEventListener("wheel", onWheel);
@@ -140,12 +169,14 @@ const Talents = () => {
   return (
     <>
       <Header />
+      <div className={s.lg} />
       <div id="p" className={s["p"]}>
         {/* LEFT */}
         <div className={s.l}>
           <ul>
             {categories.map((categ) => (
               <li
+                key={categ}
                 className={categ == category ? "active" : ""}
                 onClick={() => setCategory(categ)}
               >
@@ -160,16 +191,16 @@ const Talents = () => {
         </div>
 
         {/* RIGHT */}
-        <div className={s.r}>
-          <ul id="talents" ref={listRef}>
-            {fTalents?.map((talent, i) => (
+        <div className={s.r} id="cont">
+          <ul id="talents">
+            {/* {fTalents?.map((talent, i) => (
               <li key={talent.slug.current} data-id={i}>
                 <Link to={`/talents/${talent.slug.current}`}>
                   <h2>{talent.name}</h2>
                   <span>{talent.category}</span>
                 </Link>
               </li>
-            ))}
+            ))} */}
           </ul>
         </div>
       </div>
