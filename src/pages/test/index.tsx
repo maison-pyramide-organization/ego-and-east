@@ -6,12 +6,15 @@ import preloadTalentImages from "./utils/preloadImages";
 import cloneItems from "./utils/cloneItems";
 import Header from "../../components/Header";
 import filterTalents from "./utils/filterTalents";
+import { Link, useLocation } from "react-router-dom";
 
 const categories = ["all", "actors", "creatives", "musicians"];
 
 const Talents = () => {
   const [talents, setTalents] = useState(null) as any;
-  const [category, setCategory] = useState("musicians");
+  const { search } = useLocation();
+  const searchParams = new URLSearchParams(search);
+  const category = searchParams.get("category") || "all";
   const fTalents = filterTalents(talents, category);
 
   // FETCH TALENTS
@@ -28,14 +31,15 @@ const Talents = () => {
     const $list = document.getElementById("talents") as any;
     const $talentImage = document.getElementById("talent-image") as any;
     const $cont = document.getElementById("cont") as any;
+    let $listItems = document.querySelectorAll("#talents li") as any;
 
     // VP
     const vph = window.innerHeight;
     const vpw = window.innerWidth;
-    const vpCenter = vph / 2;
-
+    const vpCenter = vph / 2 + 35;
+    const isMob = vpw <= 768;
     // OS
-    let currOS = 0;
+    let currOS = 1;
     let maxOS;
     let touchStartY = 0;
 
@@ -49,29 +53,7 @@ const Talents = () => {
     // cloneItems($list);
 
     // Preload Images
-    const images = preloadTalentImages(talents);
-
-    const addTalents = () => {
-      $list.replaceChildren();
-      currOS = 0;
-      $list.style.transform = `translateY(-1px)`;
-      fTalents.forEach((talent, i) => {
-        const $li = document.createElement("li");
-        $li.setAttribute("data-id", i);
-        $li.innerHTML = `
-            <a to="/talents/${talent.slug.current}">
-              <h2>${talent.name}</h2>
-              <span>${talent.category}</span>
-            </a>
-          `;
-
-        // Append the <li> to the parent list
-        $list.appendChild($li);
-      });
-    };
-
-    addTalents();
-    const $listItems = document.querySelectorAll("#talents li") as any;
+    const images = preloadTalentImages(fTalents);
 
     //
     // TIMEOUT
@@ -81,18 +63,22 @@ const Talents = () => {
       nofVI = Math.ceil(vph / itemH);
       isSL = nofVI > fTalents.length;
 
+      // Clone list Items
+      if (!isSL) cloneItems($list);
+      $listItems = document.querySelectorAll("#talents li") as any;
+
       if (isSL) $cont.classList.add("s");
       else $cont.classList.remove("s");
 
-      activeCenter =
-        vpw > 768
-          ? vpCenter
-          : $list.parentElement.getBoundingClientRect().top + itemH / 2;
+      activeCenter = !isMob
+        ? vpCenter
+        : $list.parentElement.getBoundingClientRect().top + itemH / 2;
 
-      // maxOS = $list.clientHeight / 2;
-      maxOS = isSL ? $list.clientHeight : $list.clientHeight / 2;
+      maxOS = isSL ? $list.clientHeight - itemH : $list.clientHeight / 2;
 
+      $list.style.transform = `translateY(-${currOS}px)`;
       updateActiveItem();
+      $page.style.opacity = "1";
     }, 100);
 
     const onWheel = (e) => {
@@ -105,13 +91,12 @@ const Talents = () => {
 
       // Loop if clones top = 0
       if (isSL && endofList) {
-        currOS = maxOS - 2;
-        console.log("end");
-        console.log(maxOS);
+        currOS = maxOS;
       }
       if (!isSL && endofList) {
         currOS = 0;
       }
+      if (currOS <= 0) currOS = 1;
 
       // Apply the transform to simulate scrolling
       $list.style.transform = `translateY(-${currOS}px)`;
@@ -164,12 +149,11 @@ const Talents = () => {
       $page.removeEventListener("touchstart", handleTouchStart);
       $page.removeEventListener("touchmove", handleTouchMove);
     };
-  }, [talents, category]);
+  }, [talents]);
 
   return (
     <>
       <Header />
-      <div className={s.lg} />
       <div id="p" className={s["p"]}>
         {/* LEFT */}
         <div className={s.l}>
@@ -178,9 +162,9 @@ const Talents = () => {
               <li
                 key={categ}
                 className={categ == category ? "active" : ""}
-                onClick={() => setCategory(categ)}
+                // onClick={() => onCatLink(categ)}
               >
-                {categ}
+                <a href={`/test?category=${categ}`}>{categ}</a>
               </li>
             ))}
           </ul>
@@ -193,14 +177,14 @@ const Talents = () => {
         {/* RIGHT */}
         <div className={s.r} id="cont">
           <ul id="talents">
-            {/* {fTalents?.map((talent, i) => (
+            {fTalents?.map((talent, i) => (
               <li key={talent.slug.current} data-id={i}>
                 <Link to={`/talents/${talent.slug.current}`}>
                   <h2>{talent.name}</h2>
                   <span>{talent.category}</span>
                 </Link>
               </li>
-            ))} */}
+            ))}
           </ul>
         </div>
       </div>

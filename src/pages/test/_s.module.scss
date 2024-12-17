@@ -1,11 +1,3 @@
-.lg {
-  position: absolute;
-  width: 100%;
-  top: 450px;
-  height: 1px;
-  background-color: red;
-  z-index: 99;
-}
 html {
   overflow: hidden;
   overscroll-behavior: none;
@@ -27,6 +19,7 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  opacity: 0;
   @media (width > 768px) {
     display: block;
   }
@@ -60,6 +53,7 @@ body {
   font-size: 14rem;
   text-transform: capitalize;
   @media (width > 768px) {
+    cursor: pointer;
     font-size: 16rem;
   }
 }
