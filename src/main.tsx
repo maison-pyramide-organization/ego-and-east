@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Route path="talents" element={<Talents />} />
         <Route path="talents/:slug" element={<Profile />} />
         {/* <Route path="test" element={<Test />} /> */}
+        
       </Routes>
       <Popup />
     </BrowserRouter>
