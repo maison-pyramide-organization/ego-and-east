@@ -1,4 +1,4 @@
-import styles from "./styles.module.scss";
+import s from "./styles.module.scss";
 import Slider from "./slider";
 import { useEffect, useState } from "react";
 import getSliderImages from "../../services/api/getSliderImages";
@@ -13,15 +13,19 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className={styles.hero}>
-      <div className={styles.slider_container}>
+    <div className={s.hero}>
+      <div className={s.slider_container}>
         <Slider slides={slides} />
       </div>
-      <h1 className={styles.info}>
-        We connect top luxury, beauty, and fashion brands with the most
-        compelling talent in the Middle East. We specialize in talent
-        management, booking, fashion week services, brand strategy, and
-        influencer marketing.
+      <h1 className={s.info}>
+        <span className={s.info_t}>
+          We connect top luxury, beauty, <br /> and fashion brands
+          <br /> with the most compelling talent in the Middle East.
+        </span>
+        <span className={s.info_b}>
+          We specialize in talent management, booking, fashion week services,
+          brand strategy, and influencer marketing.
+        </span>
       </h1>
     </div>
   );

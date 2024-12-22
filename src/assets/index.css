@@ -48,20 +48,22 @@
   font-weight: 600;
   src: url("./fonts/SuisseIntl-Bold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "gt";
+  font-style: italic;
+  font-weight: 400;
+  src: url("./fonts/gt-r-i.woff2") format("woff2");
+}
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   overscroll-behavior: none;
 }
-/* html,
-body {
-  position: fixed;
+body,html{
   overflow: hidden;
-  top: 0;
-  left: 0;
-  width: 100vw;
-} */
+  overscroll-behavior: none;
+}
 html {
   font-size: calc(100vw / 1440);
   @media screen and (max-width: 768px) {
@@ -69,9 +71,13 @@ html {
   }
 }
 body {
+  height: 100vh;
+  height: 100dvh;
   background-color: var(--beige);
   font-family: "Suisse";
-  overflow: hidden;
+}
+#root{
+  height: 100%;
 }
 a {
   color: inherit;

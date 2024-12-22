@@ -8,13 +8,30 @@
 }
 
 .info {
-  margin: 32px auto 0;
-  width: clamp(200px, 90%, 1000px);
+  margin: 40px auto 0;
+  width: clamp(200px, 90%, 750px);
   font-size: 22px;
   font-weight: 400;
   text-align: center;
   line-height: normal;
   letter-spacing: 1.1px;
+}
+.info_t {
+  text-transform: uppercase;
+  font-family: "gt";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  display: block;
+  margin-inline: auto;
+  width: clamp(200px, 90%, 600px);
+}
+.info_b {
+  display: block;
+  margin-top: 40px;
+  font-family: "Suisse";
+  font-weight: 300;
+  font-size: 22px;
 }
 
 //////////////
@@ -36,8 +53,16 @@
   .info {
     font-size: 16px;
     line-height: 24px;
-    span {
-      font-size: 17px;
+    br{
+      display: none;
+    }
+    .info_t {
+      font-size: 20px;
+      width: 100%;
+    }
+    .info_b{
+      font-size: 16px;
+      margin-top: 24px;
     }
   }
 }

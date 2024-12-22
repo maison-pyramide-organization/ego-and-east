@@ -12,7 +12,6 @@ import Gallery from "../../components/Gallery";
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    document.body.style.height = "unset";
     setTimeout(() => {
       setIsLoading(false);
     }, 1000);
