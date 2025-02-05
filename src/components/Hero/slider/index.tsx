@@ -9,6 +9,8 @@ interface Iprops {
 }
 const Slider = (props: Iprops) => {
   const { slides } = props;
+  console.log('s',slides);
+
   if (!slides) return null;
   return (
     <div className={s.swiper_}>
