@@ -21,9 +21,6 @@ const LoaderComponent = ({ isLoading }: { isLoading: boolean }) => {
           <CSSTransition key={2} timeout={500} classNames={"item"}>
             <div className={loaderStyle.main}>
               <h1 className={loaderStyle.h1}>
-                {/* MAISON
-                <br />
-                PYRAMIDE */}
                <Logo className={loaderStyle.logo}/>
                 {/* <Image src={logo} unoptimized={true} className={loaderStyle.logo} layout="responsive"></Image> */}
               </h1>
