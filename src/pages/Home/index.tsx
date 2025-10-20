@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <>
       {/* <LoaderComponent isLoading={isLoading} /> */}
-      <div className={s.p}>
+      <div id="p" className={s.p} style={{opacity:0}}>
         <a href="https://www.instagram.com/egoandeast" className={`${s.ig} y_`}>
           <div className="y" text-animation="ig">
             INSTAGRAM

@@ -3,16 +3,20 @@ import { SplitText } from "gsap/all";
 
 export const animation = () => {
   const tl = gsap.timeline();
+  const $p = document.getElementById("p");
   const $f_logo = document.querySelector(`[a-id="f-lo"]`);
   const $ab = document.querySelector(`[a-id="ab"]`);
   const ab_split = SplitText.create($ab, { type: "lines", mask: "lines" });
 
-  tl.from($f_logo, {
-    // yPercent: 100,
-    opacity: 0,
-    duration: 1,
-    ease: "power2.in",
+  tl.set($p, {
+    opacity: 1,
   })
+    .from($f_logo, {
+      // yPercent: 100,
+      opacity: 0,
+      duration: 1,
+      ease: "power2.in",
+    })
     .from(
       ab_split.lines,
       {
