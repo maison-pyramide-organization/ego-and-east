@@ -1,0 +1,83 @@
+.f {
+  margin-top: 120rem;
+  padding-block: 40rem 24rem;
+  padding-inline: var(--p-i);
+  background-color: var(--beige);
+}
+
+.f_t {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.f_t li {
+  &:not(:first-child) {
+    margin-top: 10rem;
+  }
+}
+.f_t li a {
+  margin-top: 2rem;
+  font-size: 12rem;
+  letter-spacing: 2%;
+}
+.f_t h4 {
+  font-family: "h";
+  font-weight: normal;
+  font-size: 15rem;
+  letter-spacing: 2%;
+}
+.f_t > div {
+  display: flex;
+  gap: 50rem;
+}
+.f_cta {
+  display: flex;
+  flex-direction: column;
+}
+.f_cta:first-child {
+  width: 250rem;
+  & button {
+    margin-top: 24rem;
+  }
+}
+.f_cta:last-child {
+  width: 200rem;
+}
+
+.f_cta button {
+  width: fit-content;
+  margin-top: auto;
+  padding: 10rem 24rem;
+  border: 2rem solid black;
+  color: black;
+  font-size: 12rem;
+  font-weight: bold;
+  border-radius: 100rem;
+}
+
+.f_so {
+  width: fit-content;
+  margin-top: 80rem;
+  margin-left: auto;
+  display: flex;
+  gap: 4rem;
+}
+.f_so a {
+  font-size: 15rem;
+}
+.f_lo {
+  margin-top: 40rem;
+}
+.f_b {
+  margin-top: 32rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.f_b p {
+  font-size: 15rem;
+  letter-spacing: 2%;
+}
+.f_b img {
+  width: 330rem;
+}

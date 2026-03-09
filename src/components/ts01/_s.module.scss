@@ -1,0 +1,42 @@
+.s {
+  padding-block: 48rem;
+  padding-inline: var(--p-i);
+  background-color: var(--beige);
+}
+.s > h2 {
+  font-size: 70rem;
+  line-height: 60rem;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & span {
+    display: block;
+    font-family: "dm";
+    font-weight: normal;
+    font-style: italic;
+  }
+}
+.s ul {
+  margin-top: 48rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 20rem;
+}
+.s li {
+  flex: 1;
+  aspect-ratio: 1;
+  &:first-child {
+    aspect-ratio: 3/2;
+  }
+}
+.s p {
+  width: 910rem;
+  margin-top: 40rem;
+  margin-left: auto;
+  font-size: 16rem;
+  font-weight: 300;
+  letter-spacing: 2%;
+  white-space: pre-line;
+}

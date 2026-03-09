@@ -27,6 +27,8 @@
   padding-inline: 35rem;
   padding-top: 30rem;
   position: relative;
+  font-family: "gt", serif;
+  background-color: var(--beige);
 
   @media (max-width: 700px) {
     padding-inline: 12rem;
