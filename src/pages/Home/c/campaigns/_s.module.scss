@@ -1,0 +1,51 @@
+.s {
+  padding-block: 100rem;
+}
+.s ul {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 100rem 20rem;
+  align-items: start;
+}
+.campaign figure {
+  aspect-ratio: 4/5;
+  background-color: #ededed;
+}
+.campaign h4 {
+  margin-top: 24rem;
+  font-size: 24rem;
+  line-height: 1;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+}
+.campaign span {
+  display: block;
+  font-family: "dm";
+  font-style: italic;
+  font-weight: normal;
+}
+
+.campaign:nth-child(1),
+.campaign:nth-child(2) {
+  grid-column: span 3;
+}
+.campaign:nth-child(3),
+.campaign:nth-child(4) {
+  grid-column: span 6;
+}
+.campaign:nth-child(5) {
+  grid-column: 10 / span 3;
+}
+.campaign:nth-child(6) {
+  grid-column: 4 / span 3;
+}
+.campaign:nth-child(7) {
+  grid-column: span 6;
+}
+.campaign:nth-child(8) {
+  grid-column: span 6;
+}
+.campaign:nth-child(9),
+.campaign:nth-child(10) {
+  grid-column: span 3;
+}
