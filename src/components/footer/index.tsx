@@ -31,20 +31,24 @@ export default function Footer() {
             <h4>WANT TO CHAT ABOUT TALENTS, EVENTS, ACTIVATIONS?</h4>
             <button>GET IN TOUCH</button>
           </div>
-          <div className={s.f_cta}>
+          {/* <div className={s.f_cta}>
             <h4>WANT TO GET SCOUTED?</h4>
             <button>BECOME A TALENT</button>
           </div>
           <div className={s.f_cta}>
             <h4>LOOKING FOR POWERFUL NEW TALENT?</h4>
             <button>BOOK A TALENT</button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className={s.f_so}>
-        <a href="https://www.instagram.com/egoandeast">INSTAGRAM</a>
+        <a target="_blank" href="https://www.instagram.com/egoandeast">
+          INSTAGRAM
+        </a>
         <span>/</span>
-        <a href="https://www.linkedin.com/company/ego-east/">LINKEDIN</a>
+        <a target="_blank" href="https://www.linkedin.com/company/ego-east/">
+          LINKEDIN
+        </a>
       </div>
       <div className={s.f_lo}>
         <LogoI />

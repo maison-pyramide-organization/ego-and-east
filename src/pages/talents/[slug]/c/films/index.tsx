@@ -14,16 +14,24 @@ export default function Films(props: Iprops) {
         FILM
         <span>& TV</span>
       </h2>
-      <ul>
-        {films?.map((brand) => (
-          <li key={brand.sys.id}>
-            <figure>
-              <HoverVideo src={brand.fields.file.url} />
-              <figcaption>{brand.fields.title}</figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
+      <div>
+        <div className={s.l}>
+          <figure>
+            <HoverVideo src={films[0].fields.file.url} />
+            <figcaption>{films[0].fields.title}</figcaption>
+          </figure>
+        </div>
+        <div className={s.r}>
+          <figure>
+            <HoverVideo src={films[1].fields.file.url} />
+            <figcaption>{films[1].fields.title}</figcaption>
+          </figure>
+          <figure>
+            <HoverVideo src={films[2].fields.file.url} />
+            <figcaption>{films[2].fields.title}</figcaption>
+          </figure>
+        </div>
+      </div>
     </section>
   );
 }

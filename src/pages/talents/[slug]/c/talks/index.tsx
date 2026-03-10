@@ -18,7 +18,7 @@ export default function Talks(props: Iprops) {
       <figure>
         <img src={talksBanner.fields.file.url} alt="" />
       </figure>
-      <p>{talksIntro}</p>
+      <p className='m-o'>{talksIntro}</p>
       <ul className="h-s">
         {talks?.map((talk) => (
           <li key={talk.sys.id}>

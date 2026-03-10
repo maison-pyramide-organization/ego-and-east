@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import s from "./_s.module.scss";
+import "swiper/css";
+
 
 import { getTalent } from "../../../services/api";
 import { useParams } from "react-router-dom";
@@ -12,6 +14,7 @@ import Bof from "./c/bof";
 import Network from "./c/network";
 import Press from "./c/press";
 import TS01 from "@/components/ts01";
+import { ReactComponent as Ilogo } from "@a/logo.svg";
 
 const Talent = () => {
   const [talent, setTalent] = useState<any>(null);
@@ -38,17 +41,18 @@ const Talent = () => {
 
   return (
     <div className={s.p}>
-      <About talent={talent} />
-      <div className={s.npw}>
-        <Network network={network} />
-        <Press press={talent.press} />
+      <div className={s.h}>
+        <Ilogo />
       </div>
+      <About talent={talent} />
+      <Network network={network} />
+      <Press press={talent.press} />
       {brands?.length > 0 && <Brands brands={brands} />}
       <Films films={films} />
-      {sections.map((section) => {
+      {sections.map((section, i) => {
         switch (section.sys.contentType.sys.id) {
           case "ts01":
-            return <TS01 section={section.fields} />;
+            return <TS01 section={section.fields} key={i} />;
           default:
             return null;
         }

@@ -1,58 +1,97 @@
 .f {
-  margin-top: 120rem;
+  margin-top: 100rem;
   padding-block: 40rem 24rem;
   padding-inline: var(--p-i);
   background-color: var(--beige);
+  @media (width < 770px) {
+    margin-top: 60rem;
+  }
 }
 
 .f_t {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  @media (width < 770px) {
+    flex-direction: column;
+    gap: 40rem;
+    align-items: center;
+  }
+}
+.f_t ul {
+  @media (width < 770px) {
+    order: 2;
+    // margin-inline: auto;
+  }
 }
 .f_t li {
   &:not(:first-child) {
-    margin-top: 10rem;
+    margin-top: 16rem;
   }
-}
-.f_t li a {
-  margin-top: 2rem;
-  font-size: 12rem;
-  letter-spacing: 2%;
 }
 .f_t h4 {
   font-family: "h";
   font-weight: normal;
-  font-size: 15rem;
+  font-size: 16rem;
+  letter-spacing: 2%;
+  @media (width < 770px) {
+    text-align: center;
+  }
+}
+.f_t li a {
+  display: block;
+  margin-top: 4rem;
+  font-size: 14rem;
   letter-spacing: 2%;
 }
 .f_t > div {
-  display: flex;
-  gap: 50rem;
+  // display: flex;
+  // gap: 50rem;
+  // @media (width < 770px) {
+  //   flex-direction: column;
+  // }
 }
 .f_cta {
   display: flex;
   flex-direction: column;
+  margin-block: auto;
+  @media (width < 770px) {
+    margin-inline: auto;
+  }
 }
+.f_cta h4 {
+  @media (width < 770px) {
+    width: 290rem;
+    font-weight: bold;
+  }
+}
+
 .f_cta:first-child {
-  width: 250rem;
+  // width: 250rem;
   & button {
-    margin-top: 24rem;
+    // margin-top: 24rem;
+    // margin-left: auto;
   }
 }
 .f_cta:last-child {
-  width: 200rem;
+  // width: 200rem;
 }
 
 .f_cta button {
   width: fit-content;
-  margin-top: auto;
+  // margin-top: auto;
+  margin-top: 24rem;
+  margin-left: auto;
   padding: 10rem 24rem;
   border: 2rem solid black;
   color: black;
   font-size: 12rem;
   font-weight: bold;
   border-radius: 100rem;
+  @media (width < 770px) {
+    margin-top: 16rem;
+    margin-inline: auto;
+  }
 }
 
 .f_so {
@@ -61,23 +100,40 @@
   margin-left: auto;
   display: flex;
   gap: 4rem;
+  @media (width < 770px) {
+  margin-top: 40rem;
+    margin-inline: auto;
+  }
 }
 .f_so a {
   font-size: 15rem;
 }
 .f_lo {
   margin-top: 40rem;
+  @media (width < 770px) {
+    margin-top: 24rem;
+  }
 }
 .f_b {
   margin-top: 32rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (width < 770px) {
+    margin-top: 16rem;
+  }
 }
 .f_b p {
   font-size: 15rem;
   letter-spacing: 2%;
+  @media (width < 770px) {
+    font-size: 10rem;
+    letter-spacing: unset;
+  }
 }
 .f_b img {
   width: 330rem;
+  @media (width < 770px) {
+    width: 150rem;
+  }
 }

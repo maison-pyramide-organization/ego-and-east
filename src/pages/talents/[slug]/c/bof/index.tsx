@@ -13,10 +13,11 @@ export default function Bof(props: Iprops) {
       <div>
         <figure>
           <img src={bof[0].fields.file.url} alt="" />
-          <figcaption>{bof[0].fields.description}</figcaption>
+          <figcaption className="d-o">{bof[0].fields.description}</figcaption>
         </figure>
         <figure>
           <img src={bof[1].fields.file.url} alt="" />
+          <figcaption className="m-o">{bof[0].fields.description}</figcaption>
         </figure>
       </div>
     </section>

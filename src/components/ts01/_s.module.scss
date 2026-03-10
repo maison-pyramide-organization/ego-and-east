@@ -1,7 +1,12 @@
 .s {
+  margin-top: 80rem;
   padding-block: 48rem;
   padding-inline: var(--p-i);
   background-color: var(--beige);
+  @media (width < 770px) {
+  margin-top: 60rem;
+    padding-block: 32rem;
+  }
 }
 .s > h2 {
   font-size: 70rem;
@@ -16,6 +21,53 @@
     font-family: "dm";
     font-weight: normal;
     font-style: italic;
+  }
+  @media (width < 770px) {
+    display: block;
+    font-size: 36rem;
+    line-height: 1;
+    text-align: right;
+    & span {
+      font-size: 30rem;
+    }
+  }
+}
+.s > div {
+  margin-top: 40rem;
+  display: flex;
+  gap: 20rem;
+  align-items: flex-start;
+}
+.s .l {
+  flex: 4;
+  @media (width < 770px) {
+    order: 2;
+    flex: 3;
+  }
+}
+.s .l figure {
+  aspect-ratio: 3/2;
+  @media (width < 770px) {
+    aspect-ratio: 1;
+  }
+}
+.s .r {
+  flex: 8;
+  @media (width < 770px) {
+    flex: 2;
+  }
+}
+.s .r figure {
+  aspect-ratio: 1;
+  @media (width < 770px) {
+    aspect-ratio: 4/5;
+  }
+}
+.s .r .t {
+  display: flex;
+  gap: 20rem;
+  @media (width < 770px) {
+    flex-direction: column;
   }
 }
 .s ul {
@@ -39,4 +91,9 @@
   font-weight: 300;
   letter-spacing: 2%;
   white-space: pre-line;
+  @media (width < 770px) {
+    width: unset;
+    margin-top: 16rem;
+    font-size: 15rem;
+  }
 }

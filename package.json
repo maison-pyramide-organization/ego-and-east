@@ -21,8 +21,8 @@
     "react-router-dom": "^6.26.2",
     "react-transition-group": "^4.4.5",
     "sass": "^1.64.1",
-    "swiper": "^11.0.5",
-    "vite-plugin-svgr": "^3.2.0"
+    "swiper": "^11.2.10",
+    "vite-plugin-svgr": "^3.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
