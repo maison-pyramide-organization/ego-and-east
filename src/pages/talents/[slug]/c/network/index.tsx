@@ -10,8 +10,8 @@ export default function Network(props: Iprops) {
   const { network } = props;
   const platformIcons = {
     facebook: Ifb,
-    instagram: Iig,
     tiktok: Itik,
+    instagram: Iig,
   };
 
   return (
