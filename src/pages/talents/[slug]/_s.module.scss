@@ -122,7 +122,7 @@
   transform: translateY(-38rem);
   @media (width < 770px) {
     font-size: 36rem;
-    transform: translateY(-16rem);
+    transform: translateY(-22rem);
     text-align: right;
   }
 }
@@ -277,8 +277,8 @@
 .s-press figure {
   aspect-ratio: 4/5;
   background-color: #ededed;
-  & img{
-        object-position: top center;
+  & img {
+    object-position: top center;
   }
 }
 .s-press figcaption {
@@ -444,7 +444,7 @@
   aspect-ratio: 1;
   @media (width < 770px) {
     // flex: unset;
-    margin-top: 20rem;
+    margin-top: 32rem;
     aspect-ratio: 3/4;
   }
 }
@@ -574,7 +574,7 @@
   margin-top: 80rem;
   padding-inline: var(--p-i);
   @media (width < 770px) {
-    margin-top: 60rem;
+    margin-top: calc(60rem - 19rem);
   }
 }
 .s-bof > h2 {
