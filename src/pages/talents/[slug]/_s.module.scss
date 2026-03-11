@@ -237,7 +237,7 @@
 }
 .s-press .h nav {
   display: flex;
-  gap: 16rem;
+  gap: 8rem;
 }
 .s-press .h svg {
   cursor: pointer;
@@ -248,7 +248,7 @@
   }
 
   @media (width < 770px) {
-    width: 24rem;
+    width: 28rem;
   }
 }
 .s-press :global(.swiper) {
@@ -324,7 +324,7 @@
 
 .s-brands .h nav {
   display: flex;
-  gap: 16rem;
+  gap: 8rem;
 }
 .s-brands .h svg {
   cursor: pointer;
@@ -334,7 +334,7 @@
     transform: rotate(-180deg);
   }
   @media (width < 770px) {
-    width: 24rem;
+    width: 28rem;
   }
 }
 
@@ -525,7 +525,7 @@
 // }
 .s-talks nav {
   display: flex;
-  gap: 16rem;
+  gap: 8rem;
   justify-content: flex-end;
   margin-top: 40rem;
   @media (width < 770px) {
@@ -540,7 +540,7 @@
     transform: rotate(-180deg);
   }
   @media (width < 770px) {
-    width: 24rem;
+    width: 28rem;
   }
 }
 
