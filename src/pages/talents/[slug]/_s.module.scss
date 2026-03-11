@@ -43,6 +43,8 @@
   }
   @media (width < 770px) {
     margin-top: unset;
+    position: relative;
+    top: 120rem;
     letter-spacing: unset;
     font-size: 16rem;
     padding-left: unset;
@@ -60,9 +62,8 @@
   background-color: #ededed;
   @media (width < 770px) {
     position: relative;
-    margin-top: -38rem;
-    width: 218rem;
-    margin-left: auto;
+    margin-top: -20rem;
+    width: 200rem;
     margin-right: unset;
     top: unset;
   }
