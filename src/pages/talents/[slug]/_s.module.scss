@@ -55,6 +55,8 @@
   z-index: -1;
   position: sticky;
   top: 99rem;
+  aspect-ratio: 3/4;
+  background-color: #ededed;
   @media (width < 770px) {
     position: relative;
     margin-top: -35rem;
@@ -484,28 +486,55 @@
     width: unset;
   }
 }
-.s-talks ul {
-  margin-top: 40rem;
+// .s-talks ul {
+//   margin-top: 40rem;
+//   display: flex;
+//   gap: 20rem;
+//   @media (width < 770px) {
+//     margin-top: 30rem;
+//   }
+// }
+// .s-talks li {
+//   flex-shrink: 0;
+//   width: calc((100vw - 2 * var(--p-i) - 20rem * 3) / 4);
+//   @media (width < 770px) {
+//     width: calc((100% - 16rem) / 2);
+//   }
+// }
+.s-talks nav {
   display: flex;
-  gap: 20rem;
+  gap: 16rem;
+  justify-content: flex-end;
+  margin-top: 40rem;
   @media (width < 770px) {
     margin-top: 30rem;
   }
 }
-.s-talks li {
-  flex-shrink: 0;
-  width: calc((100vw - 2 * var(--p-i) - 20rem * 3) / 4);
+.s-talks nav svg {
+  cursor: pointer;
+  display: block;
+  width: 32rem;
+  &:first-child {
+    transform: rotate(-180deg);
+  }
   @media (width < 770px) {
-    width: calc((100% - 16rem) / 2);
+    width: 24rem;
   }
 }
-.s-talks li > figure {
+
+.s-talks :global(.swiper) {
+  margin-top: 16rem;
+  @media (width < 770px) {
+    margin-top: 8rem;
+  }
+}
+.s-talks :global(.swiper) figure {
   aspect-ratio: 2/1.8;
 }
-.s-talks li img {
+.s-talks :global(.swiper) img {
   object-position: top center;
 }
-.s-talks li > h4 {
+.s-talks h4 {
   margin-top: 24rem;
   font-size: 20rem;
   @media (width < 770px) {

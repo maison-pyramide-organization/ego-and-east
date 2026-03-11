@@ -1,4 +1,7 @@
 import s from "../../_s.module.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import { ReactComponent as Iarrow } from "@ic/arr.svg";
 
 interface Iprops {
   talks: any[];
@@ -18,17 +21,36 @@ export default function Talks(props: Iprops) {
       <figure>
         <img src={talksBanner.fields.file.url} alt="" />
       </figure>
-      <p className='m-o'>{talksIntro}</p>
-      <ul className="h-s">
+      <p className="m-o">{talksIntro}</p>
+
+      <nav>
+        <Iarrow id="talks-prev" />
+        <Iarrow id="talks-next" />
+      </nav>
+      <Swiper
+        spaceBetween="16rem"
+        slidesPerView={2}
+        breakpoints={{
+          770: {
+            spaceBetween: "20rem",
+            slidesPerView: 4,
+          },
+        }}
+        modules={[Navigation]}
+        navigation={{
+          prevEl: "#talks-prev",
+          nextEl: "#talks-next",
+        }}
+      >
         {talks?.map((talk) => (
-          <li key={talk.sys.id}>
+          <SwiperSlide key={talk.sys.id}>
             <figure>
               <img src={talk.fields.file.url} alt="" />
             </figure>
             <h4>{talk.fields.title}</h4>
-          </li>
+          </SwiperSlide>
         ))}
-      </ul>
+      </Swiper>
     </section>
   );
 }
