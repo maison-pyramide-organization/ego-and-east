@@ -453,7 +453,7 @@
   font-weight: bold;
   letter-spacing: 2%;
   @media (width < 770px) {
-    margin-top: 10rem;
+    margin-top: unset;
     font-size: 14rem;
   }
 }
