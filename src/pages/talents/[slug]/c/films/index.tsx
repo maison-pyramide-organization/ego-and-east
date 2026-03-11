@@ -12,7 +12,7 @@ export default function Films(props: Iprops) {
     <section className={s["s-films"]}>
       <h2>
         FILM
-        <span>& TV</span>
+        <span>AND TV</span>
       </h2>
       <div>
         <div className={s.l}>

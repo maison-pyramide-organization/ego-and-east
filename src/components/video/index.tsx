@@ -48,7 +48,7 @@ export default function HoverVideo(props: Iprops) {
       src={src}
       muted
       playsInline
-      preload="metadata"
+      preload="auto"
       onMouseEnter={canHover ? play : undefined}
       onMouseLeave={canHover ? pause : undefined}
       onClick={!canHover ? toggle : undefined}

@@ -21,7 +21,7 @@ export default function Talks(props: Iprops) {
       <figure>
         <img src={talksBanner.fields.file.url} alt="" />
       </figure>
-      <p className="m-o">{talksIntro}</p>
+      <p>{talksIntro}</p>
 
       <nav>
         <Iarrow id="talks-prev" />
