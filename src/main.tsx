@@ -9,7 +9,7 @@ import Home from "./pages/Home";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Home />} />
+      {/* <Route path="/" element={<Home />} /> */}
       <Route path="/landing" element={<Landing />} />
       <Route path="/talents/:slug" element={<Talent />} />
     </Routes>

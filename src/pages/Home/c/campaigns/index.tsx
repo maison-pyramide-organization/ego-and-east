@@ -1,11 +1,13 @@
-import campaigns from "@/data/campaigns";
+// import campaigns from "@/data/campaigns";
 import s from "./_s.module.scss";
 
 export default function Campaigns() {
+  let campaigns = null;
+
   return (
     <section className={s.s}>
       <ul>
-        {campaigns.map((campaign) => (
+        {campaigns?.map((campaign) => (
           <li className={s.campaign}>
             <figure>
               <img
