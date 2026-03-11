@@ -36,7 +36,6 @@ export default function Press(props: Iprops) {
           nextEl: "#press-next",
         }}
       >
-
         {press.map((item, i) => (
           <SwiperSlide key={i}>
             <figure>
