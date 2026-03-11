@@ -34,6 +34,7 @@ export default function HoverVideo(props: Iprops) {
   const toggle = () => {
     const video = videoRef.current;
     if (!video) return;
+    video.load();
     video
       .play()
       .then(() => video.pause())

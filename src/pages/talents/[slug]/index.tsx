@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import s from "./_s.module.scss";
 import "swiper/css";
 
-
 import { getTalent } from "../../../services/api";
 import { useParams } from "react-router-dom";
 import About from "./c/about";
