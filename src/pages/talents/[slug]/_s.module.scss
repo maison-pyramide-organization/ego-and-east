@@ -27,6 +27,7 @@
   text-transform: uppercase;
   @media (width < 770px) {
     font-size: 40rem;
+    text-align: center;
   }
 }
 .s-hero > p {
@@ -44,7 +45,7 @@
   @media (width < 770px) {
     margin-top: unset;
     position: relative;
-    top: 120rem;
+    top: 135rem;
     letter-spacing: unset;
     font-size: 16rem;
     padding-left: unset;
@@ -402,55 +403,51 @@
     }
   }
 }
-.s-films > div {
-  margin-top: 40rem;
+.s-films ul {
+  margin-top: 60rem;
   display: flex;
-  align-items: flex-start;
   gap: 20rem;
+  align-items: flex-start;
   @media (width < 770px) {
     margin-top: 30rem;
+    flex-direction: column;
+  }
+}
+.s-films li {
+  flex-shrink: 0;
+  @media (width < 770px) {
+    display: flex;
     gap: 16rem;
   }
 }
-.s-films .l {
-  flex: 5;
+
+.s-films li figure {
+  aspect-ratio: 3/4;
   @media (width < 770px) {
-    flex-direction: column;
     flex: 3;
   }
 }
-.s-films .l figure {
-  aspect-ratio: 3/4;
-}
-
-.s-films .r {
-  flex: 7;
-  display: flex;
-  gap: 20rem;
-  align-items: flex-start;
+.s-films li p {
   @media (width < 770px) {
     flex: 2;
-    display: block;
+    font-size: 14rem;
+    line-height: 18rem;
   }
 }
-.s-films .r figure:first-child {
+.s-films li:nth-child(1) {
+  flex: 5;
+}
+.s-films li:nth-child(2) {
   flex: 3;
-  aspect-ratio: 3/4;
-  @media (width < 770px) {
-    // flex: unset;
-  }
 }
-.s-films .r figure:last-child {
+.s-films li:nth-child(3) {
   flex: 4;
-  aspect-ratio: 1;
-  @media (width < 770px) {
-    // flex: unset;
-    margin-top: 32rem;
-    aspect-ratio: 3/4;
+  & figure {
+    aspect-ratio: 1;
   }
 }
 
-.s-films figcaption {
+.s-films p {
   margin-top: 16rem;
   font-size: 18rem;
   font-weight: bold;

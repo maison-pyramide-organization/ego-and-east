@@ -13,10 +13,6 @@ export default function HoverVideo(props: Iprops) {
     if (!video) return;
 
     video.load();
-    // video
-    //   .play()
-    //   .then(() => video.pause())
-    //   .catch(() => {});
     // Detect if device supports hover
     const mediaQuery = window.matchMedia("(hover: hover)");
 

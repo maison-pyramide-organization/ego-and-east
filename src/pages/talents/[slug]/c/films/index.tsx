@@ -12,26 +12,18 @@ export default function Films(props: Iprops) {
     <section className={s["s-films"]}>
       <h2>
         FILM
-        <span>AND TV</span>
+        <span>& TV</span>
       </h2>
-      <div>
-        <div className={s.l}>
-          <figure>
-            <HoverVideo src={films[0].fields.file.url} />
-            <figcaption>{films[0].fields.title}</figcaption>
-          </figure>
-        </div>
-        <div className={s.r}>
-          <figure>
-            <HoverVideo src={films[1].fields.file.url} />
-            <figcaption>{films[1].fields.title}</figcaption>
-          </figure>
-          <figure>
-            <HoverVideo src={films[2].fields.file.url} />
-            <figcaption>{films[2].fields.title}</figcaption>
-          </figure>
-        </div>
-      </div>
+      <ul>
+        {films.map((film) => (
+          <li>
+            <figure>
+              <HoverVideo src={film.fields.file.url} />
+            </figure>
+            <p>{film.fields.title}</p>
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

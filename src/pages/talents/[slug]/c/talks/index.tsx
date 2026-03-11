@@ -16,7 +16,7 @@ export default function Talks(props: Iprops) {
     <section className={s["s-talks"]}>
       <h2>
         TALKS
-        <span>AND PANELS</span>
+        <span>& PANELS</span>
       </h2>
       <figure>
         <img src={talksBanner.fields.file.url} alt="" />
