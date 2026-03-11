@@ -9,6 +9,14 @@ export default function HoverVideo(props: Iprops) {
   const [canHover, setCanHover] = useState(false);
 
   useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.load();
+    // video
+    //   .play()
+    //   .then(() => video.pause())
+    //   .catch(() => {});
     // Detect if device supports hover
     const mediaQuery = window.matchMedia("(hover: hover)");
 
@@ -34,11 +42,6 @@ export default function HoverVideo(props: Iprops) {
   const toggle = () => {
     const video = videoRef.current;
     if (!video) return;
-    video.load();
-    video
-      .play()
-      .then(() => video.pause())
-      .catch(() => {});
 
     if (video.paused) {
       video.play();
