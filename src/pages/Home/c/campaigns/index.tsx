@@ -2,12 +2,14 @@
 import s from "./_s.module.scss";
 
 export default function Campaigns() {
-  let campaigns = null;
+  let campaigns = [] as any[];
+
+  if (!campaigns) return;
 
   return (
     <section className={s.s}>
       <ul>
-        {campaigns?.map((campaign) => (
+        {campaigns.map((campaign) => (
           <li className={s.campaign}>
             <figure>
               <img
