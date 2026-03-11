@@ -35,6 +35,7 @@ export default function Footer() {
               </a>
             </button>
           </div>
+
           {/* <div className={s.f_cta}>
             <h4>WANT TO GET SCOUTED?</h4>
             <button>BECOME A TALENT</button>
