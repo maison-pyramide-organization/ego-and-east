@@ -21,19 +21,19 @@
   font-family: "h";
   font-style: normal;
   font-weight: 400;
-  src: url("../assets/fonts/h.woff2") format("woff2");
+  src: url("../assets/fonts/s.woff2") format("woff2");
 }
 @font-face {
   font-family: "h";
   font-style: normal;
   font-weight: 300;
-  src: url("../assets/fonts/h-l.woff2") format("woff2");
+  src: url("../assets/fonts/s-t.woff2") format("woff2");
 }
 @font-face {
   font-family: "h";
   font-style: normal;
   font-weight: 700;
-  src: url("../assets/fonts/h-b.woff2") format("woff2");
+  src: url("../assets/fonts/s-sb.woff2") format("woff2");
 }
 
 * {
