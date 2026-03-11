@@ -42,8 +42,9 @@
     font-family: "h";
   }
   @media (width < 770px) {
-    margin-top: -9rem;
-    font-size: 15rem;
+    margin-top: unset;
+    letter-spacing: unset;
+    font-size: 16rem;
     padding-left: unset;
   }
 }
@@ -60,7 +61,7 @@
   @media (width < 770px) {
     position: relative;
     margin-top: -35rem;
-    width: 285rem;
+    width: 220rem;
     margin-left: auto;
     margin-right: unset;
     top: unset;
@@ -119,25 +120,37 @@
   font-size: 70rem;
   letter-spacing: 2%;
   transform: translateY(-38rem);
-  text-align: right;
   @media (width < 770px) {
     font-size: 36rem;
     transform: translateY(-16rem);
+    text-align: right;
   }
 }
 .s-network ul {
   display: flex;
-  gap: 80rem;
+  flex-direction: column;
+  gap: 60rem;
+  margin-left: calc(360rem - 32rem);
   @media (width < 770px) {
     gap: 32rem;
     flex-direction: column;
     justify-content: unset;
+    margin-left: unset;
+  }
+}
+.s-network li {
+  display: flex;
+  gap: 64rem;
+  @media (width < 770px) {
+    flex-direction: column;
+    gap: 16rem;
   }
 }
 .s-network .t {
   display: flex;
   gap: 12rem;
   align-items: center;
+  width: 210rem;
 }
 .s-network svg {
   width: 24rem;
@@ -146,8 +159,8 @@
   }
 }
 .s-network h3 {
-  font-size: 24rem;
-  // letter-spacing: 2%;
+  font-size: 28rem;
+  letter-spacing: 2%;
   text-transform: uppercase;
   @media (width < 770px) {
     font-size: 18rem;
@@ -156,29 +169,38 @@
 .s-network li .b {
   margin-top: 16rem;
   display: flex;
-  gap: 20rem;
+  gap: 40rem;
   @media (width < 770px) {
-    margin-top: 8rem;
+    margin-top: unset;
     margin-left: calc(12rem + 15rem);
-    gap: 24rem;
+    gap: 20rem;
+    flex-wrap: wrap;
+  }
+}
+.s-network .b > div {
+  @media (width < 770px) {
+    width: 104rem;
+    &:nth-child(3) {
+      width: 80rem;
+    }
   }
 }
 .s-network p {
-  font-size: 20rem;
-  // letter-spacing: 2%;
+  font-size: 22rem;
+  letter-spacing: 2%;
   @media (width < 770px) {
-    font-size: 18rem;
+    font-size: 16rem;
   }
 }
 .s-network span {
   display: block;
-  margin-top: 4rem;
-  font-size: 18rem;
+  // margin-top: 4rem;
+  font-size: 22rem;
   // letter-spacing: 2%;
   font-weight: 300;
   @media (width < 770px) {
     margin-top: unset;
-    font-size: 16rem;
+    font-size: 14rem;
   }
 }
 // Press
@@ -253,7 +275,7 @@
 //   }
 // }
 .s-press figure {
-  aspect-ratio: 3/4;
+  aspect-ratio: 4/5;
   background-color: #ededed;
 }
 .s-press figcaption {

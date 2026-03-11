@@ -23,7 +23,7 @@ export default function Press(props: Iprops) {
       </div>
       <Swiper
         spaceBetween="16rem"
-        slidesPerView={2.5}
+        slidesPerView={2}
         breakpoints={{
           770: {
             spaceBetween: "20rem",

@@ -4,7 +4,7 @@
   padding-inline: var(--p-i);
   background-color: var(--beige);
   @media (width < 770px) {
-  margin-top: 60rem;
+    margin-top: 60rem;
     padding-block: 32rem;
   }
 }
@@ -37,18 +37,24 @@
   display: flex;
   gap: 20rem;
   align-items: flex-start;
+  @media (width < 770px) {
+    align-items: stretch;
+  }
 }
 .s .l {
   flex: 4;
+  order: 2;
   @media (width < 770px) {
-    order: 2;
     flex: 3;
   }
 }
 .s .l figure {
-  aspect-ratio: 3/2;
+  aspect-ratio: 1;
+  width: 442rem;
   @media (width < 770px) {
-    aspect-ratio: 1;
+    width: unset;
+    aspect-ratio: unset;
+    height: 100%;
   }
 }
 .s .r {
@@ -59,13 +65,15 @@
 }
 .s .r figure {
   aspect-ratio: 1;
-  @media (width < 770px) {
-    aspect-ratio: 4/5;
+  flex: 1;
+  &:first-child {
+    aspect-ratio: 3/2;
   }
 }
 .s .r .t {
   display: flex;
   gap: 20rem;
+  align-items: flex-start;
   @media (width < 770px) {
     flex-direction: column;
   }

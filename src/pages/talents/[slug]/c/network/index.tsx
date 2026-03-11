@@ -13,6 +13,7 @@ export default function Network(props: Iprops) {
     tiktok: Itik,
     instagram: Iig,
   };
+  console.log(network);
 
   return (
     <section className={s["s-network"]}>
@@ -41,9 +42,15 @@ export default function Network(props: Iprops) {
                   <span>Female</span>
                 </div>
                 {item.fields.locations && (
-                  <div className="d-o">
+                  <div>
                     <p>{item.fields.locations}</p>
                     <span>Locations</span>
+                  </div>
+                )}
+                {item.fields.likes && (
+                  <div>
+                    <p>{item.fields.likes}</p>
+                    <span>Likes</span>
                   </div>
                 )}
               </div>

@@ -28,7 +28,10 @@ export default function Footer() {
         </ul>
         <div>
           <div className={s.f_cta}>
-            <h4>WANT TO CHAT ABOUT TALENTS, EVENTS, ACTIVATIONS?</h4>
+            {/* <h4>WANT TO CHAT ABOUT TALENTS, EVENTS, ACTIVATIONS?</h4> */}
+            <h4>
+              LOOKING TO COLLABORATE, GET SCOUTED, OR DISCOVER NEW TALENT?
+            </h4>
             <button>
               <a href="mailto:hello@egoandeast.co" target="_blank">
                 GET IN TOUCH

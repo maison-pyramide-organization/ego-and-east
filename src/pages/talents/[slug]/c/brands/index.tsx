@@ -21,11 +21,10 @@ export default function Brands(props: Iprops) {
           BRANDS
           <span>PARTNERSHIPS</span>
         </h2>
-
       </div>
       <Swiper
         spaceBetween="16rem"
-        slidesPerView={2.5}
+        slidesPerView={2}
         breakpoints={{
           770: {
             spaceBetween: "20rem",

@@ -1,4 +1,3 @@
-// import campaigns from "@/data/campaigns";
 import s from "./_s.module.scss";
 
 export default function Campaigns() {
