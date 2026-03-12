@@ -24,7 +24,7 @@ export const getCampaigns = async () => {
     limit: 100,
   });
 
-  const campaigns = items.map(({ fields, sys }) => ({
+  const campaigns = items.map(({ fields }) => ({
     ...fields,
     // id: sys.id,
     // modifiedAt: sys.updatedAt, // ISO8601 UTC
