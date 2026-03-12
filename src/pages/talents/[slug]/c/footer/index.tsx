@@ -8,11 +8,9 @@ export default function Footer() {
       <div className={s.f_t}>
         <div className={s.f_info}>
           <h4>FOR MORE INFORMATION</h4>
-          <button>
             <a href="mailto:karenwazen@egoandeast.co" target="_blank">
               CONTACT US
             </a>
-          </button>
         </div>
         <p>
           This document and the information in it are provided in confidence,

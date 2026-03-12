@@ -40,7 +40,8 @@
   }
 }
 
-.f_info button {
+.f_info a {
+  display: block;
   width: fit-content;
   margin-top: 24rem;
   padding: 10rem 24rem;
