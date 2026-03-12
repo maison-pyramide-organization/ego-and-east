@@ -26,7 +26,9 @@ export default function Services() {
         WE COLLABORATE WITH BUSINESSES & BRANDS ON WORLD CLASS CREATIVE
         DIRECTION, STRATEGY & DESIGN.
       </p>
-      <button>GET IN TOUCH</button>
+      <a href="mailto:hello@egoandeast.co" target="_blank">
+        GET IN TOUCH
+      </a>
     </section>
   );
 }

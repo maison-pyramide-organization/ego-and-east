@@ -44,17 +44,9 @@
   font-size: 14rem;
   letter-spacing: 2%;
 }
-.f_t > div {
-  // display: flex;
-  // gap: 50rem;
-  // @media (width < 770px) {
-  //   flex-direction: column;
-  // }
-}
 .f_cta {
   display: flex;
   flex-direction: column;
-  margin-block: auto;
   @media (width < 770px) {
     margin-inline: auto;
   }
@@ -66,18 +58,7 @@
   }
 }
 
-.f_cta:first-child {
-  // width: 250rem;
-  & button {
-    // margin-top: 24rem;
-    // margin-left: auto;
-  }
-}
-.f_cta:last-child {
-  // width: 200rem;
-}
-
-.f_cta button {
+.f_cta a {
   width: fit-content;
   // margin-top: auto;
   margin-top: 24rem;

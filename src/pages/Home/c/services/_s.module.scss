@@ -64,6 +64,7 @@
   line-height: 44rem;
   letter-spacing: 2%;
   @media (width < 770px) {
+    margin-top: 12rem;
     font-size: 17rem;
     line-height: 1;
   }
@@ -86,8 +87,9 @@
     line-height: 20rem;
   }
 }
-.s > button {
+.s > a {
   display: block;
+  width: fit-content;
   margin-top: 80rem;
   margin-inline: auto;
   background-color: black;
@@ -95,10 +97,11 @@
   font-size: 15rem;
   font-weight: bold;
   padding: 16rem 32rem;
-  border-radius: 50rem;
+  border: 2rem solid black;
+  border-radius: 80rem;
   @media (width < 770px) {
     margin-top: 40rem;
-    font-size: 10rem;
+    font-size: 12rem;
     padding: 10rem 24rem;
   }
 }

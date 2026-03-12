@@ -32,11 +32,9 @@ export default function Footer() {
             <h4>
               LOOKING TO COLLABORATE, GET SCOUTED, OR DISCOVER NEW TALENT?
             </h4>
-            <button>
               <a href="mailto:hello@egoandeast.co" target="_blank">
                 GET IN TOUCH
               </a>
-            </button>
           </div>
 
           {/* <div className={s.f_cta}>
