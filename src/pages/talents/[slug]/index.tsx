@@ -1,19 +1,18 @@
 import { useEffect, useState } from "react";
 import s from "./_s.module.scss";
 import "swiper/css";
-
 import { getTalent } from "../../../services/api";
 import { useParams } from "react-router-dom";
 import About from "./c/about";
 import Brands from "./c/brands";
 import Films from "./c/films";
 import Talks from "./c/talks";
-import Footer from "@/components/footer";
 import Bof from "./c/bof";
 import Network from "./c/network";
 import Press from "./c/press";
 import TS01 from "@/components/ts01";
 import { ReactComponent as Ilogo } from "@a/logo.svg";
+import Footer from "./c/footer";
 
 const Talent = () => {
   const [talent, setTalent] = useState<any>(null);

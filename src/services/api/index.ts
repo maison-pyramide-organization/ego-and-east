@@ -18,3 +18,17 @@ export const getTalent = async (slug: string) => {
   };
 };
 
+export const getCampaigns = async () => {
+  const { items } = await client.getEntries({
+    content_type: "campaign",
+    limit: 100,
+  });
+
+  const campaigns = items.map(({ fields, sys }) => ({
+    ...fields,
+    // id: sys.id,
+    // modifiedAt: sys.updatedAt, // ISO8601 UTC
+  }));
+
+  return campaigns;
+};

@@ -14,7 +14,7 @@ export default function Services() {
         <div className={s.r}>
           <ul>
             {services.map((service) => (
-              <li>
+              <li key={service.id}>
                 <span>{service.id}</span>
                 <div>{service.name}</div>
               </li>

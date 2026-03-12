@@ -1,9 +1,17 @@
 .s {
-  padding-top: 80rem;
+  margin-top: 80rem;
+  @media (width < 770px) {
+    margin-top: 70rem;
+  }
 }
 .s .t {
   display: flex;
   gap: 20rem;
+
+  @media (width < 770px) {
+    flex-direction: column;
+    gap: 30rem;
+  }
 }
 .s .l {
   flex: 5;
@@ -12,6 +20,10 @@
   font-size: 102rem;
   line-height: 92rem;
   letter-spacing: 2%;
+  @media (width < 770px) {
+    font-size: 40rem;
+    line-height: 40rem;
+  }
 }
 .s h2 span {
   display: block;
@@ -27,20 +39,34 @@
   display: flex;
   flex-wrap: wrap;
   gap: 136rem;
+  @media (width < 770px) {
+    gap: 32rem;
+    margin-left: calc(92rem - 12rem);
+  }
 }
 .s li {
   flex-basis: calc((100% - 136rem) / 2);
+  @media (width < 770px) {
+    flex-basis: 132rem;
+  }
 }
 .s li span {
   font-size: 30rem;
   letter-spacing: 2%;
   font-weight: 300;
+  @media (width < 770px) {
+    font-size: 15rem;
+  }
 }
 .s li div {
   margin-top: 16rem;
   font-size: 40rem;
   line-height: 44rem;
   letter-spacing: 2%;
+  @media (width < 770px) {
+    font-size: 17rem;
+    line-height: 1;
+  }
 }
 .s > p {
   width: 950rem;
@@ -52,6 +78,13 @@
   font-family: "dm";
   font-style: italic;
   text-align: center;
+
+  @media (width < 770px) {
+    margin-top: 70rem;
+    width: 320rem;
+    font-size: 20rem;
+    line-height: 20rem;
+  }
 }
 .s > button {
   display: block;
@@ -63,4 +96,9 @@
   font-weight: bold;
   padding: 16rem 32rem;
   border-radius: 50rem;
+  @media (width < 770px) {
+    margin-top: 40rem;
+    font-size: 10rem;
+    padding: 10rem 24rem;
+  }
 }

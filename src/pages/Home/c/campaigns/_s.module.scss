@@ -1,11 +1,16 @@
 .s {
-  padding-block: 100rem;
+  padding-top: 100rem;
 }
 .s ul {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 100rem 20rem;
   align-items: start;
+  @media (width < 770px) {
+    display: flex;
+    flex-direction: column;
+    gap: 50rem;
+  }
 }
 .campaign figure {
   aspect-ratio: 4/5;
@@ -17,6 +22,10 @@
   line-height: 1;
   letter-spacing: 2%;
   text-transform: uppercase;
+  @media (width < 770px) {
+    font-size: 15rem;
+    line-height: 14rem;
+  }
 }
 .campaign span {
   display: block;

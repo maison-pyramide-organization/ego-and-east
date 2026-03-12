@@ -1,0 +1,42 @@
+import s from "./_s.module.scss";
+import { ReactComponent as LogoI } from "@a/logo.svg";
+import mpcoLogo from "@a/Images/mp-co-logo.png";
+
+export default function Footer() {
+  return (
+    <footer className={s.f}>
+      <div className={s.f_t}>
+        <div className={s.f_info}>
+          <h4>FOR MORE INFORMATION</h4>
+          <button>
+            <a href="mailto:karenwazen@egoandeast.co" target="_blank">
+              CONTACT US
+            </a>
+          </button>
+        </div>
+        <p>
+          This document and the information in it are provided in confidence,
+          for the sole purpose of the recipient, and may not be disclosed to any
+          third party or used for any other purpose without the express written
+          permission of Reem or Natalya Kanj.
+        </p>
+      </div>
+      <div className={s.f_so}>
+        <a target="_blank" href="https://www.instagram.com/egoandeast">
+          INSTAGRAM
+        </a>
+        <span>/</span>
+        <a target="_blank" href="https://www.linkedin.com/company/ego-east/">
+          LINKEDIN
+        </a>
+      </div>
+      <div className={s.f_lo}>
+        <LogoI />
+      </div>
+      <div className={s.f_b}>
+        <p>©2026 ALL RIGHTS RESERVED</p>
+        <img src={mpcoLogo} alt="Maison Pyramide Company Logo" />
+      </div>
+    </footer>
+  );
+}

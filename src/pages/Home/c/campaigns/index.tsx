@@ -1,24 +1,33 @@
+import { useEffect, useState } from "react";
 import s from "./_s.module.scss";
+import { getCampaigns } from "@/services/api";
 
 export default function Campaigns() {
-  let campaigns = [] as any[];
+  const [campaigns, setCampaigns] = useState<any>(null);
 
-  if (!campaigns) return;
+  useEffect(() => {
+    getCampaigns().then((c: any) => {
+      c.sort((a, b) => a.id - b.id);
+      setCampaigns(c);
+    });
+  }, []);
+
+  if (!campaigns) return null;
 
   return (
     <section className={s.s}>
       <ul>
-        {campaigns.map((campaign) => (
-          <li className={s.campaign}>
+        {campaigns?.map((campaign) => (
+          <li className={s.campaign} key={campaign.id}>
             <figure>
               <img
-                src={campaign.img}
+                src={campaign.image.fields.file.url}
                 alt={`${campaign.talent} - ${campaign.brand}`}
               />
             </figure>
             <h4>
               {campaign.talent}
-              <span>for {campaign.brand}</span>
+              <span> {campaign.brand}</span>
             </h4>
           </li>
         ))}
