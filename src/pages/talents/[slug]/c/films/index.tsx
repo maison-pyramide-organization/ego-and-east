@@ -17,9 +17,7 @@ export default function Films(props: Iprops) {
       <ul>
         {films.map((film) => (
           <li>
-            <figure>
-              <HoverVideo src={film.fields.file.url} />
-            </figure>
+            <HoverVideo src={film.fields.file.url} />
             <p>{film.fields.title}</p>
           </li>
         ))}
