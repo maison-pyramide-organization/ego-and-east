@@ -1,6 +1,7 @@
 .s {
   height: 300dvh;
   height: 300vh;
+  margin-top: calc(var(--h-h) * -1);
 }
 .hero {
   position: sticky;
@@ -11,6 +12,30 @@
   align-items: center;
   justify-content: center;
 }
-figure {
-  width: 1000px;
+.s figure {
+  width: 590rem;
+}
+.s p {
+  position: absolute;
+  width: 363rem;
+  font-size: 15rem;
+  font-weight: 300;
+  line-height: 17rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.s p:first-of-type {
+  left: 0;
+}
+.s p:last-of-type {
+  right: 0;
+  text-align: right;
+}
+.s h1 {
+  font-size: 24rem;
+  font-weight: normal;
+  width: 1000rem;
+  text-align: center;
+  position: absolute;
+  top: calc(50vh + 160rem + 70rem);
 }

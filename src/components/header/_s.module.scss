@@ -1,0 +1,18 @@
+.h {
+  padding-top: 32rem;
+  padding-inline: var(--p-i);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--h-h);
+}
+.h > div {
+  width: 170rem;
+}
+.h nav {
+  display: flex;
+  gap: 16rem;
+}
+.h nav a {
+  font-size: 12rem;
+}
