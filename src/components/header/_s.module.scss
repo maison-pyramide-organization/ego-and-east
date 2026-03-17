@@ -5,6 +5,11 @@
   justify-content: space-between;
   align-items: center;
   height: var(--h-h);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  mix-blend-mode: difference;
 }
 .h > div {
   width: 170rem;
@@ -15,4 +20,5 @@
 }
 .h nav a {
   font-size: 12rem;
+  color: white;
 }

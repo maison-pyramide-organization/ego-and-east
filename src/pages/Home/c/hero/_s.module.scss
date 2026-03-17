@@ -1,7 +1,15 @@
+.m {
+  height: 100vh;
+  max-height: 100vh;
+  // margin-top: calc(var(--h-h) * -1);
+}
+.m figure {
+  width: 100%;
+  height: 100%;
+}
 .s {
-  height: 300dvh;
-  height: 300vh;
-  margin-top: calc(var(--h-h) * -1);
+  // height: 300dvh;
+  // height: 300vh;
 }
 .hero {
   position: sticky;
