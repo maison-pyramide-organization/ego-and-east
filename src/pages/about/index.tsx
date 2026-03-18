@@ -6,11 +6,14 @@ export default function () {
     <>
       <div className={s.p}>
         <main className={s.m}>
+          <h1 className="m-o">REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST.</h1>
           <figure>
             <img src={aboutI} alt="" />
           </figure>
           <aside>
-            <h1>REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST.</h1>
+            <h1 className="d-o">
+              REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST.
+            </h1>
             <div>
               <p>
                 Their innovative approach to talent management, influenced by

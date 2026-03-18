@@ -1,11 +1,18 @@
 .p {
   padding-top: 150rem;
   padding-inline: var(--p-i);
+  @media (width < 770px) {
+    padding-top: 100rem;
+  }
 }
 
 .m {
   display: flex;
   gap: 136rem;
+  @media (width < 770px) {
+    flex-direction: column;
+    gap: 80rem;
+  }
 }
 .m .l {
   width: 330rem;
@@ -18,20 +25,37 @@
   font-family: "dm";
   font-weight: normal;
   font-style: italic;
+  @media (width < 770px) {
+    font-size: 40rem;
+  }
 }
 
 .l p {
   margin-top: 56rem;
-  font-size: "h";
   font-size: 15rem;
   letter-spacing: 2%;
+  @media (width < 770px) {
+    margin-top: 32rem;
+  }
 }
 .em,
 .so {
-  margin-top: 48rem;
   font-size: 15rem;
   letter-spacing: 2%;
 }
+.em {
+  margin-top: 48rem;
+  @media (width < 770px) {
+    margin-top: 56rem;
+  }
+}
+.so {
+  margin-top: 48rem;
+  @media (width < 770px) {
+    margin-top: 40rem;
+  }
+}
+
 .ti {
   font-weight: 300;
 }
@@ -72,6 +96,12 @@
     "e d"
     "f d"
     ". g";
+
+  @media (width < 770px) {
+    display: flex;
+    flex-direction: column;
+    gap: 55rem;
+  }
 }
 
 .form input {
@@ -91,6 +121,9 @@
   resize: none;
   padding: 8rem;
   border: 0.5px solid black;
+  @media (width < 770px) {
+    min-height: 140rem;
+  }
 }
 
 .form .talent {
@@ -122,4 +155,7 @@
   border-radius: 100rem;
   font-size: 12rem;
   font-weight: bold;
+  @media (width < 770px) {
+    margin-top: -10rem;
+  }
 }

@@ -11,9 +11,15 @@
   left: 0;
   z-index: 9999;
   mix-blend-mode: difference;
+  @media (width < 770px) {
+    padding-top: 16rem;
+  }
 }
 .h .lo {
   width: 170rem;
+  @media (width < 770px) {
+    width: 110rem;
+  }
 }
 .h nav {
   display: flex;

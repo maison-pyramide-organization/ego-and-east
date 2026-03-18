@@ -12,7 +12,7 @@ export default function Header() {
       <Link to="/" className={s.lo}>
         <BLogoI />
       </Link>
-      <nav>
+      <nav className="d-o">
         <Link to="/about">ABOUT US</Link>
         <Link to="#services">OUR SERVICES</Link>
         <Link to="/contact">CONTACT US</Link>
