@@ -1,5 +1,5 @@
 import s from "./_s.module.scss";
-import { ReactComponent as LogoI } from "@a/logo.svg";
+import { ReactComponent as LogoI } from "@a/b-logo.svg";
 import mpcoLogo from "@a/Images/mp-co-logo.png";
 
 export default function Footer() {

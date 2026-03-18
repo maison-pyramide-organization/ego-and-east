@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
 import s from "./_s.module.scss";
-import { ReactComponent as LogoI } from "@a/logo.svg";
+import { Link, useLocation } from "react-router-dom";
+import { ReactComponent as BLogoI } from "@a/b-logo.svg";
+import { ReactComponent as WLogoI } from "@a/w-logo.svg";
 
 export default function Header() {
+  const { pathname } = useLocation();
+
   return (
     <header className={s.h}>
-      <div className={s.lo}>
-        <LogoI />
-      </div>
+      <Link to="/" className={s.lo}>
+        <BLogoI />
+      </Link>
       <nav>
         <Link to="/about">ABOUT US</Link>
         <Link to="#services">OUR SERVICES</Link>

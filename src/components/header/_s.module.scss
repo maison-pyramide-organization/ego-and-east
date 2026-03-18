@@ -9,9 +9,10 @@
   top: 0;
   right: 0;
   left: 0;
+  z-index: 9999;
   mix-blend-mode: difference;
 }
-.h > div {
+.h .lo {
   width: 170rem;
 }
 .h nav {
@@ -20,5 +21,5 @@
 }
 .h nav a {
   font-size: 12rem;
-  color: white;
+  // color: white;
 }

@@ -11,7 +11,7 @@ import Bof from "./c/bof";
 import Network from "./c/network";
 import Press from "./c/press";
 import TS01 from "@/components/ts01";
-import { ReactComponent as Ilogo } from "@a/logo.svg";
+import { ReactComponent as Ilogo } from "@a/b-logo.svg";
 import Footer from "./c/footer";
 
 const Talent = () => {

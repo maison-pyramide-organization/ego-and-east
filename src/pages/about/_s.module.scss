@@ -1,0 +1,39 @@
+.p {
+  padding-top: 150rem;
+  padding-inline: 32rem;
+}
+.m {
+  display: flex;
+  gap: 20rem;
+}
+.m figure {
+  flex: 1;
+  aspect-ratio: 4/3;
+  background-color: #ededed;
+}
+.m aside {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.m aside h1 {
+  margin-top: -6rem;
+  font-size: 54rem;
+  line-height: 49rem;
+  font-style: italic;
+  letter-spacing: 2%;
+  font-family: "dm";
+  font-weight: normal;
+}
+.m aside > div {
+  margin-top: auto;
+  display: flex;
+  gap: 20rem;
+}
+.m aside p {
+  flex: 1;
+  font-size: 15rem;
+  line-height: 17rem;
+  font-weight: 300;
+}

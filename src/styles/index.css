@@ -91,7 +91,15 @@ button {
   color: black;
   cursor: pointer;
 }
+fieldset {
+  outline: none;
+  border: none;
+}
+label {
+  display: block;
+}
 input,
+textarea,
 select {
   display: block;
   outline: none;

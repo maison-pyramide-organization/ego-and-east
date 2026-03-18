@@ -1,5 +1,5 @@
 import s from "./_s.module.scss";
-import { ReactComponent as LogoI } from "@a/logo.svg";
+import { ReactComponent as LogoI } from "@a/b-logo.svg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger, SplitText } from "gsap/all";
