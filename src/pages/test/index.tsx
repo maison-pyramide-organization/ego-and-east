@@ -27,7 +27,7 @@ export default function Test() {
         ease: "power1.out",
         duration: 1,
       },
-      //   ">",
+      ">",
     );
     // const text_tl = gsap.timeline({
     //   defaults: {
