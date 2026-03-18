@@ -27,7 +27,7 @@ export default function ContactForm() {
           onClick={onNavClick}
           className={formType == "become" ? s.active : undefined}
         >
-          BOOK A TALENT
+          BECOME A TALENT
         </button>
       </nav>
 
@@ -55,7 +55,9 @@ export default function ContactForm() {
         )}
         <fieldset className={s.msg}>
           <label htmlFor="message">
-            WHAT KIND OF TALENT ARE YOU LOOKING FOR?
+            {formType == "book"
+              ? "WHAT KIND OF TALENT ARE YOU LOOKING FOR?"
+              : "TELL US ABOUT YOURSELF AND YOUR GOALS?"}
           </label>
           <textarea placeholder="(MAX 100 CHARACTERS)" id="message" />
         </fieldset>
