@@ -1,10 +1,11 @@
 import s from "./_s.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as BLogoI } from "@a/b-logo.svg";
-import { ReactComponent as WLogoI } from "@a/w-logo.svg";
+// import { ReactComponent as WLogoI } from "@a/w-logo.svg";
 
 export default function Header() {
   const { pathname } = useLocation();
+  console.log("pn", pathname);
 
   return (
     <header className={s.h}>

@@ -9,6 +9,7 @@ import About from "./pages/about";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Contact from "./pages/contact";
+import Test from "./pages/test";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
       <Route path="/talents/:slug" element={<Talent />} />
+      <Route path="/test" element={<Test />} />
     </Routes>
     <Footer />
   </BrowserRouter>,

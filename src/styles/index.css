@@ -43,7 +43,7 @@
 }
 body,
 html {
-  overflow: hidden;
+  /* overflow: hidden; */
   overscroll-behavior: none;
 }
 html {
@@ -55,15 +55,15 @@ html {
   }
 }
 body {
-  height: 100vh;
-  height: 100dvh;
+  /* height: 100vh;
+  height: 100dvh; */
   /* background-color: var(--bg); */
   /* font-family: "gt", serif; */
   font-family: "h", serif;
   font-size: 14rem;
 }
 #root {
-  height: 100%;
+  /* height: 100%; */
 }
 a {
   color: inherit;
@@ -113,25 +113,26 @@ select {
 /*******************/
 /*** GLOBAL CSS ****/
 /*******************/
-.disable-scroll {
+/* .disable-scroll {
   overflow: hidden;
   scrollbar-gutter: stable;
-}
+} */
+
 .disable-select {
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none;
 }
-.hide-scrollbar {
+/* .hide-scrollbar {
   overflow: auto;
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
-}
-.section {
+} */
+/* .section {
   margin: 0 auto;
   padding: 0 var(--side-padding);
 }
@@ -145,7 +146,7 @@ select {
 }
 .y_ {
   overflow: hidden;
-}
+} */
 
 /***************/
 /****MOBILE****/
