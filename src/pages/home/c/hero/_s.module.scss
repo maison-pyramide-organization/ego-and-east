@@ -1,6 +1,24 @@
 .s {
   height: 300vh;
   height: 300dvh;
+  position: relative;
+}
+.x {
+  height: 300vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  z-index: 999;
+
+  & > * {
+    display: block;
+    width: 100%;
+    border: 1px solid green;
+    flex-basis: 100%;
+  }
 }
 .hero {
   position: relative;

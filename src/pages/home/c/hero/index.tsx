@@ -32,6 +32,11 @@ export default function Hero() {
   return (
     <>
       <section id="he-s" className={s.s}>
+        <div className={s.x}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <div id="hero" className={s.hero}>
           <figure id="vid">
             <video src="/vids/ego-demo.mp4" autoPlay playsInline loop muted />

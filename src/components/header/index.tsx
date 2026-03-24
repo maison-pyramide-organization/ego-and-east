@@ -1,14 +1,14 @@
 import s from "./_s.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as BLogoI } from "@a/b-logo.svg";
-import { useState } from "react";
+// import { useState } from "react";
 // import { ReactComponent as WLogoI } from "@a/w-logo.svg";
 
 export default function Header() {
   const { pathname } = useLocation();
   console.log("pn", pathname);
 
-  const [opnd, isOpnd] = useState()
+  // const [opnd, isOpnd] = useState()
 
 
   return (
