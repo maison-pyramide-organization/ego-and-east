@@ -1,13 +1,36 @@
+import { useGSAP } from "@gsap/react";
 import s from "./_s.module.scss";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Hero() {
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#he-s",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: 1,
+        pin: "#hero",
+      },
+    });
+
+    tl.to("#vid", { scale: 0.4, ease: "none", duration: 2 });
+    tl.from("#hero p", {
+      opacity: 0,
+      ease: "power3.inOut",
+      duration: 0.5,
+    });
+    tl.from("#hero h1", {
+      opacity: 0,
+      ease: "power3.inOut",
+      duration: 0.5,
+    },'<');
+  });
   return (
     <>
-      <main className={s.m}>
-        <figure>
-          <video src="/vids/ego-demo.mp4" autoPlay playsInline loop muted />
-        </figure>
-      </main>
       <section id="he-s" className={s.s}>
         <div id="hero" className={s.hero}>
           <figure id="vid">

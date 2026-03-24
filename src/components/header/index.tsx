@@ -1,11 +1,15 @@
 import s from "./_s.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import { ReactComponent as BLogoI } from "@a/b-logo.svg";
+import { useState } from "react";
 // import { ReactComponent as WLogoI } from "@a/w-logo.svg";
 
 export default function Header() {
   const { pathname } = useLocation();
   console.log("pn", pathname);
+
+  const [opnd, isOpnd] = useState()
+
 
   return (
     <header className={s.h}>
@@ -17,6 +21,7 @@ export default function Header() {
         <Link to="#services">OUR SERVICES</Link>
         <Link to="/contact">CONTACT US</Link>
       </nav>
+      <button className="m-o">MENU</button>
     </header>
   );
 }

@@ -7,18 +7,19 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Test() {
   useGSAP(() => {
-    let box_tl = gsap.timeline({
+
+    const box_tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#s",
         start: "top top",
-        // end: "bottom top",
-        end: "+=300vh",
+        end: "bottom bottom",
         scrub: 1,
         pin: "#w",
       },
     });
 
-    box_tl.to("#box", { scale: 0.5, ease: "none", duration: 2 });
+    box_tl.to("#box", { scale: 0.4, ease: "none", duration: 2 });
+
     box_tl.from(
       "#text p",
       {
@@ -29,15 +30,6 @@ export default function Test() {
       },
       ">",
     );
-
-    // const text_tl = gsap.timeline({
-    //   defaults: {
-    //     duration: 0.1,
-    //     ease: "power1.inOut",
-    //     opacity: 0,
-    //     y: "30",
-    //   },
-    // });
   });
 
   return (
