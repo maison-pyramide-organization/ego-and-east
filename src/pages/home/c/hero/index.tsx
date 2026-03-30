@@ -23,20 +23,25 @@ export default function Hero() {
       ease: "power3.inOut",
       duration: 0.5,
     });
-    tl.from("#hero h1", {
-      opacity: 0,
-      ease: "power3.inOut",
-      duration: 0.5,
-    },'<');
+    tl.from(
+      "#hero h1",
+      {
+        opacity: 0,
+        ease: "power3.inOut",
+        duration: 0.5,
+      },
+      "<",
+    );
   });
+
   return (
     <>
       <section id="he-s" className={s.s}>
-        <div className={s.x}>
+        {/* <div className={s.x}>
           <span></span>
           <span></span>
           <span></span>
-        </div>
+        </div> */}
         <div id="hero" className={s.hero}>
           <figure id="vid">
             <video src="/vids/ego-demo.mp4" autoPlay playsInline loop muted />
