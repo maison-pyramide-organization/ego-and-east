@@ -1,7 +1,7 @@
 import s from "./_s.module.scss";
 import aboutI from "@a/Images/about.png";
 
-export default function () {
+export default function About() {
   return (
     <>
       <div className={s.p}>

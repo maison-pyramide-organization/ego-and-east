@@ -1,7 +1,7 @@
 import s from "./_s.module.scss";
 import ContactForm from "./form";
 
-export default function () {
+export default function Contact() {
   return (
     <div className={s.p}>
       <main className={s.m}>

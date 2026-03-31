@@ -42,7 +42,7 @@
 .m aside > div {
   margin-top: auto;
   display: flex;
-  gap: 20rem;
+  gap: 40rem;
   @media (width < 770px) {
     flex-direction: column;
   }
@@ -51,5 +51,6 @@
   flex: 1;
   font-size: 15rem;
   line-height: 17rem;
-  font-weight: 300;
+  font-weight: 400;
+  opacity: 70%;
 }
