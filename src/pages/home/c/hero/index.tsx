@@ -44,7 +44,7 @@ export default function Hero() {
         </div> */}
         <div id="hero" className={s.hero}>
           <figure id="vid">
-            <video src="/vids/ego-demo.mp4" autoPlay playsInline loop muted />
+            <video src="/vids/he-d.mp4" autoPlay playsInline loop muted />
           </figure>
           <p>
             Co-founders Reem and Natalya Kanj have propelled Ego & East into one

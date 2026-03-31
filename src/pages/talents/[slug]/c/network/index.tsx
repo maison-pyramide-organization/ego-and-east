@@ -2,6 +2,7 @@ import s from "../../_s.module.scss";
 import { ReactComponent as Ifb } from "@ic/fb.svg";
 import { ReactComponent as Iig } from "@ic/ig.svg";
 import { ReactComponent as Itik } from "@ic/tik.svg";
+import { ReactComponent as Isc } from "@ic/sc.svg";
 
 interface Iprops {
   network: any;
@@ -12,6 +13,7 @@ export default function Network(props: Iprops) {
     facebook: Ifb,
     tiktok: Itik,
     instagram: Iig,
+    snapchat: Isc,
   };
 
   return (
@@ -32,14 +34,31 @@ export default function Network(props: Iprops) {
                   <p>{item.fields.followers}</p>
                   <span>Followers</span>
                 </div>
-                <div>
-                  <p>{item.fields.ageRange}</p>
-                  <span>Age Range</span>
-                </div>
-                <div>
-                  <p>{item.fields.female}</p>
-                  <span>Female</span>
-                </div>
+
+                {item.fields.ageRange && (
+                  <div>
+                    <p>{item.fields.ageRange}</p>
+                    <span>Age Range</span>
+                  </div>
+                )}
+                {item.fields.female && (
+                  <div>
+                    <p>{item.fields.female}</p>
+                    <span>Female</span>
+                  </div>
+                )}
+                {item.fields.profileViews && (
+                  <div>
+                    <p>{item.fields.profileViews}</p>
+                    <span>Profile Views</span>
+                  </div>
+                )}
+                {item.fields.snapViews && (
+                  <div>
+                    <p>{item.fields.snapViews}</p>
+                    <span>Snap Views</span>
+                  </div>
+                )}
                 {item.fields.locations && (
                   <div>
                     <p>{item.fields.locations}</p>

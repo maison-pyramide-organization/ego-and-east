@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import s from "./_s.module.scss";
 import "swiper/css";
 import { getTalent } from "../../../services/api";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import About from "./c/about";
 import Brands from "./c/brands";
 import Films from "./c/films";
@@ -41,7 +41,9 @@ const Talent = () => {
   return (
     <div className={s.p}>
       <div className={s.h}>
-        <Ilogo />
+        <Link to="/">
+          <Ilogo />
+        </Link>
       </div>
       <About talent={talent} />
       <Network network={network} />

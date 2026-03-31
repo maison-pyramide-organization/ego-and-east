@@ -34,6 +34,7 @@
   margin-top: -34rem;
   padding-left: 6rem;
   font-size: 40rem;
+  line-height: 1;
   letter-spacing: 2%;
   font-style: italic;
   font-family: "dm";
@@ -97,7 +98,8 @@
 .s-hero .ab > div {
   font-size: 16rem;
   margin-top: 40rem;
-  font-weight: 300;
+  font-weight: 400;
+  opacity: 70%;
   & p:not(:first-child) {
     margin-top: 18rem;
   }
@@ -132,7 +134,7 @@
   display: flex;
   flex-direction: column;
   gap: 60rem;
-  margin-left: calc(360rem - 32rem);
+  margin-left: calc(280rem - 32rem);
   @media (width < 770px) {
     gap: 32rem;
     flex-direction: column;
@@ -143,6 +145,7 @@
 .s-network li {
   display: flex;
   gap: 64rem;
+  align-items: flex-start;
   @media (width < 770px) {
     flex-direction: column;
     gap: 16rem;
@@ -169,7 +172,7 @@
   }
 }
 .s-network li .b {
-  margin-top: 16rem;
+  // margin-top: 16rem;
   display: flex;
   gap: 40rem;
   @media (width < 770px) {
@@ -180,8 +183,18 @@
   }
 }
 .s-network .b > div {
+    &:nth-child(2) {
+      width: 129rem;
+    }
+    &:nth-child(3) {
+      width: 114rem;
+    }
+
   @media (width < 770px) {
     width: 104rem;
+    &:nth-child(3) {
+      width: 80rem;
+    }
     &:nth-child(3) {
       width: 80rem;
     }
@@ -470,7 +483,8 @@
   width: 667rem;
   margin-left: calc(730rem - 32rem);
   font-size: 16rem;
-  font-weight: 300;
+  font-weight: 400;
+  opacity: 70%;
   letter-spacing: 2%;
   @media (width < 770px) {
     margin-top: 16rem;
@@ -571,7 +585,8 @@
 .s-bof figcaption {
   margin-top: 32rem;
   font-size: 16rem;
-  font-weight: 300;
+  font-weight: 400;
+  opacity: 70%;
   letter-spacing: 2%;
   @media (width < 770px) {
     margin-top: 10rem;
