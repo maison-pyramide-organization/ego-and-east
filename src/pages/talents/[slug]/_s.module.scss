@@ -136,6 +136,7 @@
   gap: 60rem;
   margin-left: calc(280rem - 32rem);
   @media (width < 770px) {
+    padding-left: 12rem;
     gap: 32rem;
     flex-direction: column;
     justify-content: unset;
@@ -183,20 +184,17 @@
   }
 }
 .s-network .b > div {
-    &:nth-child(2) {
-      width: 129rem;
-    }
-    &:nth-child(3) {
-      width: 114rem;
-    }
+  &:nth-child(2) {
+    width: 129rem;
+  }
+  &:nth-child(3) {
+    width: 114rem;
+  }
 
   @media (width < 770px) {
-    width: 104rem;
+    width: 104rem !important;
     &:nth-child(3) {
-      width: 80rem;
-    }
-    &:nth-child(3) {
-      width: 80rem;
+      width: 80rem !important;
     }
   }
 }
