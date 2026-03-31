@@ -125,6 +125,13 @@
   @media (width < 770px) {
     min-height: 140rem;
   }
+  &::placeholder {
+    font-size: 15rem;
+    letter-spacing: 2%;
+    color: black;
+    font-family: "h";
+    font-weight: 300;
+  }
 }
 
 .form .talent {

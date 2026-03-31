@@ -10,10 +10,12 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Contact from "./pages/contact";
 import Test from "./pages/test";
+import ScrollToTop from "./components/scroll top";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Header />
+    <ScrollToTop />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/landing" element={<Landing />} />
