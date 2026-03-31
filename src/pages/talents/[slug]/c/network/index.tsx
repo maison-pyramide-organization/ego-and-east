@@ -13,7 +13,6 @@ export default function Network(props: Iprops) {
     tiktok: Itik,
     instagram: Iig,
   };
-  console.log(network);
 
   return (
     <section className={s["s-network"]}>

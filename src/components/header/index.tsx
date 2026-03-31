@@ -7,9 +7,10 @@ import { ReactComponent as BLogoI } from "@a/b-logo.svg";
 export default function Header() {
   const { pathname } = useLocation();
   console.log("pn", pathname);
+  const isTalentsPage =
+    pathname.startsWith("/talents/") && pathname !== "/talents";
 
-  // const [opnd, isOpnd] = useState()
-
+  if (isTalentsPage) return null;
 
   return (
     <header className={s.h}>
