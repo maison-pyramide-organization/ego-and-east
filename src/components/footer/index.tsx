@@ -1,8 +1,16 @@
 import s from "./_s.module.scss";
+import { useLocation } from "react-router-dom";
 import { ReactComponent as LogoI } from "@a/b-logo.svg";
 import mpcoLogo from "@a/Images/mp-co-logo.png";
 
 export default function Footer() {
+  const { pathname } = useLocation();
+
+  const isTalentsPage =
+    pathname.startsWith("/talents/") && pathname !== "/talents";
+
+  if (isTalentsPage) return null;
+
   return (
     <footer id="f" className={s.f}>
       <div className={s.f_t}>
@@ -32,9 +40,9 @@ export default function Footer() {
             <h4>
               LOOKING TO COLLABORATE, GET SCOUTED, OR DISCOVER NEW TALENT?
             </h4>
-              <a href="mailto:hello@egoandeast.co" target="_blank">
-                GET IN TOUCH
-              </a>
+            <a href="mailto:hello@egoandeast.co" target="_blank">
+              GET IN TOUCH
+            </a>
           </div>
 
           {/* <div className={s.f_cta}>
