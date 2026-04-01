@@ -1,6 +1,9 @@
 .s {
   padding-top: 100rem;
   padding-inline: var(--p-i);
+  @media (width < 770px) {
+    padding-top: 60rem;
+  }
 }
 .s ul {
   display: grid;

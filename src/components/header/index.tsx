@@ -6,7 +6,6 @@ import { ReactComponent as BLogoI } from "@a/b-logo.svg";
 
 export default function Header() {
   const { pathname } = useLocation();
-  console.log("pn", pathname);
   const isTalentsPage =
     pathname.startsWith("/talents/") && pathname !== "/talents";
 

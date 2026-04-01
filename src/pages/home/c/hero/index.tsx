@@ -46,11 +46,11 @@ export default function Hero() {
           <figure id="vid">
             <video src="/vids/he-d.mp4" autoPlay playsInline loop muted />
           </figure>
-          <p>
+          <p className="d-o">
             Co-founders Reem and Natalya Kanj have propelled Ego & East into one
             of the most prominent
           </p>
-          <p>
+          <p className="d-o">
             The Lebanese sisters and business partners have crafted an
             innovative approach to talent management,
           </p>
