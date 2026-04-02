@@ -11,9 +11,7 @@ export default function About() {
             <img src={aboutI} alt="" />
           </figure>
           <aside>
-            <h1 className="d-o">
-              REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST.
-            </h1>
+            <h1 className="d-o">REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST</h1>
             <div>
               <p>
                 Their innovative approach to talent management, influenced by
@@ -30,8 +28,23 @@ export default function About() {
                 <br />
                 Their distinctively mindful – yet tenacious – approach to brand
                 elevation has earned them
+                <span className="m-o">
+                  features in leading publications such as Vogue Business,
+                  Emirates Woman, Vogue Arabia, Grazia, and Cosmopolitan.
+                  Additionally, they have been recognized for their expertise in
+                  fashion week services and invited to guest lecture at Istituto
+                  Marangoni, one of the world's most prestigious fashion
+                  schools.
+                  <br />
+                  <br />
+                  Recently, Ego & East embarked on an exciting new venture,
+                  merging with the leading agency Maison Pyramide. This
+                  partnership is set to become ‘one of the most forward-thinking
+                  mergers in the talent management and influencer marketing
+                  industry’.
+                </span>
               </p>
-              <p>
+              <p className="d-o">
                 features in leading publications such as Vogue Business,
                 Emirates Woman, Vogue Arabia, Grazia, and Cosmopolitan.
                 Additionally, they have been recognized for their expertise in

@@ -35,7 +35,7 @@
   @media (width < 770px) {
     font-size: 30rem;
     line-height: 30rem;
-    text-align: center;
+    // text-align: center;
     margin-top: 0;
   }
 }
@@ -53,4 +53,7 @@
   line-height: 17rem;
   font-weight: 400;
   opacity: 70%;
+  @media (width < 770px) {
+    line-height: 20rem;
+  }
 }

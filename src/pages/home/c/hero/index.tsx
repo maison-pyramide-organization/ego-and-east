@@ -34,6 +34,11 @@ export default function Hero() {
     );
   });
 
+  const isPortrait =
+    typeof window !== "undefined"
+      ? window.innerHeight > window.innerWidth
+      : false;
+
   return (
     <>
       <section id="he-s" className={s.s}>
@@ -44,7 +49,15 @@ export default function Hero() {
         </div> */}
         <div id="hero" className={s.hero}>
           <figure id="vid">
-            <video src="/vids/he-d.mp4" autoPlay playsInline loop muted />
+            {/* <video src="/vids/he-d.mp4" autoPlay playsInline loop muted /> */}
+            <video
+              preload="true"
+              autoPlay={true}
+              muted={true}
+              loop={true}
+              playsInline={true}
+              src={isPortrait ? "/vids/he-m.mp4" : "/vids/he-d.mp4"}
+            ></video>
           </figure>
           <p className="d-o">
             Co-founders Reem and Natalya Kanj have propelled Ego & East into one

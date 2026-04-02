@@ -11,7 +11,7 @@
   --h-h: 60px;
   --p-i: 32rem;
   @media (width < 770px) {
-    --h-h: 80px;
+    --h-h: 38rem;
     --p-i: 12rem;
   }
 }

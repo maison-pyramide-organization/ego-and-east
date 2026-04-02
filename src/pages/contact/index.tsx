@@ -4,9 +4,10 @@ import ContactForm from "./form";
 export default function Contact() {
   return (
     <div className={s.p}>
+      <h1 className="m-o">CONTACT US</h1>
       <main className={s.m}>
         <div className={s.l}>
-          <h1>CONTACT US</h1>
+          <h1 className="d-o">CONTACT US</h1>
           <p>
             FOR MORE INFORMATION ABOUT EGO & EAST OR ANY GENERAL INQUIRIES,
             PLEASE CONTACT OUR TEAM.

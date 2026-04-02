@@ -12,15 +12,19 @@
   @media (width < 770px) {
     flex-direction: column;
     gap: 80rem;
+    margin-top: 64rem;
   }
 }
 
 .m .l {
   width: 330rem;
   flex-shrink: 0;
+  @media (width < 770px) {
+    order: 2;
+  }
 }
 
-.l h1 {
+.p h1 {
   font-size: 56rem;
   line-height: 51rem;
   letter-spacing: 2%;
@@ -48,13 +52,13 @@
 .em {
   margin-top: 48rem;
   @media (width < 770px) {
-    margin-top: 56rem;
+    margin-top: 24rem;
   }
 }
 .so {
   margin-top: 48rem;
   @media (width < 770px) {
-    margin-top: 40rem;
+    margin-top: 24rem;
   }
 }
 .ti {
@@ -71,6 +75,9 @@
 .r {
   width: 100%;
   padding-top: 20rem;
+  @media (width < 770px) {
+    padding-top: 0;
+  }
 }
 .nav {
   display: flex;
@@ -100,6 +107,7 @@
     ". g";
 
   @media (width < 770px) {
+    margin-top: 48rem;
     display: flex;
     flex-direction: column;
     gap: 55rem;
@@ -127,7 +135,7 @@
     min-height: 140rem;
   }
   &::placeholder {
-    font-size: 15rem;
+    font-size: 12rem;
     letter-spacing: 2%;
     color: black;
     font-family: "h";
