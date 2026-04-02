@@ -16,7 +16,6 @@ export default function Hero() {
         pin: "#hero",
       },
     });
-
     tl.to("#vid", { scale: 0.5, ease: "none", duration: 2 });
     tl.from("#hero p", {
       opacity: 0,
@@ -32,6 +31,15 @@ export default function Hero() {
       },
       "<",
     );
+    gsap.from("#h", {
+      autoAlpha: 0,
+      duration: 0.1,
+      scrollTrigger: {
+        trigger: "#he-s",
+        start: "center bottom",
+        toggleActions: "play none play reverse",
+      },
+    });
   });
 
   const isPortrait =

@@ -16,7 +16,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={isOpen ? `${s.h} ${s.open}` : s.h}>
+      <header id="h" className={isOpen ? `${s.h} ${s.open}` : s.h}>
         <Link to="/" className={s.lo}>
           <BLogoI />
         </Link>
