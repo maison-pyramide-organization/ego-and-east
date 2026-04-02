@@ -6,7 +6,7 @@ export default function About() {
     <>
       <div className={s.p}>
         <main className={s.m}>
-          <h1 className="m-o">REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST.</h1>
+          <h1 className="m-o">REEM & NATALYA KANJ, FOUNDERS OF EGO & EAST</h1>
           <figure>
             <img src={aboutI} alt="" />
           </figure>
