@@ -17,7 +17,7 @@ export default function Hero() {
       },
     });
 
-    tl.to("#vid", { scale: 0.4, ease: "none", duration: 2 });
+    tl.to("#vid", { scale: 0.5, ease: "none", duration: 2 });
     tl.from("#hero p", {
       opacity: 0,
       ease: "power3.inOut",

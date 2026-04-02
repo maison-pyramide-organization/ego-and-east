@@ -34,7 +34,7 @@
 }
 .s p {
   position: absolute;
-  width: 363rem;
+  width: 245rem;
   font-size: 15rem;
   font-weight: 400;
   opacity: 70%;
@@ -55,7 +55,7 @@
   width: 1000rem;
   text-align: center;
   position: absolute;
-  top: calc(50vh + 160rem + 70rem);
+  top: calc(50vh + 160rem + 100rem);
   @media (width < 770px) {
     width: unset;
     font-size: 18rem;
