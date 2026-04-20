@@ -14,6 +14,8 @@ export default function Header() {
 
   if (isTalentsPage) return null;
 
+  const closeMenu = () => setIsOpen(false);
+
   return (
     <>
       <header id="h" className={isOpen ? `${s.h} ${s.open}` : s.h}>
@@ -29,7 +31,7 @@ export default function Header() {
           {isOpen ? "CLOSE" : "MENU"}
         </button>
       </header>
-      {isOpen && <Menu />}
+      {isOpen && <Menu closeMenu={closeMenu} />}
     </>
   );
 }

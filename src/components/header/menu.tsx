@@ -3,13 +3,21 @@ import { ReactComponent as LogoI } from "@a/b-logo.svg";
 import mpcoLogo from "@a/Images/mp-co-logo.png";
 import { Link } from "react-router-dom";
 
-export default function Menu() {
+export default function Menu(props:any) {
+  const { closeMenu } = props;
+
   return (
     <div className={s.menu}>
       <nav>
-        <Link to="/about"> ABOUT</Link>
-        <Link to="/services">OUR SERVICES</Link>
-        <Link to="/contact">CONTACT US</Link>
+        <Link to="/about" onClick={closeMenu}>
+          ABOUT
+        </Link>
+        <Link to="/services" onClick={closeMenu}>
+          OUR SERVICES
+        </Link>
+        <Link to="/contact" onClick={closeMenu}>
+          CONTACT US
+        </Link>
       </nav>
       <div className={s.m_b}>
         <div className={s.f_so}>

@@ -1,6 +1,7 @@
 .s {
   padding-top: 100rem;
   padding-inline: var(--p-i);
+  // border: 1px solid crimson;
   @media (width < 770px) {
     padding-top: 60rem;
   }

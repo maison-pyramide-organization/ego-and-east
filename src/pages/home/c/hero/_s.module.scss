@@ -1,7 +1,8 @@
 .s {
   height: 300vh;
-  height: 300dvh;
+  // height: 300dvh;
   position: relative;
+  // border: 2px solid blue;
 }
 .x {
   height: 300vh;
@@ -16,14 +17,14 @@
   & > * {
     display: block;
     width: 100%;
-    border: 1px solid green;
+    // border: 1px solid green;
     flex-basis: 100%;
   }
 }
 .hero {
   position: relative;
   height: 100vh;
-  height: 100dvh;
+  // height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -60,5 +61,6 @@
     width: unset;
     font-size: 18rem;
     padding-inline: var(--p-i);
+    top: calc(50vh + 300rem);
   }
 }

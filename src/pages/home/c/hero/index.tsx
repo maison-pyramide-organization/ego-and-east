@@ -11,17 +11,22 @@ export default function Hero() {
       scrollTrigger: {
         trigger: "#he-s",
         start: "top top",
+        // end: "bottom bottom",
         end: "bottom bottom",
-        scrub: 1,
+        scrub: true,
         pin: "#hero",
+        pinSpacing: false,
       },
     });
-    tl.to("#vid", { scale: 0.5, ease: "none", duration: 2 });
-    tl.from("#hero p", {
-      opacity: 0,
-      ease: "power3.inOut",
-      duration: 0.5,
-    });
+    // tl.to("#vid", { scale: 0.5, ease: "none", duration: 2 });
+    tl.to("#vid", { scale: 0.6, ease: "none", duration: 2 });
+
+    // tl.from("#hero p", {
+    //   opacity: 0,
+    //   ease: "power3.inOut",
+    //   duration: 0.5,
+    // });
+
     tl.from(
       "#hero h1",
       {
@@ -29,8 +34,9 @@ export default function Hero() {
         ease: "power3.inOut",
         duration: 0.5,
       },
-      "<",
+      // "<",
     );
+
     gsap.from("#h", {
       autoAlpha: 0,
       duration: 0.1,
@@ -55,6 +61,7 @@ export default function Hero() {
           <span></span>
           <span></span>
         </div> */}
+
         <div id="hero" className={s.hero}>
           <figure id="vid">
             {/* <video src="/vids/he-d.mp4" autoPlay playsInline loop muted /> */}

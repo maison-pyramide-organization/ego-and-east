@@ -11,6 +11,7 @@ import Footer from "./components/footer";
 import Contact from "./pages/contact";
 import Test from "./pages/test";
 import ScrollToTop from "./components/scroll top";
+import Services from "./pages/services";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <Route path="/landing" element={<Landing />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
       <Route path="/talents/:slug" element={<Talent />} />
       <Route path="/test" element={<Test />} />
     </Routes>
