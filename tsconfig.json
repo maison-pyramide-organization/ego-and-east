@@ -6,16 +6,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
 
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"],
-      "@c/*": ["src/components/*"],
-      "@a/*": ["src/assets/*"],
-      "@im/*": ["src/assets/images/*"],
-      "@ic/*": ["src/assets/icons/*"],
-      "@s/*": ["src/styles/*"]
-    },
-
+    
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
