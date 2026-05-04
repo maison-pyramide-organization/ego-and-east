@@ -60,8 +60,9 @@
   top: calc((100vh - var(--h-h) - 450rem) / 2 + 450rem + 24rem);
   @media (width < 770px) {
     width: unset;
-    font-size: 18rem;
+    font-size: 14rem;
     padding-inline: var(--p-i);
-    top: calc(50vh + 300rem);
+    // top: calc(50vh + 300rem);
+    top: calc((100vh - var(--h-h) - 450rem) / 2 + 450rem + 24rem);
   }
 }

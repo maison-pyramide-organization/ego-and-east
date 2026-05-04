@@ -6,6 +6,11 @@ import { ScrollTrigger } from "gsap/all";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function Hero() {
+  const isPortrait =
+    typeof window !== "undefined"
+      ? window.innerHeight > window.innerWidth
+      : false;
+
   useGSAP(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -22,7 +27,7 @@ export default function Hero() {
     // tl.to("#vid", { scale: 0.6, ease: "none", duration: 2 });
     tl.to("#vid", {
       y: "-40rem",
-      width: "800rem",
+      width: isPortrait ? "250rem" : "800rem",
       height: "450rem",
       ease: "none",
       duration: 2,
@@ -55,11 +60,6 @@ export default function Hero() {
       },
     });
   });
-
-  const isPortrait =
-    typeof window !== "undefined"
-      ? window.innerHeight > window.innerWidth
-      : false;
 
   return (
     <>
