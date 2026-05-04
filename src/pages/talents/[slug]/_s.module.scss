@@ -113,8 +113,10 @@
 .s-network {
   margin-top: 120rem;
   padding-inline: var(--p-i);
-  background-color: var(--beige);
-  padding-bottom: 72rem;
+  background-color: black;
+  color: white;
+  padding-top: 40rem;
+  padding-bottom: 24rem;
   @media (width < 770px) {
     margin-top: 80rem;
     padding-bottom: 32rem;
@@ -123,7 +125,7 @@
 .s-network > h2 {
   font-size: 70rem;
   letter-spacing: 2%;
-  transform: translateY(-38rem);
+  // transform: translateY(-38rem);
   @media (width < 770px) {
     font-size: 36rem;
     transform: translateY(-22rem);
@@ -131,10 +133,11 @@
   }
 }
 .s-network ul {
+  margin-top: 80rem;
   display: flex;
-  flex-direction: column;
   gap: 60rem;
-  margin-left: calc(280rem - 32rem);
+  // margin-left: calc(280rem - 32rem);
+  padding-inline: 32rem;
   @media (width < 770px) {
     padding-left: 12rem;
     gap: 32rem;
@@ -144,27 +147,32 @@
   }
 }
 .s-network li {
+  padding-left: 32rem;
+  border-left: 1px solid white;
   display: flex;
   gap: 64rem;
-  align-items: flex-start;
+  flex-direction: column;
+  flex: 1;
   @media (width < 770px) {
     flex-direction: column;
     gap: 16rem;
   }
 }
 .s-network .t {
-  display: flex;
-  gap: 12rem;
-  align-items: center;
-  width: 210rem;
+  // width: 210rem;
 }
 .s-network svg {
-  width: 24rem;
+  width: 40rem;
+  height: auto;
+  path {
+    fill: white;
+  }
   @media (width < 770px) {
     width: 15rem;
   }
 }
-.s-network h3 {
+.s-network li h3 {
+  margin-top: 16rem;
   font-size: 28rem;
   letter-spacing: 2%;
   text-transform: uppercase;
@@ -175,7 +183,8 @@
 .s-network li .b {
   // margin-top: 16rem;
   display: flex;
-  gap: 40rem;
+  gap: 48rem;
+  flex-direction: column;
   @media (width < 770px) {
     margin-top: unset;
     margin-left: calc(12rem + 15rem);
@@ -183,13 +192,14 @@
     flex-wrap: wrap;
   }
 }
+
 .s-network .b > div {
-  &:nth-child(2) {
-    width: 129rem;
-  }
-  &:nth-child(3) {
-    width: 114rem;
-  }
+  // &:nth-child(2) {
+  //   width: 129rem;
+  // }
+  // &:nth-child(3) {
+  //   width: 114rem;
+  // }
 
   @media (width < 770px) {
     width: 104rem !important;
@@ -198,8 +208,9 @@
     }
   }
 }
+
 .s-network p {
-  font-size: 22rem;
+  font-size: 32rem;
   letter-spacing: 2%;
   @media (width < 770px) {
     font-size: 16rem;
@@ -215,6 +226,12 @@
     margin-top: unset;
     font-size: 14rem;
   }
+}
+.s-network h4 {
+  margin-top: 72rem;
+  font-size: 22rem;
+  text-align: center;
+  font-weight: normal;
 }
 // Press
 .s-press {
@@ -465,8 +482,8 @@
 }
 .s-talks > figure {
   margin-top: 72rem;
-  aspect-ratio: 4/4.5;
-  width: 680rem;
+  aspect-ratio: 3/3.5;
+  width: 450rem;
   margin-inline: auto;
   @media (width < 770px) {
     width: 220rem;

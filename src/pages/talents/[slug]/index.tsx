@@ -14,6 +14,7 @@ import Press from "./c/press";
 import TS01 from "@/components/ts01";
 import { ReactComponent as Ilogo } from "@a/b-logo.svg";
 import Footer from "./c/footer";
+import TS02 from "@/components/ts02";
 
 const Talent = () => {
   const [talent, setTalent] = useState<any>(null);
@@ -47,17 +48,19 @@ const Talent = () => {
       </div>
       <About talent={talent} />
       <Network network={network} />
-      <Press press={talent.press} />
-      {brands?.length > 0 && <Brands brands={brands} />}
-      <Films films={films} />
+      {/* <Press press={talent.press} /> */}
+      {/* {brands?.length > 0 && <Brands brands={brands} />} */}
       {sections.map((section, i) => {
         switch (section.sys.contentType.sys.id) {
+          case "ts02":
+            return <TS02 section={section.fields} key={i} />;
           case "ts01":
             return <TS01 section={section.fields} key={i} />;
           default:
             return null;
         }
       })}
+      <Films films={films} />
       <Talks talks={talks} talksBanner={talksBanner} talksIntro={talksIntro} />
       <Bof bof={bof} />
       <Footer />

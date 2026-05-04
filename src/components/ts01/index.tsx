@@ -4,6 +4,7 @@ import s from "./_s.module.scss";
 interface Iprops {
   section: any;
 }
+
 export default function TS01(props: Iprops) {
   const { section } = props;
   const { gallery, title, label, description } = section;

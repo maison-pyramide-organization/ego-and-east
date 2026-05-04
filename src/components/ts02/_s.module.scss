@@ -1,0 +1,81 @@
+:global {
+  .ra {
+    text-align: right;
+    order:2
+  }
+  .tl {
+    display: block;
+  }
+}
+.s {
+  margin-top: 80rem;
+  padding-inline: var(--p-i);
+  padding-bottom: 40rem;
+  @media (width < 770px) {
+    margin-top: 60rem;
+  }
+}
+.s .h {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.s .h h2 {
+  font-size: 70rem;
+  line-height: 60rem;
+  letter-spacing: 2%;
+  text-transform: uppercase;
+  & span {
+    font-size: 75rem;
+    font-family: "dm";
+    font-style: italic;
+    font-weight: normal;
+  }
+  @media (width < 770px) {
+    font-size: 36rem;
+    line-height: 36rem;
+    & span {
+      font-size: 38rem;
+    }
+  }
+}
+.s .h nav {
+  display: flex;
+  gap: 8rem;
+}
+.s .h svg {
+  cursor: pointer;
+  display: block;
+  width: 32rem;
+  &:first-child {
+    transform: rotate(-180deg);
+  }
+
+  @media (width < 770px) {
+    width: 28rem;
+  }
+}
+.s :global(.swiper) {
+  margin-top: 40rem;
+  @media (width < 770px) {
+    margin-top: 30rem;
+  }
+}
+
+.s figure {
+  aspect-ratio: 4/5;
+  background-color: #ededed;
+  & img {
+    object-position: top center;
+  }
+}
+.s figcaption {
+  margin-top: 16rem;
+  font-size: 18rem;
+  font-weight: bold;
+  letter-spacing: 2%;
+  @media (width < 770px) {
+    margin-top: 10rem;
+    font-size: 14rem;
+  }
+}

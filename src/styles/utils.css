@@ -8,7 +8,7 @@
   --md-space: 56px;
   --lg-space: 80px;
   --side-padding: 40px;
-  --h-h: 60px;
+  --h-h: 60rem;
   --p-i: 32rem;
   @media (width < 770px) {
     --h-h: 38rem;

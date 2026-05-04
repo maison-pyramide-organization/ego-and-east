@@ -59,7 +59,7 @@ export default function Network(props: Iprops) {
                     <span>Snap Views</span>
                   </div>
                 )}
-                {item.fields.locations && (
+                {/* {item.fields.locations && (
                   <div>
                     <p>{item.fields.locations}</p>
                     <span>Locations</span>
@@ -70,12 +70,13 @@ export default function Network(props: Iprops) {
                     <p>{item.fields.likes}</p>
                     <span>Likes</span>
                   </div>
-                )}
+                )} */}
               </div>
             </li>
           );
         })}
       </ul>
+      <h4>LOCATED IN EGY/KSA/IRQ</h4>
     </section>
   );
 }
