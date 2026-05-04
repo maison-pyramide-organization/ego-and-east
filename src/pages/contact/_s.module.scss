@@ -1,0 +1,178 @@
+.p {
+  padding-top: 150rem;
+  padding-inline: var(--p-i);
+  @media (width < 770px) {
+    padding-top: 100rem;
+  }
+}
+
+.m {
+  display: flex;
+  gap: 136rem;
+  @media (width < 770px) {
+    flex-direction: column;
+    gap: 80rem;
+    margin-top: 64rem;
+  }
+}
+
+.m .l {
+  width: 330rem;
+  flex-shrink: 0;
+  @media (width < 770px) {
+    order: 2;
+  }
+}
+
+.p h1 {
+  font-size: 56rem;
+  line-height: 51rem;
+  letter-spacing: 2%;
+  font-family: "dm";
+  font-weight: normal;
+  font-style: italic;
+  @media (width < 770px) {
+    font-size: 40rem;
+  }
+}
+
+.l p {
+  margin-top: 56rem;
+  font-size: 15rem;
+  letter-spacing: 2%;
+  @media (width < 770px) {
+    margin-top: 32rem;
+  }
+}
+.em,
+.so {
+  font-size: 15rem;
+  letter-spacing: 2%;
+}
+.em {
+  margin-top: 48rem;
+  @media (width < 770px) {
+    margin-top: 24rem;
+  }
+}
+.so {
+  margin-top: 48rem;
+  @media (width < 770px) {
+    margin-top: 24rem;
+  }
+}
+.ti {
+  font-weight: 400;
+  opacity: 70%;
+}
+.so > div:nth-child(2) {
+  display: flex;
+  gap: 4rem;
+}
+//
+// FORM
+//
+.r {
+  width: 100%;
+  padding-top: 20rem;
+  @media (width < 770px) {
+    padding-top: 0;
+  }
+}
+.nav {
+  display: flex;
+  gap: 32rem;
+}
+.nav button {
+  font-size: 15rem;
+  letter-spacing: 2%;
+  font-weight: 300;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid white;
+  &.active {
+    font-weight: bold;
+    border-color: black;
+  }
+}
+.form {
+  margin-top: 64rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55rem 32rem;
+  grid-template-areas:
+    "a b"
+    "c d"
+    "e d"
+    "f d"
+    ". g";
+
+  @media (width < 770px) {
+    margin-top: 48rem;
+    display: flex;
+    flex-direction: column;
+    gap: 55rem;
+  }
+}
+
+.form input {
+  padding-bottom: 20rem;
+  border-bottom: 0.5px solid black;
+  width: 100%;
+}
+
+.form input::placeholder {
+  font-size: 15rem;
+  letter-spacing: 2%;
+  color: black;
+}
+.form textarea {
+  margin-top: 20rem;
+  height: 100%;
+  resize: none;
+  padding: 8rem;
+  border: 0.5px solid black;
+  @media (width < 770px) {
+    min-height: 140rem;
+  }
+  &::placeholder {
+    font-size: 12rem;
+    letter-spacing: 2%;
+    color: black;
+    font-family: "h";
+    font-weight: 300;
+  }
+}
+
+.form .talent {
+  grid-area: a;
+}
+.form .email {
+  grid-area: b;
+}
+.form .country {
+  grid-area: c;
+}
+.form .msg {
+  grid-area: d;
+  display: flex;
+  flex-direction: column;
+}
+.form .name {
+  grid-area: e;
+}
+.form .company,
+.igun {
+  grid-area: f;
+}
+.form button {
+  grid-area: g;
+  margin-left: auto;
+  border: 2px solid black;
+  padding: 10rem 32rem;
+  border-radius: 100rem;
+  font-size: 12rem;
+  font-weight: bold;
+  @media (width < 770px) {
+    margin-top: -10rem;
+  }
+}

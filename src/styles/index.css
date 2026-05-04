@@ -1,0 +1,167 @@
+/* FONTS */
+@font-face {
+  font-family: "dm";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/dm.woff2") format("woff2");
+}
+@font-face {
+  font-family: "dm";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../assets/fonts/dm-i.woff2") format("woff2");
+}
+@font-face {
+  font-family: "gt";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/gt.woff2") format("woff2");
+}
+@font-face {
+  font-family: "h";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/s.woff2") format("woff2");
+}
+@font-face {
+  font-family: "h";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/s-t.woff2") format("woff2");
+}
+@font-face {
+  font-family: "h";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/s-sb.woff2") format("woff2");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  /* overflow: hidden; */
+  overscroll-behavior: none;
+}
+html {
+  font-size: calc(100vw / 1440);
+  -webkit-text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  @media screen and (max-width: 700px) {
+    font-size: calc(100vw / 400);
+  }
+}
+body {
+  /* height: 100vh;
+  height: 100dvh; */
+  /* background-color: var(--bg); */
+  /* font-family: "gt", serif; */
+  font-family: "h", serif;
+  font-size: 14rem;
+}
+#root {
+  /* height: 100%; */
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+img,
+video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+button {
+  border: none;
+  outline: none;
+  display: block;
+  background-color: transparent;
+  color: black;
+  cursor: pointer;
+}
+fieldset {
+  outline: none;
+  border: none;
+}
+label {
+  display: block;
+}
+input,
+textarea,
+select {
+  display: block;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+/*******************/
+/*** GLOBAL CSS ****/
+/*******************/
+/* .disable-scroll {
+  overflow: hidden;
+  scrollbar-gutter: stable;
+} */
+
+.disable-select {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+/* .hide-scrollbar {
+  overflow: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+} */
+/* .section {
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.title {
+  text-align: center;
+  font-size: 48px;
+  text-transform: uppercase;
+}
+.menu-opened {
+  background-color: var(--grey-800) !important;
+}
+.y_ {
+  overflow: hidden;
+} */
+
+/***************/
+/****MOBILE****/
+/*************/
+@media screen and (max-width: 600px) {
+  :root {
+    --header-height: calc(83px);
+    --md-space: 32px;
+    --lg-space: 56px;
+    --side-padding: 24px;
+  }
+  .home {
+    padding: 0 16px;
+  }
+  .title {
+    font-size: 32px;
+  }
+}

@@ -1,0 +1,117 @@
+.h {
+  padding-block: 16rem;
+  padding-inline: var(--p-i);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--h-h);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  // mix-blend-mode: difference;
+  background: white;
+  @media (width < 770px) {
+    padding-top: 16rem;
+    background: white;
+  }
+}
+.h.open {
+  background-color: transparent !important;
+}
+.h .lo {
+  width: 170rem;
+  @media (width < 770px) {
+    width: 110rem;
+  }
+}
+.h nav {
+  display: flex;
+  gap: 16rem;
+}
+.h nav a {
+  font-size: 12rem;
+  // color: white;
+}
+.h button {
+  font-size: 15rem;
+}
+
+// MENU
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #eae7de;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--h-h);
+  padding-bottom: 16rem;
+  padding-inline: var(--p-i);
+  height: 100dvh;
+  height: 100vh;
+  z-index: 999;
+  overflow: auto;
+}
+.menu nav {
+  min-height: calc(100vh - var(--h-h) - 175rem - 16rem);
+  min-height: calc(100dvh - var(--h-h) - 175rem - 16rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32rem;
+}
+.menu nav a {
+  font-family: "h";
+  font-weight: 600;
+  font-size: 32rem;
+}
+.m_b {
+}
+.f_so {
+  width: fit-content;
+  margin-top: 80rem;
+  margin-left: auto;
+  display: flex;
+  gap: 4rem;
+  @media (width < 770px) {
+    margin-top: 40rem;
+    margin-inline: auto;
+  }
+}
+.f_so a {
+  font-size: 15rem;
+}
+.f_lo {
+  margin-top: 40rem;
+  @media (width < 770px) {
+    margin-top: 24rem;
+  }
+}
+.f_b {
+  margin-top: 32rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (width < 770px) {
+    margin-top: 16rem;
+  }
+}
+.f_b p {
+  font-size: 15rem;
+  letter-spacing: 2%;
+  @media (width < 770px) {
+    font-size: 10rem;
+    letter-spacing: unset;
+  }
+}
+.f_b img {
+  width: 330rem;
+  @media (width < 770px) {
+    width: 150rem;
+  }
+}

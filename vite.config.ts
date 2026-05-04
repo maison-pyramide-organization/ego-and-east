@@ -4,7 +4,6 @@ import svgr from "vite-plugin-svgr";
 import autoprefixer from "autoprefixer";
 import postcssPresetEnv from "postcss-preset-env";
 
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), svgr()],
@@ -14,7 +13,9 @@ export default defineConfig({
       "@": "/src",
       "@c": "/src/components",
       "@a": "/src/assets",
-      "@s": "/src/assets/styles",
+      "@im": "/src/assets/images",
+      "@ic": "/src/assets/icons",
+      "@s": "/src/styles",
     },
   },
   // Post Css
