@@ -19,13 +19,20 @@ export default function Hero() {
       },
     });
     // tl.to("#vid", { scale: 0.5, ease: "none", duration: 2 });
-    tl.to("#vid", { scale: 0.6, ease: "none", duration: 2 });
+    // tl.to("#vid", { scale: 0.6, ease: "none", duration: 2 });
+    tl.to("#vid", {
+      y: "-40rem",
+      width: "800rem",
+      height: "450rem",
+      ease: "none",
+      duration: 2,
+    });
 
-    // tl.from("#hero p", {
-    //   opacity: 0,
-    //   ease: "power3.inOut",
-    //   duration: 0.5,
-    // });
+    tl.from("#hero p", {
+      opacity: 0,
+      ease: "power3.inOut",
+      duration: 0.5,
+    });
 
     tl.from(
       "#hero h1",
@@ -42,7 +49,8 @@ export default function Hero() {
       duration: 0.1,
       scrollTrigger: {
         trigger: "#he-s",
-        start: "center bottom",
+        start: "center center",
+        // markers: true,
         toggleActions: "play none play reverse",
       },
     });

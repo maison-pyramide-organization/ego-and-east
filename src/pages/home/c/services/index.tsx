@@ -1,10 +1,10 @@
 import s from "./_s.module.scss";
-import services from "@/data/services";
+// import services from "@/data/services";
 
 export default function Services() {
   return (
     <section className={s.s}>
-      <div className={s.t}>
+      {/* <div className={s.t}>
         <div className={s.l}>
           <h2>
             OUR
@@ -21,7 +21,7 @@ export default function Services() {
             ))}
           </ul>
         </div>
-      </div>
+      </div> */}
       <p>
         WE COLLABORATE WITH BUSINESSES & BRANDS ON WORLD CLASS CREATIVE
         DIRECTION, STRATEGY & DESIGN.
