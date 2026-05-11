@@ -82,11 +82,15 @@
 }
 
 .f_b {
+  margin-top: 16rem;
   display: flex;
   justify-content: space-between;
   // align-items: flex-start;
-  margin-top: 16rem;
   @media (width < 770px) {
+    margin-top: 40rem;
+    flex-direction: column-reverse;
+    gap: 40rem;
+    align-items: center;
   }
 }
 
@@ -95,6 +99,9 @@
   & svg {
     height: auto;
     fill: white;
+  }
+  @media (width < 770px) {
+    width: 100%;
   }
 }
 
@@ -118,4 +125,16 @@
   @media (width < 770px) {
     width: 150rem;
   }
+}
+
+.f_b_m {
+  margin-top: 24rem;
+  display: flex;
+  justify-content: space-between;
+}
+.f_b_m p {
+  font-size: 10rem;
+}
+.f_b_m img {
+  width: 150rem;
 }

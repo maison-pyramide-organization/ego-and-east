@@ -1,4 +1,4 @@
-import s from "../../_s.module.scss";
+import s from "./_s.module.scss";
 import { ReactComponent as Ifb } from "@ic/fb.svg";
 import { ReactComponent as Iig } from "@ic/ig.svg";
 import { ReactComponent as Itik } from "@ic/tik.svg";

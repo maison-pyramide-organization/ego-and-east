@@ -19,7 +19,7 @@ export default function Footer() {
           permission of Reem or Natalya Kanj.
         </p>
       </div>
-      <div className={s.f_cr}>
+      <div className={`${s.f_cr} d-o`}>
         <p>©2026 ALL RIGHTS RESERVED</p>
       </div>
 
@@ -41,8 +41,19 @@ export default function Footer() {
             </a>
           </div>
 
-          <img src={mpcoLogo} alt="Maison Pyramide Company Logo" />
+          <img
+            className="d-o"
+            src={mpcoLogo}
+            alt="Maison Pyramide Company Logo"
+          />
         </div>
+      </div>
+      <div className={`${s.f_b_m} m-o`}>
+        <img
+          src={mpcoLogo}
+          alt="Maison Pyramide Company Logo"
+        />
+        <p>©2026 ALL RIGHTS RESERVED</p>
       </div>
     </footer>
   );

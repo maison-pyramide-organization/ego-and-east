@@ -2,18 +2,27 @@ import s from "./_s.module.scss";
 import { useEffect, useRef, useState } from "react";
 import { ReactComponent as Iplay } from "@a/icons/play.svg";
 import { ReactComponent as Ipause } from "@a/icons/pause.svg";
+import { getAssetUrl } from "@/services/api";
 
 interface Iprops {
   src: string;
+  coverId: string;
 }
 
 export default function HoverVideo(props: Iprops) {
-  const { src } = props;
+  const { src, coverId } = props;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [canHover, setCanHover] = useState(false);
   const [isPlaying, setPlaying] = useState(false);
+  const [coverUrl, setCoverUrl] = useState<string | null>(null);
 
   useEffect(() => {
+    if (coverId) {
+      getAssetUrl(coverId).then((url) => {
+        console.log("cover url", url);
+        setCoverUrl(url);
+      });
+    }
     const video = videoRef.current;
     if (!video) return;
 
@@ -57,6 +66,7 @@ export default function HoverVideo(props: Iprops) {
 
   return (
     <figure className={s.fig}>
+      {coverUrl && <img src={coverUrl} alt="EGO & EAST" className={s.cover} />}
       <video
         ref={videoRef}
         src={src}

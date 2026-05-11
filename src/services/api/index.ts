@@ -32,3 +32,10 @@ export const getCampaigns = async () => {
 
   return campaigns;
 };
+
+export const getAssetUrl = async (assetId: string) => {
+  const asset = (await client.getAsset(assetId)) as any;
+
+  return asset.fields.file.url;
+  // return `https:${asset.fields.file?.url}`;
+};
