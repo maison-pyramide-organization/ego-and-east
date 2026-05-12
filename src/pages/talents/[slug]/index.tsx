@@ -62,7 +62,7 @@ const Talent = () => {
       })}
       <Films films={films} />
       <Talks talks={talks} talksBanner={talksBanner} talksIntro={talksIntro} />
-      <Bof bof={bof} />
+      {/* <Bof bof={bof} /> */}
       <Footer />
     </div>
   );

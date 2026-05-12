@@ -1,8 +1,15 @@
 .p {
   //   padding-bottom: 80rem;
+  padding-top: 60rem;
 }
 .p > .h {
   padding-block: 16rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 2;
 }
 .h svg {
   display: block;
