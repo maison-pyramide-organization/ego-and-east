@@ -8,7 +8,7 @@ import About from "./c/about";
 // import Brands from "./c/brands";
 import Films from "./c/films";
 import Talks from "./c/talks";
-import Bof from "./c/bof";
+// import Bof from "./c/bof";
 import Network from "./c/network";
 // import Press from "./c/press";
 import TS01 from "@/components/ts01";
@@ -33,7 +33,7 @@ const Talent = () => {
     talks,
     talksBanner,
     talksIntro,
-    bof,
+    // bof,
     films,
     network,
     sections,
